@@ -1,0 +1,194 @@
+[
+  {
+    "name": "home-en-desktop",
+    "title": "Frydom Express — Crispy Fried Chicken & Burgers",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "home-en-mobile",
+    "title": "Frydom Express — Crispy Fried Chicken & Burgers",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "story-en-desktop",
+    "title": "Our Story | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "story-en-mobile",
+    "title": "Our Story | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "menu-en-desktop",
+    "title": "Menu | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "menu-en-mobile",
+    "title": "Menu | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "locations-en-desktop",
+    "title": "Locations | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "locations-en-mobile",
+    "title": "Locations | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "partner-en-desktop",
+    "title": "Become a Partner | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "partner-en-mobile",
+    "title": "Become a Partner | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "support-en-desktop",
+    "title": "Partner Support | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "support-en-mobile",
+    "title": "Partner Support | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "privacy-en-desktop",
+    "title": "Privacy Policy | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "privacy-en-mobile",
+    "title": "Privacy Policy | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "terms-en-desktop",
+    "title": "Terms of Service | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "terms-en-mobile",
+    "title": "Terms of Service | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "home-zh-desktop",
+    "title": "Frydom Express — 金黄酥脆，一口爆汁",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "home-zh-mobile",
+    "title": "Frydom Express — 金黄酥脆，一口爆汁",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "story-zh-desktop",
+    "title": "品牌故事 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "story-zh-mobile",
+    "title": "品牌故事 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "menu-zh-desktop",
+    "title": "菜单 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "menu-zh-mobile",
+    "title": "菜单 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "locations-zh-desktop",
+    "title": "门店 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "locations-zh-mobile",
+    "title": "门店 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "partner-zh-desktop",
+    "title": "加盟合作 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "partner-zh-mobile",
+    "title": "加盟合作 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "support-zh-desktop",
+    "title": "总部支持 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "support-zh-mobile",
+    "title": "总部支持 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "privacy-zh-desktop",
+    "title": "隐私政策 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "privacy-zh-mobile",
+    "title": "隐私政策 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "terms-zh-desktop",
+    "title": "服务条款 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "terms-zh-mobile",
+    "title": "服务条款 | Frydom Express",
+    "overflow": false,
+    "errors": []
+  }
+]

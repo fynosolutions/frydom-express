@@ -1,0 +1,17 @@
+---
+import Arrow from './Arrow.astro';
+import Price from './Price.astro';
+import BreakableText from './BreakableText.astro';
+import {t,url,type Language}from'../lib/site';
+const{item,lang,featured=false,index=0}=Astro.props as {item:any,lang:Language,featured?:boolean,index?:number};
+---
+<article class:list={['menu-item',{'favorite-card':featured}]} id={!featured?item.id:undefined} data-item-id={item.id}>
+  <div class="item-photo"><img src={item.image.src} alt={'Frydom Express '+item.name} width={item.image.width} height={item.image.height} loading="lazy" decoding="async"/>{featured&&<span class="item-number">0{index+1}</span>}{item.imageStatus==='update_pending'&&<span class="photo-note">{t(lang,'Photo update coming soon','图片更新中')}</span>}</div>
+  <div class="item-body">
+    <h3>{featured?<a href={url(lang,'menu')+'#'+item.id}><span><BreakableText text={item.name}/></span><Arrow diagonal/></a>:<BreakableText text={item.name}/>}</h3>
+    <p class="item-description">{item.description}</p>
+    <Price item={item} lang={lang} compact={featured}/>
+    {!featured&&item.labels.filter((label:string)=>!/Photo update|图片更新/.test(label)).map((label:string)=><p class="item-note">{label}</p>)}
+    {!featured&&item.notes.map((note:string)=><p class="item-note">{note}</p>)}
+  </div>
+</article>

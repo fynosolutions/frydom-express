@@ -1,0 +1,7 @@
+---
+import Arrow from './Arrow.astro';
+import BreakableText from './BreakableText.astro';
+import{t,url,type Language}from'../lib/site';
+const{lang}=Astro.props as {lang:Language};
+---
+<section class="partner-banner" aria-labelledby="partner-banner-title"><div class="wrap partner-banner-inner"><div><span class="eyebrow">{t(lang,'GOOD FOOD. SHARED AMBITION.','好味道，一起创造')}</span><h2 id="partner-banner-title">{t(lang,'A little Frydom.','让 Frydom，')}<br/><BreakableText text={t(lang,'In your neighborhood.','来到你的城市。')}/></h2></div><div><p>{t(lang,'Bring the crunch to your community. Explore our menu flexibility, standardized operations, and brand and opening support.','从菜单适配、标准化运营到品牌与开业支持，了解 Frydom Express 如何与合作伙伴一起成长。')}</p><a class="button button-dark" href={url(lang,'partner')}>{t(lang,'Become a partner','了解加盟合作')}<Arrow diagonal/></a><a class="text-link" href={url(lang,'support')}>{t(lang,'Explore partner support','了解总部支持')} →</a></div></div></section>

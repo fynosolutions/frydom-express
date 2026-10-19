@@ -1,0 +1,14 @@
+node_modules
+.astro
+.git
+.vercel
+dist
+deliverables
+docs
+sources
+tests
+test-results
+playwright-report
+.env
+.env.*
+*.log

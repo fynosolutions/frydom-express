@@ -1,0 +1,1306 @@
+{
+  "capturedAt": "2026-10-19T12:56:59.075Z",
+  "pages": [
+    {
+      "route": "/",
+      "sourceUrl": "https://frydomexpress.com/",
+      "finalUrl": "https://frydomexpress.com/",
+      "status": 200,
+      "file": "sources/pages/zh-home.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/about-us.html",
+      "sourceUrl": "https://frydomexpress.com/about-us.html",
+      "finalUrl": "https://frydomexpress.com/about-us.html",
+      "status": 200,
+      "file": "sources/pages/about-us.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/",
+      "sourceUrl": "https://frydomexpress.com/en/",
+      "finalUrl": "https://frydomexpress.com/en/",
+      "status": 200,
+      "file": "sources/pages/en-home.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/about-us.html",
+      "sourceUrl": "https://frydomexpress.com/en/about-us.html",
+      "finalUrl": "https://frydomexpress.com/en/about-us.html",
+      "status": 200,
+      "file": "sources/pages/en__about-us.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/franchise.html",
+      "sourceUrl": "https://frydomexpress.com/en/franchise.html",
+      "finalUrl": "https://frydomexpress.com/en/franchise.html",
+      "status": 200,
+      "file": "sources/pages/en__franchise.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/index.html",
+      "sourceUrl": "https://frydomexpress.com/en/index.html",
+      "finalUrl": "https://frydomexpress.com/en/index.html",
+      "status": 200,
+      "file": "sources/pages/en__index.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/menu.html",
+      "sourceUrl": "https://frydomexpress.com/en/menu.html",
+      "finalUrl": "https://frydomexpress.com/en/menu.html",
+      "status": 200,
+      "file": "sources/pages/en__menu.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/privacy-policy.html",
+      "sourceUrl": "https://frydomexpress.com/en/privacy-policy.html",
+      "finalUrl": "https://frydomexpress.com/en/privacy-policy.html",
+      "status": 200,
+      "file": "sources/pages/en__privacy-policy.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/stores.html",
+      "sourceUrl": "https://frydomexpress.com/en/stores.html",
+      "finalUrl": "https://frydomexpress.com/en/stores.html",
+      "status": 200,
+      "file": "sources/pages/en__stores.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/support.html",
+      "sourceUrl": "https://frydomexpress.com/en/support.html",
+      "finalUrl": "https://frydomexpress.com/en/support.html",
+      "status": 200,
+      "file": "sources/pages/en__support.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/en/terms-of-service.html",
+      "sourceUrl": "https://frydomexpress.com/en/terms-of-service.html",
+      "finalUrl": "https://frydomexpress.com/en/terms-of-service.html",
+      "status": 200,
+      "file": "sources/pages/en__terms-of-service.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/franchise.html",
+      "sourceUrl": "https://frydomexpress.com/franchise.html",
+      "finalUrl": "https://frydomexpress.com/franchise.html",
+      "status": 200,
+      "file": "sources/pages/franchise.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/fuwu.html",
+      "sourceUrl": "https://frydomexpress.com/fuwu.html",
+      "finalUrl": "https://frydomexpress.com/fuwu.html",
+      "status": 200,
+      "file": "sources/pages/fuwu.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/index.html",
+      "sourceUrl": "https://frydomexpress.com/index.html",
+      "finalUrl": "https://frydomexpress.com/index.html",
+      "status": 200,
+      "file": "sources/pages/index.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/menu.html",
+      "sourceUrl": "https://frydomexpress.com/menu.html",
+      "finalUrl": "https://frydomexpress.com/menu.html",
+      "status": 200,
+      "file": "sources/pages/menu.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/privacy-policy.html",
+      "sourceUrl": "https://frydomexpress.com/privacy-policy.html",
+      "finalUrl": "https://frydomexpress.com/privacy-policy.html",
+      "status": 200,
+      "file": "sources/pages/privacy-policy.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/robots.txt",
+      "sourceUrl": "https://frydomexpress.com/robots.txt",
+      "finalUrl": "https://frydomexpress.com/robots.txt",
+      "status": 404,
+      "file": "sources/pages/robots.txt",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/sitemap.xml",
+      "sourceUrl": "https://frydomexpress.com/sitemap.xml",
+      "finalUrl": "https://frydomexpress.com/sitemap.xml",
+      "status": 404,
+      "file": "sources/pages/sitemap.xml",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/stores.html",
+      "sourceUrl": "https://frydomexpress.com/stores.html",
+      "finalUrl": "https://frydomexpress.com/stores.html",
+      "status": 200,
+      "file": "sources/pages/stores.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    },
+    {
+      "route": "/terms-of-service.html",
+      "sourceUrl": "https://frydomexpress.com/terms-of-service.html",
+      "finalUrl": "https://frydomexpress.com/terms-of-service.html",
+      "status": 200,
+      "file": "sources/pages/terms-of-service.html",
+      "capturedAt": "2026-10-19T12:56:59.075Z"
+    }
+  ],
+  "assets": [
+    {
+      "sourceUrl": "https://frydomexpress.com/favicon.ico",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/terms-of-service.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/privacy-policy.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/about-us.html",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/franchise.html",
+        "https://frydomexpress.com/en/index.html",
+        "https://frydomexpress.com/en/support.html",
+        "https://frydomexpress.com/en/terms-of-service.html",
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/dc807af9-favicon.ico",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "bytes": 849
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/favicon-48.png",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/terms-of-service.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/privacy-policy.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/about-us.html",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/franchise.html",
+        "https://frydomexpress.com/en/index.html",
+        "https://frydomexpress.com/en/support.html",
+        "https://frydomexpress.com/en/terms-of-service.html",
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/eb50656b-favicon-48.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 4929
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/favicon-32.png",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/terms-of-service.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/privacy-policy.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/about-us.html",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/franchise.html",
+        "https://frydomexpress.com/en/index.html",
+        "https://frydomexpress.com/en/support.html",
+        "https://frydomexpress.com/en/terms-of-service.html",
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/9b4cb2fe-favicon-32.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 2421
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/apple-touch-icon.png",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/terms-of-service.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/privacy-policy.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/about-us.html",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/franchise.html",
+        "https://frydomexpress.com/en/index.html",
+        "https://frydomexpress.com/en/support.html",
+        "https://frydomexpress.com/en/terms-of-service.html",
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/3387931f-apple-touch-icon.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 47074
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/css/site.css",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/terms-of-service.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/privacy-policy.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/about-us.html",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/franchise.html",
+        "https://frydomexpress.com/en/index.html",
+        "https://frydomexpress.com/en/support.html",
+        "https://frydomexpress.com/en/terms-of-service.html",
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/c9d86178-site.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 98015
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/logo-mark-240.webp",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/terms-of-service.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/privacy-policy.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/about-us.html",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/franchise.html",
+        "https://frydomexpress.com/en/index.html",
+        "https://frydomexpress.com/en/support.html",
+        "https://frydomexpress.com/en/terms-of-service.html",
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/a4753cd2-logo-mark-240.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 13894
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/store-outside-800.webp",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/en/stores.html"
+      ],
+      "localPath": "/assets/original/7d579376-store-outside-800.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 32972
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/store-inside-665.webp",
+      "pages": [
+        "https://frydomexpress.com/stores.html",
+        "https://frydomexpress.com/franchise.html",
+        "https://frydomexpress.com/en/stores.html",
+        "https://frydomexpress.com/en/franchise.html"
+      ],
+      "localPath": "/assets/original/a1e069f4-store-inside-665.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 32086
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-honey-mustard-wings-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/d6649a7f-menu-honey-mustard-wings-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 17474
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Snow%20Cheese%20Wings-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/42155b05-snow-cheese-wings-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 16824
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Amber%20Wings-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/2ccdbb85-amber-wings-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 17088
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Sweet-Chili-Wings-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/eb6c2e2f-sweet-chili-wings-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 16314
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-snow-cheese-boneless-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/1668617d-menu-snow-cheese-boneless-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 14474
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-amber-boneless-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/7fb43bc7-menu-amber-boneless-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 15978
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-honey-mustard-boneless-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/1cc284ac-menu-honey-mustard-boneless-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 16180
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-sweet-chili-boneless-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/e20c0a06-menu-sweet-chili-boneless-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 16438
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/new/hot-original-chicken-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/56327726-hot-original-chicken-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 18556
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-colonel%20chicken%20nuggets-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/3253b2df-menu-colonel-chicken-nuggets-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 9704
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Crispy%20Chicken%20Burger-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/266bb842-crispy-chicken-burger-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 10922
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Angus%20Beef%20Cheeseburger-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/87836e32-angus-beef-cheeseburger-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 13592
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Crunch%20burger%20combo-310.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/c5c0ea4f-crunch-burger-combo-310.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 13156
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-chicken-wrap-combo_1-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/bfc7b7dd-menu-chicken-wrap-combo_1-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 19796
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Crispy%20Chicken%20Burger%20Combo-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/17dd3e68-crispy-chicken-burger-combo-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 19906
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-angus-burger-combo-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/32166a00-menu-angus-burger-combo-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 21882
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Chicken%20Wrap%20Combo-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/8fec1303-chicken-wrap-combo-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 18582
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-chicken-wings-combo-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/0c11f365-menu-chicken-wings-combo-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 21914
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-onion-cheese-bacon-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/71b2473a-menu-onion-cheese-bacon-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 17772
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Beef%20Cheese%20Burger%20combo-310.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/eb8661a5-beef-cheese-burger-combo-310.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 12840
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-pineapple-beef-burger-combo-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/145cf623-menu-pineapple-beef-burger-combo-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 21908
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-fries-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/af388ed8-menu-fries-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 12604
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-popcorn-chicken-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/d19a339a-menu-popcorn-chicken-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 12610
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/yinliao-440.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/26105a1c-yinliao-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 8650
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-honey-mustard-wings-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/664785a3-menu-honey-mustard-wings-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6890
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Snow%20Cheese%20Wings-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/f5f63d12-snow-cheese-wings-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5728
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Amber%20Wings-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/06d5a301-amber-wings-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6564
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Sweet-Chili-Wings-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/c6c78653-sweet-chili-wings-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5738
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-snow-cheese-boneless-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/265f8cff-menu-snow-cheese-boneless-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5144
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-amber-boneless-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/48b36b85-menu-amber-boneless-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6334
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-honey-mustard-boneless-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/e0b5d418-menu-honey-mustard-boneless-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5886
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-sweet-chili-boneless-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/91b3aa9b-menu-sweet-chili-boneless-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6376
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/new/hot-original-chicken-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/dcace9db-hot-original-chicken-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6576
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-colonel%20chicken%20nuggets-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/9029d68b-menu-colonel-chicken-nuggets-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 3968
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Crispy%20Chicken%20Burger-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/daf32217-crispy-chicken-burger-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 4682
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Angus%20Beef%20Cheeseburger-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/6086d069-angus-beef-cheeseburger-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5504
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Crunch%20burger%20combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/59a5fad9-crunch-burger-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 8730
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-chicken-wrap-combo_1-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/3feb20b5-menu-chicken-wrap-combo_1-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6726
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Crispy%20Chicken%20Burger%20Combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/f420b032-crispy-chicken-burger-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 7448
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-angus-burger-combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/b5b29aa4-menu-angus-burger-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 8010
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Chicken%20Wrap%20Combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/718b33de-chicken-wrap-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 7160
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-chicken-wings-combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/d6c17d3f-menu-chicken-wings-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 7604
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-onion-cheese-bacon-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/777aa7ce-menu-onion-cheese-bacon-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6392
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Beef%20Cheese%20Burger%20combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/5bb47474-beef-cheese-burger-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 8434
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-pineapple-beef-burger-combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/f140d295-menu-pineapple-beef-burger-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 7510
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-fries-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/4f8d57a4-menu-fries-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5432
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/menu-popcorn-chicken-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/c04aef09-menu-popcorn-chicken-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 5132
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/yinliao-220.webp",
+      "pages": [
+        "https://frydomexpress.com/menu.html",
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/menu.html",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/941e8e4c-yinliao-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 3982
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/brand-new-1280-1280.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/8b9c9602-brand-new-1280-1280.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 62772
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/%E7%BB%8F%E5%85%B8%E5%8E%9F%E5%91%B3%E7%82%B8%E9%B8%A1.png",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html"
+      ],
+      "localPath": "/assets/original/9d89077d-.png",
+      "status": 404,
+      "contentType": "text/html"
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/hero-poster.jpg",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html"
+      ],
+      "localPath": "/assets/original/c7f56f42-hero-poster.jpg",
+      "status": 404,
+      "contentType": "text/html"
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/new/hot-crispy-burger-combo-440.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/7c2a2ba3-hot-crispy-burger-combo-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 22690
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/new/hot-snow-cheese-wings-440.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/db625ca3-hot-snow-cheese-wings-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 19628
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/brand-op-960.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/9dddc004-brand-op-960.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 34402
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/promo-s-1200-600-1-1200.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/6d50c9d7-promo-s-1200-600-1-1200.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 67598
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Original%20Recipe%20Fried%20Chicken-440.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/e87d30be-original-recipe-fried-chicken-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 16370
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/%E9%9B%AA%E8%8A%B1%E8%8A%9D%E5%A3%AB%E9%B8%A1%E7%BF%85.png",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html"
+      ],
+      "localPath": "/assets/original/2ec5f698-.png",
+      "status": 404,
+      "contentType": "text/html"
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/brand-new-960.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/b099d593-brand-new-960.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 31356
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/brand-new-640-640.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/e87e04e0-brand-new-640-640.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 22572
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/new/hot-crispy-burger-combo-220.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/f95d4be0-hot-crispy-burger-combo-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 8900
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/new/hot-snow-cheese-wings-220.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/6b0ef05b-hot-snow-cheese-wings-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 7098
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/brand-op-640.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/49892a0d-brand-op-640.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 22730
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/brand-op-1280.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/863df91d-brand-op-1280.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 45584
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/promo-s-640-360_1.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/",
+        "https://frydomexpress.com/en/index.html"
+      ],
+      "localPath": "/assets/original/252518ec-promo-s-640-360_1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 25084
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/Original%20Recipe%20Fried%20Chicken-220.webp",
+      "pages": [
+        "https://frydomexpress.com/",
+        "https://frydomexpress.com/index.html",
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/d100baf9-original-recipe-fried-chicken-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6352
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/frydom-express-our3-800.webp",
+      "pages": [
+        "https://frydomexpress.com/about-us.html",
+        "https://frydomexpress.com/en/about-us.html"
+      ],
+      "localPath": "/assets/original/53aec887-frydom-express-our3-800.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 48874
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/xiaoguo_1.jpg",
+      "pages": [
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/en/support.html"
+      ],
+      "localPath": "/assets/original/19bd74d9-xiaoguo_1.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 184370
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/marketing.webp",
+      "pages": [
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/en/support.html"
+      ],
+      "localPath": "/assets/original/d708ad6d-marketing.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 161120
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/administration.webp",
+      "pages": [
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/en/support.html"
+      ],
+      "localPath": "/assets/original/73648ab7-administration.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 122650
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/campaignplanning.webp",
+      "pages": [
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/en/support.html"
+      ],
+      "localPath": "/assets/original/10e1c7f6-campaignplanning.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 105282
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/promotion.webp",
+      "pages": [
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/en/support.html"
+      ],
+      "localPath": "/assets/original/98f07d87-promotion.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 93536
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/market-research.webp",
+      "pages": [
+        "https://frydomexpress.com/fuwu.html",
+        "https://frydomexpress.com/en/support.html"
+      ],
+      "localPath": "/assets/original/ea534cb9-market-research.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 126372
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/frydom-express-our3.jpg",
+      "pages": [
+        "https://frydomexpress.com/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/c68ccd2e-frydom-express-our3.jpg",
+      "status": 404,
+      "contentType": "text/html"
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/All%20Frydom%20Express%20Chicken-440.webp",
+      "pages": [
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/07346bb8-all-frydom-express-chicken-440.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 32138
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/images/All%20Frydom%20Express%20Chicken-220.webp",
+      "pages": [
+        "https://frydomexpress.com/en/menu.html"
+      ],
+      "localPath": "/assets/original/63e18a92-all-frydom-express-chicken-220.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 11732
+    },
+    {
+      "sourceUrl": "https://frydomexpress.com/en/images/frydom-express-our3.jpg",
+      "pages": [
+        "https://frydomexpress.com/en/privacy-policy.html"
+      ],
+      "localPath": "/assets/original/18705665-frydom-express-our3.jpg",
+      "status": 404,
+      "contentType": "text/html"
+    }
+  ]
+}

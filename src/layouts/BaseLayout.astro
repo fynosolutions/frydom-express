@@ -1,0 +1,46 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HomeIntro from '../components/HomeIntro.astro';
+import { asset, metadata, structuredData, t, url, type Language, type PageKind } from '../lib/site';
+import '../styles/global.css';
+const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
+const meta=metadata(lang,kind);
+const canonical='https://frydomexpress.com'+url(lang,kind);
+const hero=asset('/images/brand-new-1280-1280.webp');
+---
+<!DOCTYPE html>
+<html lang={lang==='en'?'en':'zh-Hans'}>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#faeec9"/>
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description}/>
+    <link rel="canonical" href={canonical}/>
+    <link rel="alternate" hreflang="en" href={'https://frydomexpress.com'+url('en',kind)}/>
+    <link rel="alternate" hreflang="zh-Hans" href={'https://frydomexpress.com'+url('zh',kind)}/>
+    <link rel="icon" href={asset('/favicon-32.png').src} type="image/png"/>
+    <link rel="apple-touch-icon" href={asset('/apple-touch-icon.png').src}/>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+    {kind==='home'&&<link rel="preload" as="image" href={hero.src}/>}
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Frydom Express"/>
+    <meta property="og:title" content={meta.title}/>
+    <meta property="og:description" content={meta.description}/>
+    <meta property="og:url" content={canonical}/>
+    <meta property="og:image" content={'https://frydomexpress.com'+hero.src}/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData(lang,kind)).replaceAll('<','\u003c')}/>
+  </head>
+  <body id="top" class:list={[`page-${kind}`,`locale-${lang}`]}>
+    {kind==='home'&&<HomeIntro lang={lang}/>}
+    <a href="#main" class="skip-link">{t(lang,'Skip to content','跳转到正文')}</a>
+    <Header lang={lang} kind={kind}/>
+    <main id="main"><slot/></main>
+    <Footer lang={lang}/>
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>

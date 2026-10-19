@@ -1,0 +1,5 @@
+---
+import{t,url,labels,type Language,type PageKind}from'../lib/site';
+const{lang,kind}=Astro.props as {lang:Language,kind:PageKind};
+---
+<nav class="breadcrumb wrap" aria-label={t(lang,'Breadcrumb','面包屑导航')}><a href={url(lang,'home')}>{labels[lang].home}</a><span aria-hidden="true">/</span><span aria-current="page">{labels[lang][kind]}</span></nav>

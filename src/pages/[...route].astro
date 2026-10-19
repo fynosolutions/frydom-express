@@ -1,0 +1,7 @@
+---
+import SitePage from '../components/SitePage.astro';
+import{data,type Language,type PageKind}from'../lib/site';
+export function getStaticPaths(){return data.routes.filter((route:any)=>route.kind!=='home').map((route:any)=>({params:{route:route.path.replace(/^\//,'').replace(/\.html$/,'')},props:{lang:route.lang,kind:route.kind}}));}
+const{lang,kind}=Astro.props as {lang:Language,kind:PageKind};
+---
+<SitePage lang={lang} kind={kind}/>

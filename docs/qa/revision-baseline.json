@@ -1,0 +1,770 @@
+[
+  {
+    "width": 320,
+    "route": "/en/",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 320,
+        "height": 7530.5625
+      },
+      "h1": {
+        "fontSize": 57.6,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 291,
+        "height": 152.015625
+      },
+      ".hero-intro": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 288,
+        "height": 66.5625
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 28,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 220.546875,
+        "height": 60.46875
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 232.15625,
+        "height": 63
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 72.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 44.8,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 320,
+        "height": 40.3125
+      },
+      "menuImage": {
+        "width": 236.15625,
+        "height": 157.4375
+      }
+    }
+  },
+  {
+    "width": 320,
+    "route": "/en/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 320,
+        "height": 7761.34375
+      },
+      "h1": {
+        "fontSize": 70,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 288,
+        "height": 203.671875
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 134,
+        "height": 45.34375
+      },
+      ".item-description": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 134,
+        "height": 87.5
+      },
+      ".item-prices dd": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 29.578125,
+        "height": 16.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 37,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 210.453125,
+        "height": 35.875
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 72.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 44.8,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 320,
+        "height": 40.3125
+      },
+      "menuImage": {
+        "width": 138,
+        "height": 125.453125
+      }
+    }
+  },
+  {
+    "width": 320,
+    "route": "/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 320,
+        "height": 6973.296875
+      },
+      "h1": {
+        "fontSize": 42,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 288,
+        "height": 97.4375
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 17,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 134,
+        "height": 18.359375
+      },
+      ".item-description": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 134,
+        "height": 35
+      },
+      ".item-prices dd": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 29.578125,
+        "height": 16.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 29,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 150,
+        "height": 33.625
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 72.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 44.8,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 320,
+        "height": 40.3125
+      },
+      "menuImage": {
+        "width": 138,
+        "height": 125.453125
+      }
+    }
+  },
+  {
+    "width": 390,
+    "route": "/en/",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 390,
+        "height": 7255.59375
+      },
+      "h1": {
+        "fontSize": 76,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 353,
+        "height": 200.625
+      },
+      ".hero-intro": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 350,
+        "height": 44.375
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 28,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 268.84375,
+        "height": 60.46875
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 283,
+        "height": 63
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 88.890625,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 54.6,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 390,
+        "height": 49.125
+      },
+      "menuImage": {
+        "width": 287,
+        "height": 191.328125
+      }
+    }
+  },
+  {
+    "width": 390,
+    "route": "/en/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 390,
+        "height": 7886.953125
+      },
+      "h1": {
+        "fontSize": 70,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 350,
+        "height": 135.78125
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 23,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 163,
+        "height": 49.65625
+      },
+      ".item-description": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 163,
+        "height": 70
+      },
+      ".item-prices dd": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 29.578125,
+        "height": 16.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 37,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 210.453125,
+        "height": 35.875
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 88.890625,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 54.6,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 390,
+        "height": 49.125
+      },
+      "menuImage": {
+        "width": 167,
+        "height": 151.8125
+      }
+    }
+  },
+  {
+    "width": 390,
+    "route": "/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 390,
+        "height": 7223.15625
+      },
+      "h1": {
+        "fontSize": 42.9,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 350,
+        "height": 99.53125
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 17,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 163,
+        "height": 18.359375
+      },
+      ".item-description": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 163,
+        "height": 17.5
+      },
+      ".item-prices dd": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 29.578125,
+        "height": 16.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 29,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 150,
+        "height": 33.625
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 72.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 54.6,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 390,
+        "height": 49.125
+      },
+      "menuImage": {
+        "width": 167,
+        "height": 151.8125
+      }
+    }
+  },
+  {
+    "width": 768,
+    "route": "/en/",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 768,
+        "height": 5761.796875
+      },
+      "h1": {
+        "fontSize": 70.656,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 345,
+        "height": 182.25
+      },
+      ".hero-intro": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 342,
+        "height": 66.5625
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 28,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 203.296875,
+        "height": 60.46875
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 214,
+        "height": 84
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 91.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 109.056,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 768,
+        "height": 98.15625
+      },
+      "menuImage": {
+        "width": 218,
+        "height": 150.34375
+      }
+    }
+  },
+  {
+    "width": 768,
+    "route": "/en/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 768,
+        "height": 9338.5625
+      },
+      "h1": {
+        "fontSize": 68,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 704,
+        "height": 131.90625
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 27,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 317.765625,
+        "height": 29.15625
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 334.5,
+        "height": 42
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 46,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 252.53125,
+        "height": 44.609375
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 91.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 109.056,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 768,
+        "height": 98.15625
+      },
+      "menuImage": {
+        "width": 338.5,
+        "height": 233.4375
+      }
+    }
+  },
+  {
+    "width": 768,
+    "route": "/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 768,
+        "height": 9505.71875
+      },
+      "h1": {
+        "fontSize": 52,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 704,
+        "height": 120.625
+      },
+      ".desktop-nav a": {
+        "fontSize": 10,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 0,
+        "height": 0
+      },
+      ".item-body h3": {
+        "fontSize": 27,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 317.765625,
+        "height": 29.15625
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 334.5,
+        "height": 42
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 46,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 180,
+        "height": 53.359375
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 21,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 72.96875,
+        "height": 37.59375
+      },
+      ".footer-wordmark": {
+        "fontSize": 109.056,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 768,
+        "height": 98.15625
+      },
+      "menuImage": {
+        "width": 338.5,
+        "height": 233.4375
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/en/",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 1440,
+        "height": 6294
+      },
+      "h1": {
+        "fontSize": 125.28,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 628,
+        "height": 323.203125
+      },
+      ".hero-intro": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 370,
+        "height": 72.140625
+      },
+      ".desktop-nav a": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 31.109375,
+        "height": 42.140625
+      },
+      ".item-body h3": {
+        "fontSize": 28,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 385.6875,
+        "height": 30.234375
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 406,
+        "height": 42
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 24,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 102.6875,
+        "height": 43.21875
+      },
+      ".footer-wordmark": {
+        "fontSize": 204.48,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 1440,
+        "height": 184.03125
+      },
+      "menuImage": {
+        "width": 410,
+        "height": 282.75
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/en/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 1440,
+        "height": 7662.96875
+      },
+      "h1": {
+        "fontSize": 112,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 1280,
+        "height": 217.25
+      },
+      ".desktop-nav a": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 31.109375,
+        "height": 42.140625
+      },
+      ".item-body h3": {
+        "fontSize": 27,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 384.421875,
+        "height": 29.15625
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 404.65625,
+        "height": 42
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 46,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", \"Microsoft YaHei\", sans-serif",
+        "width": 252.53125,
+        "height": 44.609375
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 24,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 102.6875,
+        "height": 43.21875
+      },
+      ".footer-wordmark": {
+        "fontSize": 204.48,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 1440,
+        "height": 184.03125
+      },
+      "menuImage": {
+        "width": 408.65625,
+        "height": 281.828125
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/menu.html",
+    "values": {
+      "body": {
+        "fontSize": 15,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 1440,
+        "height": 7963.390625
+      },
+      "h1": {
+        "fontSize": 84,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 1280,
+        "height": 194.875
+      },
+      ".desktop-nav a": {
+        "fontSize": 11,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 22,
+        "height": 42.140625
+      },
+      ".item-body h3": {
+        "fontSize": 27,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 384.421875,
+        "height": 29.15625
+      },
+      ".item-description": {
+        "fontSize": 12,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 404.65625,
+        "height": 42
+      },
+      ".item-prices dd": {
+        "fontSize": 13,
+        "fontFamily": "\"DM Sans\", Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 34.953125,
+        "height": 19.5
+      },
+      ".menu-section-heading h2": {
+        "fontSize": 46,
+        "fontFamily": "\"DM Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "width": 180,
+        "height": 53.359375
+      },
+      ".brand-wordmark strong": {
+        "fontSize": 24,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 84.484375,
+        "height": 43.21875
+      },
+      ".footer-wordmark": {
+        "fontSize": 204.48,
+        "fontFamily": "\"Barlow Condensed\", Impact, \"Arial Narrow\", sans-serif",
+        "width": 1440,
+        "height": 184.03125
+      },
+      "menuImage": {
+        "width": 408.65625,
+        "height": 281.828125
+      }
+    }
+  }
+]

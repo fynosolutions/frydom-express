@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>404 — Page Not Found</title>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+
+<noscript>
+</noscript>
+<style id="critical-above-the-fold">
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faeec9;
+  color: #5c4a3a;
+}
+body {
+  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.site-header,
+.hero,
+.hero-v2,
+main,
+section {
+  background: transparent;
+}
+.site-header {
+  background: #faeec9;
+}
+.hero,
+.hero-v2 {
+  overflow: hidden;
+}
+.hero h1,
+.hero-v2 h1,
+.hero-title,
+h1 {
+  color: #cd5817;
+}
+.hero p,
+.hero-v2 p,
+.hero-subtitle,
+p {
+  color: inherit;
+}
+.brand-mark {
+  width: 240px;
+  height: auto;
+}
+.menu-card-img,
+.hot-img,
+.brand-hero-image,
+.fr-top-hero-image {
+  overflow: hidden;
+}
+</style>
+  <link rel="stylesheet" href="css/site.css"/>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<h1>Page not found</h1>
+<p>The page you’re looking for doesn’t exist (or was moved).</p>
+<p><a href="index.html">Back to Home</a></p>
+<div class="meta">Error 404</div>
+</div>
+</div>
+<script>
+(function(){
+  var header=document.querySelector('.site-header');
+  var nav=document.getElementById('site-nav');
+  var toggle=document.querySelector('.nav-toggle');
+  if(!header||!nav||!toggle) return;
+  function mobile(){ return window.matchMedia('(max-width: 768px)').matches; }
+  function closeNav(){ header.classList.remove('nav-open'); nav.hidden=true; toggle.setAttribute('aria-expanded','false'); }
+  function openNav(){ header.classList.add('nav-open'); nav.hidden=false; toggle.setAttribute('aria-expanded','true'); }
+  function sync(){
+    if(mobile()){
+      if(!header.classList.contains('nav-open')) closeNav(); else openNav();
+    }else{
+      header.classList.remove('nav-open'); nav.hidden=false; toggle.setAttribute('aria-expanded','false');
+    }
+  }
+  toggle.type='button';
+  toggle.addEventListener('click', function(e){
+    e.preventDefault(); e.stopPropagation();
+    if(!mobile()) return;
+    if(header.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+  document.addEventListener('click', function(e){ if(mobile() && !header.contains(e.target)) closeNav(); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ if(mobile()) closeNav(); }); });
+  window.addEventListener('resize', sync);
+  sync();
+})();
+</script></body>
+</html>

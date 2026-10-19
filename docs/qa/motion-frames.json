@@ -1,0 +1,226 @@
+{
+  "capturedAt": "2026-10-19T17:48:18.454Z",
+  "spacing": {
+    "bottom": 420.1585388183594,
+    "caption": 435.15625
+  },
+  "details": [
+    {
+      "text": "Honey Mustard WingsA smooth honey mustard glaze with just enough tang to keep th",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 0,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    },
+    {
+      "text": "Sweet Chili WingsSweet up front with a mild spicy finish.Ask in store for pricin",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 65,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    },
+    {
+      "text": "Boneless & Nuggets",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 130,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    },
+    {
+      "text": "Big flavor in every little bite.",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 195,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    },
+    {
+      "text": "Snow Cheese Boneless ChickenCrispy boneless chicken dusted with our savory chees",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 195,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    },
+    {
+      "text": "Amber Boneless ChickenBoneless chicken tossed in our signature sweet-savory ambe",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 195,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    },
+    {
+      "text": "Honey Mustard Boneless ChickenEasygoing, familiar flavor with a smooth honey mus",
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(28px)",
+          "opacity": "0.25",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateY(0px)",
+          "opacity": "1",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "delay": 195,
+        "direction": "normal",
+        "duration": 680,
+        "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+        "endDelay": 0,
+        "fill": "backwards",
+        "iterationStart": 0,
+        "iterations": 1
+      }
+    }
+  ]
+}

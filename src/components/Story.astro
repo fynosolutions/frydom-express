@@ -1,0 +1,16 @@
+---
+import Arrow from './Arrow.astro';
+import PartnerBanner from './PartnerBanner.astro';
+import{asset,locale,t,url,type Language}from'../lib/site';
+const{lang}=Astro.props as {lang:Language};
+const content=locale(lang).story;
+const photo=asset('/images/frydom-express-our3-800.webp');
+const sectionTitles=lang==='en'?['Our food','The store experience','Operating standards']:['我们的产品','门店体验','运营标准'];
+---
+<section class="editorial-hero wrap" id="content"><div><span class="eyebrow">{t(lang,'OUR STORY · BROOKLYN ROOTS','品牌故事 · 从布鲁克林出发')}</span><h1>{t(lang,'A little crunch.','一口酥脆。')}<br/><em>{t(lang,'A lot of heart.','满满用心。')}</em></h1><p class="lead">{content.intro}</p><a class="text-link" href={url(lang,'menu')}>{t(lang,'Meet the menu','从菜单认识我们')}<Arrow diagonal/></a></div><div class="editorial-photo"><img src={photo.src} width={photo.width} height={photo.height} alt={t(lang,'Frydom Express burger, fresh ingredients and branded packaging','Frydom Express 汉堡、食材与品牌包装')} fetchpriority="high"/><span class="photo-caption">FRYDOM EXPRESS · {t(lang,'FOOD WITH CHARACTER','有滋有味，有态度')}</span></div></section>
+<div class="story-badges wrap">{content.badges.map((badge:string)=><span>✳ {badge}</span>)}</div>
+<section class="story-food wrap section-pad" aria-labelledby="our-food-title"><span class="eyebrow">{t(lang,'MADE WITH CARE','认真做好每一餐')}</span><h2 id="our-food-title">{t(lang,'Fresh food.','现炸现做。')}<br/><em>{t(lang,'Full-on flavor.','风味十足。')}</em></h2><div>{content.paragraphs.map((p:string)=><p>{p}</p>)}</div></section>
+<div class="story-principles wrap">{content.cards.map((card:any,index:number)=><section><span class="category-index">0{index+1}</span><h2>{sectionTitles[index]}</h2><h3>{card.title}</h3><p>{card.text}</p></section>)}</div>
+<section class="story-timeline section-pad wrap" aria-labelledby="vision-title"><div><span class="eyebrow">{t(lang,'THE STORY KEEPS GOING','好味道，继续向前')}</span><h2 id="vision-title">{t(lang,'Where we’re','我们的')}<br/><em>{t(lang,'headed.','下一步。')}</em></h2></div><ol>{content.timeline.map((step:any,index:number)=><li><span>0{index+1}</span><div><h3>{step.label}</h3><p>{step.text}</p></div></li>)}</ol></section>
+<section class="story-explore wrap"><h2>{t(lang,'Explore Frydom Express','继续了解 Frydom Express')}</h2><p>{content.contact}</p><div class="button-row"><a class="button button-dark" href={url(lang,'menu')}>{t(lang,'View the menu','查看菜单')}<Arrow/></a><a class="button button-outline" href={url(lang,'locations')}>{t(lang,'Find our locations','寻找门店')}<Arrow diagonal/></a><a class="text-link" href="mailto:info@frydomexpress.com">{t(lang,'Email us','邮件联系')} ↗</a></div></section>
+<PartnerBanner lang={lang}/>

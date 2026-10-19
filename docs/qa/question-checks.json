@@ -1,0 +1,96 @@
+{
+  "method": "Deterministic DOM and shared data checks against the production build; not a live search/LLM indexing experiment.",
+  "executedAt": "2026-10-19T17:49:06.890Z",
+  "checks": [
+    {
+      "question": "What does Frydom Express serve?",
+      "status": "passed",
+      "answer": "Fried chicken, wings, boneless chicken, burgers, wraps, sides and drinks.",
+      "evidence": "/en/#brand"
+    },
+    {
+      "question": "Which locations are currently listed?",
+      "status": "passed",
+      "answer": "Brooklyn, New York; Rolla, Missouri. This is the current website listing, not a claim of total worldwide store count.",
+      "evidence": "/en/stores.html"
+    },
+    {
+      "question": "What is the Brooklyn address?",
+      "status": "passed",
+      "answer": "781 61st St, Brooklyn, NY 11220, United States.",
+      "evidence": "/en/stores.html#brooklyn"
+    },
+    {
+      "question": "What is the Rolla address?",
+      "status": "passed",
+      "answer": "1049 Kingshighway Suite 2, Rolla, MO 65401, United States.",
+      "evidence": "/en/stores.html#rolla"
+    },
+    {
+      "question": "What hours are listed? Are days specified?",
+      "status": "passed",
+      "answer": "11 AM – 9 PM. Weekdays are unspecified.",
+      "evidence": "/en/stores.html#brooklyn; /en/stores.html#rolla"
+    },
+    {
+      "question": "What services are listed?",
+      "status": "passed",
+      "answer": "Dine-in and takeout; do not infer delivery.",
+      "evidence": "/en/stores.html"
+    },
+    {
+      "question": "Where can I read the full menu?",
+      "status": "passed",
+      "answer": "The full representative menu is in the initial HTML at /en/menu.html.",
+      "evidence": "/en/menu.html#menu"
+    },
+    {
+      "question": "What comes with Chicken Wrap Combo?",
+      "status": "passed",
+      "answer": "A crispy chicken wrap, fries and a drink.",
+      "evidence": "/en/menu.html#chicken-wrap-combo"
+    },
+    {
+      "question": "What sizes are listed for Original Recipe Fried Chicken?",
+      "status": "passed",
+      "answer": "3, 6 and 9 pieces.",
+      "evidence": "/en/menu.html#original-recipe-fried-chicken"
+    },
+    {
+      "question": "Are Crispy Chicken Burger Combo prices consistent?",
+      "status": "passed",
+      "answer": "No. The old home and menu conflict. Current pricing must be confirmed with the restaurant.",
+      "evidence": "docs/content-issues.md; /en/menu.html#crispy-chicken-burger-combo"
+    },
+    {
+      "question": "Is the menu identical at all locations?",
+      "status": "passed",
+      "answer": "No identical-menu guarantee: selection, availability and pricing may vary by location.",
+      "evidence": "/en/menu.html#menu"
+    },
+    {
+      "question": "How can I make a partnership inquiry?",
+      "status": "passed",
+      "answer": "Use Become a Partner and the original HubSpot inquiry form, or email info@frydomexpress.com. Local preview intentionally disables live sending.",
+      "evidence": "/en/franchise.html#franchise-inquiry"
+    },
+    {
+      "question": "Which fields are required?",
+      "status": "passed",
+      "answer": "Full name and phone only. WeChat, email and goals/questions are optional.",
+      "evidence": "/en/franchise.html#franchise-inquiry"
+    },
+    {
+      "question": "What partner support is described?",
+      "status": "passed",
+      "answer": "Brand Advertising & Marketing; Brand Licensing and Management; Marketing Campaign Planning; Promotional Support; Market Research & Growth Planning",
+      "evidence": "/en/support.html"
+    },
+    {
+      "question": "Are delivery and individual store phones confirmed?",
+      "status": "passed",
+      "answer": "No. Do not use the partnership line as a store phone or import reference-site order links.",
+      "evidence": "docs/content-issues.md; /en/stores.html"
+    }
+  ]
+}

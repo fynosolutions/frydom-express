@@ -1,0 +1,398 @@
+{
+  "executedAt": "2026-10-19T17:47:48.746Z",
+  "method": "Production HTML parsed with Cheerio, without executing JavaScript. Not a search indexing or live CRM test.",
+  "routes": 16,
+  "checks": 97,
+  "passed": 97,
+  "failures": [],
+  "details": [
+    {
+      "name": "/en/ semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/ canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/ unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/ exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/ JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/about-us.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/about-us.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/about-us.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/about-us.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/about-us.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/about-us.html all original story paragraphs and development steps",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html full menu coverage and headings",
+      "status": "passed"
+    },
+    {
+      "name": "/en/stores.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/stores.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/stores.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/stores.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/stores.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/stores.html locations are separate and accurate",
+      "status": "passed"
+    },
+    {
+      "name": "/en/franchise.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/franchise.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/franchise.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/franchise.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/franchise.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/franchise.html original form contract and safe no-script fallback",
+      "status": "passed"
+    },
+    {
+      "name": "/en/support.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/support.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/support.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/support.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/support.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/support.html five complete original support sections",
+      "status": "passed"
+    },
+    {
+      "name": "/en/privacy-policy.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/privacy-policy.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/privacy-policy.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/privacy-policy.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/privacy-policy.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/privacy-policy.html legal text and dates preserved",
+      "status": "passed"
+    },
+    {
+      "name": "/en/terms-of-service.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/terms-of-service.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/terms-of-service.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/terms-of-service.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/terms-of-service.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/terms-of-service.html legal text and dates preserved",
+      "status": "passed"
+    },
+    {
+      "name": "/ semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/ canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/ unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/ exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/ JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/about-us.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/about-us.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/about-us.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/about-us.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/about-us.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/about-us.html all original story paragraphs and development steps",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html full menu coverage and headings",
+      "status": "passed"
+    },
+    {
+      "name": "/stores.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/stores.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/stores.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/stores.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/stores.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/stores.html locations are separate and accurate",
+      "status": "passed"
+    },
+    {
+      "name": "/franchise.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/franchise.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/franchise.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/franchise.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/franchise.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/franchise.html original form contract and safe no-script fallback",
+      "status": "passed"
+    },
+    {
+      "name": "/fuwu.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/fuwu.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/fuwu.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/fuwu.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/fuwu.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/fuwu.html five complete original support sections",
+      "status": "passed"
+    },
+    {
+      "name": "/privacy-policy.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/privacy-policy.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/privacy-policy.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/privacy-policy.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/privacy-policy.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/privacy-policy.html legal text and dates preserved",
+      "status": "passed"
+    },
+    {
+      "name": "/terms-of-service.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/terms-of-service.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/terms-of-service.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/terms-of-service.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/terms-of-service.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/terms-of-service.html legal text and dates preserved",
+      "status": "passed"
+    },
+    {
+      "name": "unique page titles and descriptions",
+      "status": "passed"
+    },
+    {
+      "name": "sitemap lists only canonical routes",
+      "status": "passed"
+    },
+    {
+      "name": "robots and homepage aliases",
+      "status": "passed"
+    }
+  ]
+}

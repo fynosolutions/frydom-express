@@ -1,0 +1,14 @@
+---
+import FranchiseForm from './FranchiseForm.astro';
+import Arrow from './Arrow.astro';
+import{asset,locale,t,url,type Language}from'../lib/site';
+const{lang}=Astro.props as {lang:Language};
+const content=locale(lang).partner;
+const photo=asset('/images/store-inside-665.webp');
+---
+<section class="editorial-hero partner-hero wrap" id="content"><div><span class="eyebrow">{t(lang,'BECOME A FRYDOM EXPRESS PARTNER','成为 Frydom Express 合作伙伴')}</span><h1>{t(lang,'Big flavor.','大有滋味。')}<br/><em>{t(lang,'Shared ambition.','一起创造。')}</em></h1><p class="lead">{content.intro}</p><a class="button button-dark" href="#franchise-inquiry">{t(lang,'Let’s talk partnership','聊聊加盟合作')}<Arrow diagonal/></a></div><div class="editorial-photo"><img src={photo.src} width={photo.width} height={photo.height} alt={t(lang,'Frydom Express restaurant interior','Frydom Express 门店内景')} fetchpriority="high"/><span class="photo-caption">{t(lang,'A BRAND BUILT FOR THE NEIGHBORHOOD','把好味道带进更多社区')}</span></div></section>
+<div class="partner-tags wrap">{content.tags.map((tag:string)=><span>✳ {tag}</span>)}</div><p class="partner-terms wrap">{content.note}</p>
+<nav class="partner-index wrap" aria-label={t(lang,'Partnership sections','加盟内容导航')}><a href="#why-partner">{t(lang,'Why partner','合作优势')}</a><a href="#who-we-want">{t(lang,'Who we’re looking for','合作伙伴')}</a><a href="#partnership-process">{t(lang,'The process','沟通流程')}</a><a href="#franchise-inquiry">{t(lang,'Make an inquiry','提交意向')}</a></nav>
+<div class="partner-source wrap" set:html={content.bodyHtml}/>
+<FranchiseForm lang={lang}/>
+<section class="support-crosslink wrap"><h2>{t(lang,'You bring the ambition. We bring the support.','你带着热爱前来，我们提供专业支持。')}</h2><a class="text-link" href={url(lang,'support')}>{t(lang,'Explore our five areas of partner support','了解五大总部支持服务')}<Arrow diagonal/></a></section>

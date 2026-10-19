@@ -1,0 +1,27 @@
+---
+import { data, navigation, labels, t, url, type Language, type PageKind } from '../lib/site';
+const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
+const other=lang==='en'?'zh':'en';
+---
+<div class="topline"><span>{t(lang,'A GOLDEN CRUNCH. A JUICY BITE.','金黄酥脆 · 一口爆汁')}</span><span>{t(lang,'DINE IN · TAKEOUT','堂食 · 外带')}</span></div>
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand-lockup" href={url(lang,'home')} aria-label={t(lang,'Frydom Express home','Frydom Express 首页')}>
+      <img src={data.brand.logo.src} alt="" width="56" height="56" decoding="async" />
+      <span class="brand-wordmark"><strong>FRYDOM<span>EXPRESS</span></strong><small>{t(lang,'CHICKEN · BURGERS · JOY','炸鸡 · 汉堡 · 快乐滋味')}</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label={t(lang,'Main navigation','主导航')}>
+      {navigation.map(item=><a href={url(lang,item)} aria-current={kind===item?'page':undefined}><span class="nav-label">{labels[lang][item]}</span></a>)}
+    </nav>
+    <div class="header-actions">
+      <a class="language-link" href={url(other,kind)} lang={other==='zh'?'zh-Hans':'en'} aria-label={t(lang,'切换到本页中文版','View this page in English')}><span aria-hidden="true">◎</span> {t(lang,'中文','EN')}</a>
+      <details class="mobile-navigation" id="mobile-navigation">
+        <summary aria-label={t(lang,'Open navigation','打开导航')}><span></span><span></span></summary>
+        <nav aria-label={t(lang,'Mobile navigation','移动端导航')}>
+          {navigation.map(item=><a href={url(lang,item)} aria-current={kind===item?'page':undefined}><span class="nav-label">{labels[lang][item]}</span> <span aria-hidden="true">↗</span></a>)}
+          <a href={url(lang,'terms')}><span class="nav-label">{labels[lang].terms}</span></a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

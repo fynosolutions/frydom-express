@@ -1,0 +1,58 @@
+# 静态托管与上线检查
+
+已于 2026-10-20 更新至 Vercel 生产项目 `wei34/frydom-express`，平台状态为 Ready。公开地址：https://frydom-express.vercel.app 。部署 ID：`dpl_BX9TUkLEtqxHuZpyKgJBDMT4MikL`。本次更新为导航悬停放大与全站文字滚动入场，发布前 97 项静态检查及 121 项浏览器检查通过。
+
+当前执行环境访问 vercel.app 出现 DNS/连接超时，未完成公网 HTTP 路由和浏览器复查；不将本地验证计为线上验证。原 `frydomexpress.com` 域名未绑定或迁移，canonical 与站点地图继续指向原正式域名。加盟表单与统计仍只在原正式域名启用；Vercel 域名可通过页面提供的邮箱联系。
+
+Vercel 配置为根目录 `vercel.json`，使用 `npm ci` 安装、`npm run build` 构建，发布 `dist/`。`.vercelignore` 排除开发报告、快照、交付压缩包、依赖和本地环境文件。后续更新执行：
+
+```powershell
+npx --yes vercel@latest deploy --prod --yes --project frydom-express --scope wei34
+```
+
+静态产物仍为项目根目录 `dist/` 的内容。
+
+## 路径契约
+
+- `/` 中文；`/en/` 英文；两者不得互相覆盖。
+- 原 `.html` 文件直接返回对应内容，不重定向到首页。
+- `/index.html` 单跳 301 到 `/`，`/en/index.html` 单跳 301 到 `/en/`。
+- 原中文支持路径 `/fuwu.html`。
+- 未知路径返回 HTTP 404，内容为 `404.html`，不要使用 SPA fallback。
+- 生产 `robots.txt`、`sitemap.xml` 返回 200 和正确文本类型。
+
+## Nginx 等效示例
+
+以下仅作路径部署模板；域名证书、实际 root、WAF 与现有访问控制需按真实托管环境配置。
+
+```nginx
+server {
+    listen 443 ssl;
+    server_name frydomexpress.com;
+    root /var/www/frydomexpress;
+    index index.html;
+
+    location = /index.html { return 301 /; }
+    location = /en/index.html { return 301 /en/; }
+    location / { try_files $uri $uri/ =404; }
+    error_page 404 /404.html;
+    location = /404.html { internal; }
+
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+}
+```
+
+托管平台支持 `_redirects` 与 `_headers` 时，可使用构建输出的文件；否则自行配置同义规则。`scripts/serve.mjs` 的 noindex 响应头只用于本地预览，不复制到生产。
+
+## 上线后另行核验
+
+1. 确认 DNS/SSL、真实路径、单跳重定向和 404；检查 CDN 未缓存旧 HTML。
+2. 检查正式 HTML 与响应头没有 noindex/nosnippet 限制。
+3. 核对公开内容请求没有登录墙、交互挑战或错误 403；不擅自取消整站防护。
+4. 检查 sitemap、canonical、双向 hreflang、JSON-LD 与可见事实。
+5. 在项目指定测试配置中验证 HubSpot 收到线索，并核对成功/失败、Lead 归因。
+6. 使用 Schema.org/Google Rich Results Test 做线上补充检查，区分不支持富结果与数据错误。
+7. 由账号所有者提交 Search Console/Bing Webmaster Tools，另行记录索引与 AI 引用表现。
+
+未取得经营方核实的价格、营业星期、门店电话和订单服务，继续按内容问题台账处理。

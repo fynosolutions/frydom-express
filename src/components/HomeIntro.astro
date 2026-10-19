@@ -1,0 +1,62 @@
+---
+import{asset,t,type Language}from'../lib/site';
+const{lang}=Astro.props as {lang:Language};
+const picture=asset('/images/brand-new-1280-1280.webp');
+---
+<div class="home-intro" id="home-intro" hidden data-image={picture.src}>
+  <div class="intro-content" aria-hidden="true">
+    <p class="intro-loading">LOADING<span>...</span></p>
+    <div class="intro-picture"><canvas class="intro-canvas" width="480" height="270"></canvas><span class="intro-brand">FRYDOM EXPRESS</span></div>
+    <p class="intro-tagline">{t(lang,'CRISPY BITES COMING RIGHT UP','金黄酥脆，即刻开场')}</p>
+  </div>
+  <button class="intro-skip" type="button">{t(lang,'Skip intro','跳过开场')} <span aria-hidden="true">↗</span></button>
+</div>
+<script is:inline>
+  (()=>{
+    const intro=document.getElementById('home-intro');
+    if(!intro||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    let frame=0,finished=false;
+    const root=document.documentElement;
+    const finish=()=>{
+      if(finished)return;finished=true;
+      cancelAnimationFrame(frame);clearTimeout(fadeTimer);clearTimeout(endTimer);clearTimeout(failSafe);
+      const focused=intro.contains(document.activeElement);
+      intro.hidden=true;root.removeAttribute('data-intro-active');
+      document.removeEventListener('keydown',onKey);window.removeEventListener('pagehide',finish);
+      if(focused)document.querySelector('.skip-link')?.focus({preventScroll:true});
+    };
+    const onKey=event=>{if(event.key==='Escape')finish();};
+    // This independent upper bound is armed before the overlay can cover anything.
+    let fadeTimer,endTimer;
+    const failSafe=setTimeout(finish,1200);
+    intro.hidden=false;root.setAttribute('data-intro-active','true');
+    intro.querySelector('button').addEventListener('click',finish,{once:true});
+    document.addEventListener('keydown',onKey);window.addEventListener('pagehide',finish,{once:true});
+    fadeTimer=setTimeout(()=>intro.classList.add('is-leaving'),850);
+    endTimer=setTimeout(finish,1120);
+    const started=performance.now();
+    try{
+      const canvas=intro.querySelector('canvas');const context=canvas.getContext('2d');
+      const scratch=document.createElement('canvas');const small=scratch.getContext('2d');
+      if(!context||!small)return;
+      const image=new Image();
+      image.onload=()=>{
+        if(finished)return;
+        const draw=()=>{
+          if(finished)return;
+          const elapsed=performance.now()-started;
+          const widths=[8,16,32,80,160,480];
+          const step=Math.min(Math.floor(elapsed/145),widths.length-1);
+          const width=widths[step],height=Math.max(1,Math.round(width*canvas.height/canvas.width));
+          scratch.width=width;scratch.height=height;
+          small.drawImage(image,0,0,width,height);
+          context.clearRect(0,0,canvas.width,canvas.height);context.imageSmoothingEnabled=false;
+          context.drawImage(scratch,0,0,width,height,0,0,canvas.width,canvas.height);
+          intro.dataset.pixelStep=String(step);
+          if(step<widths.length-1)frame=requestAnimationFrame(draw);
+        };draw();
+      };
+      image.src=intro.dataset.image;
+    }catch{/* The independent timers still dismiss the introduction. */}
+  })();
+</script>

@@ -1,0 +1,7 @@
+---
+import{locale,labels,t,type Language,type PageKind}from'../lib/site';
+const{lang,kind}=Astro.props as {lang:Language,kind:'privacy'|'terms'};
+const content=locale(lang).pages[kind];
+---
+<section class="page-intro legal-intro wrap" id="content"><span class="eyebrow">FRYDOM EXPRESS · {t(lang,'THE DETAILS','政策与条款')}</span><h1>{labels[lang][kind]}</h1>{lang==='zh'&&<p>{content.bodyLanguage==='en'?'以下保留原网站完整英文条款及原更新日期。':'以下保留原网站完整条款及原更新日期。'}</p>}</section>
+<div class="legal-layout wrap"><aside class="legal-toc"><span class="eyebrow">{t(lang,'ON THIS PAGE','本页目录')}</span><nav aria-label={t(lang,'Document sections','文档目录')}>{content.toc.map((item:any)=><a href={'#'+item.id}>{item.text}</a>)}</nav></aside><article class="legal-content" lang={content.bodyLanguage} aria-label={kind==='privacy'?'Privacy Policy':'Terms of Service'} set:html={content.bodyHtml}/></div>

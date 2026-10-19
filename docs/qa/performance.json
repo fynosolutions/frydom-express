@@ -1,0 +1,26 @@
+{
+  "executedAt": "2026-10-19T14:02:18.844Z",
+  "method": "Single cold-cache laboratory navigation per viewport. Chromium headless, 4× CPU slowdown, 1.6 Mbps download, 750 Kbps upload, 150ms latency, local source server. Not Lighthouse, CrUX or real-user p75 data; no INP claim.",
+  "runs": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 1544,
+      "cls": 0.008614823682705284,
+      "domContentLoaded": 1582.5,
+      "transferBytes": 477161
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "lcp": 1456,
+      "cls": 0.0009228155704192174,
+      "domContentLoaded": 1429.300000000745,
+      "transferBytes": 503463
+    }
+  ]
+}

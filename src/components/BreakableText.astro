@@ -1,0 +1,11 @@
+---
+const{text}=Astro.props as {text:string};
+// Discretionary word boundaries preserve the exact text and avoid a lone
+// trailing letter when Futura's enlarged headings meet narrow columns.
+const boundaries:Record<string,number[]>={cravings:[4],neighborhood:[5,8],cheeseburger:[6]};
+const pieces=text.split(/(cravings|neighborhood|cheeseburger)/gi).flatMap(word=>{
+ const points=boundaries[word.toLowerCase()];if(!points)return[{text:word,breakBefore:false}];
+ const offsets=[0,...points,word.length];return offsets.slice(0,-1).map((start,index)=>({text:word.slice(start,offsets[index+1]),breakBefore:index>0}));
+});
+---
+{pieces.map(piece=><>{piece.breakBefore&&<wbr/>}{piece.text}</>)}

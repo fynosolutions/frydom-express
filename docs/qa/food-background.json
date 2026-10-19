@@ -1,0 +1,636 @@
+[
+  {
+    "route": "/en/",
+    "width": 1440,
+    "count": 3,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "count": 3,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/en/menu.html",
+    "width": 1440,
+    "count": 26,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/menu.html",
+    "width": 1440,
+    "count": 25,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/en/",
+    "width": 390,
+    "count": 3,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "count": 3,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/en/menu.html",
+    "width": 390,
+    "count": 26,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/menu.html",
+    "width": 390,
+    "count": 25,
+    "passed": true,
+    "cards": [
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      },
+      {
+        "background": "rgb(205, 88, 23)",
+        "blend": "normal",
+        "loaded": true
+      }
+    ]
+  }
+]
