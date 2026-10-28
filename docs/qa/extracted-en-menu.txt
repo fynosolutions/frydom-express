@@ -48,9 +48,12 @@ $15.95
 Wings
 Sauced, seasoned, and ready to share.
 ↑
-Classic Wings (6 pcs)
+Classic Wings
 Crispy wings ready for your favorite sauce or seasoning.
-Ask in store for pricing.
+Small
+$5.95
+Large
+$11.25
 Illustrative photo shared with Honey Mustard Wings on the original website.
 Snow Cheese Wings
 Coated with a rich, savory-sweet cheese seasoning that adds bold flavor without feeling too heavy.
@@ -66,10 +69,16 @@ Large
 $11.25
 Honey Mustard Wings
 A smooth honey mustard glaze with just enough tang to keep things bright.
-Ask in store for pricing.
+Small
+$5.95
+Large
+$11.25
 Sweet Chili Wings
 Sweet up front with a mild spicy finish.
-Ask in store for pricing.
+Small
+$5.95
+Large
+$11.25
 Sweet Plum Wings
 Sweet plum wings, available in small or large.
 Small

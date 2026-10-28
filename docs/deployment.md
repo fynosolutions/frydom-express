@@ -1,6 +1,8 @@
 # 静态托管与上线检查
 
-已于 2026-10-28 发布当前版本至 Vercel 生产项目 `wei34/frydom-express`，状态 READY。公开地址：https://frydom-express.vercel.app 。部署 ID：`dpl_3YMrFNvgCzBehpT81YJY4XpANLLq`。
+已于 2026-10-28 发布当前版本至 Vercel 生产项目 `wei34/frydom-express`，状态 READY。公开地址：https://frydom-express.vercel.app 。部署 ID：`dpl_44yH3U9kPDNoqy597avAKXNjz6W8`。
+
+本次追加修复：中英文 Wings 全部 7 款统一显示 Small $5.95 / Large $11.25；选中文字改为红底奶油色字，解决红底红字不可读问题。经典鸡翅标题取消固定 6 块标注，以配合大小份规格，未推断每份块数。
 
 本次发布包含 Patty & Bun 参考风格改版、三个活动及详情页、中英文各 12 个新增菜单条目、中文得意黑字体。发布前 137 项静态检查和 36 项中文页面/视口检查通过。公网直接访问首页、中英文菜单、活动页和字体文件均返回 HTTP 200，已确认新增菜单及活动内容。检查记录见 `docs/qa/production-http-20261028.json`。
 

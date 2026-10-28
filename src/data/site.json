@@ -239,7 +239,7 @@
         },
         {
           "id": "classic-wings",
-          "name": "Classic Wings (6 pcs)",
+          "name": "Classic Wings",
           "sourceName": "Classic Wings (6 pcs)",
           "description": "Crispy wings ready for your favorite sauce or seasoning.",
           "sectionId": "wings",
@@ -249,8 +249,32 @@
             "height": 269
           },
           "labels": [],
-          "variants": [],
-          "sourcePrices": [],
+          "variants": [
+            {
+              "id": "small",
+              "label": "Small",
+              "quantityText": "",
+              "price": 5.95,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            },
+            {
+              "id": "large",
+              "label": "Large",
+              "quantityText": "",
+              "price": 11.25,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            }
+          ],
+          "sourcePrices": [
+            {
+              "source": "Owner confirmation, 2026-10-28",
+              "text": "All Wings: Small $5.95; Large $11.25."
+            }
+          ],
           "sources": [
             {
               "sourceUrl": "https://frydomexpress.com/en/menu.html",
@@ -387,8 +411,32 @@
             "height": 269
           },
           "labels": [],
-          "variants": [],
-          "sourcePrices": [],
+          "variants": [
+            {
+              "id": "small",
+              "label": "Small",
+              "quantityText": "",
+              "price": 5.95,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            },
+            {
+              "id": "large",
+              "label": "Large",
+              "quantityText": "",
+              "price": 11.25,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            }
+          ],
+          "sourcePrices": [
+            {
+              "source": "Owner confirmation, 2026-10-28",
+              "text": "All Wings: Small $5.95; Large $11.25."
+            }
+          ],
           "sources": [
             {
               "sourceUrl": "https://frydomexpress.com/en/menu.html",
@@ -411,8 +459,32 @@
             "height": 269
           },
           "labels": [],
-          "variants": [],
-          "sourcePrices": [],
+          "variants": [
+            {
+              "id": "small",
+              "label": "Small",
+              "quantityText": "",
+              "price": 5.95,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            },
+            {
+              "id": "large",
+              "label": "Large",
+              "quantityText": "",
+              "price": 11.25,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            }
+          ],
+          "sourcePrices": [
+            {
+              "source": "Owner confirmation, 2026-10-28",
+              "text": "All Wings: Small $5.95; Large $11.25."
+            }
+          ],
           "sources": [
             {
               "sourceUrl": "https://frydomexpress.com/en/menu.html",
@@ -2252,7 +2324,7 @@
       "menu": [
         {
           "id": "classic-wings",
-          "name": "经典鸡翅（6块）",
+          "name": "经典鸡翅",
           "sourceName": "经典鸡翅（6块）",
           "description": "酥脆鸡翅，适合多人分享，可选择你喜欢的风味酱料。",
           "sectionId": "wings",
@@ -2262,8 +2334,32 @@
             "height": 269
           },
           "labels": [],
-          "variants": [],
-          "sourcePrices": [],
+          "variants": [
+            {
+              "id": "small",
+              "label": "小份",
+              "quantityText": "",
+              "price": 5.95,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            },
+            {
+              "id": "large",
+              "label": "大份",
+              "quantityText": "",
+              "price": 11.25,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            }
+          ],
+          "sourcePrices": [
+            {
+              "source": "Owner confirmation, 2026-10-28",
+              "text": "All Wings: Small $5.95; Large $11.25."
+            }
+          ],
           "sources": [
             {
               "sourceUrl": "https://frydomexpress.com/menu.html",
@@ -2342,8 +2438,32 @@
             "height": 269
           },
           "labels": [],
-          "variants": [],
-          "sourcePrices": [],
+          "variants": [
+            {
+              "id": "small",
+              "label": "小份",
+              "quantityText": "",
+              "price": 5.95,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            },
+            {
+              "id": "large",
+              "label": "大份",
+              "quantityText": "",
+              "price": 11.25,
+              "currency": null,
+              "status": "source_consistent",
+              "scope": "Wings category pricing confirmed by owner on 2026-10-28"
+            }
+          ],
+          "sourcePrices": [
+            {
+              "source": "Owner confirmation, 2026-10-28",
+              "text": "All Wings: Small $5.95; Large $11.25."
+            }
+          ],
           "sources": [
             {
               "sourceUrl": "https://frydomexpress.com/menu.html",
