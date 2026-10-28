@@ -1,0 +1,12 @@
+---
+import {t,type Language} from '../lib/site';
+const {offer,lang}=Astro.props as {offer:any,lang:Language};
+---
+{offer.id==='staff-offer'?<div class="benefit-tiers">{offer.tiers.map((tier:any,index:number)=><div class="benefit-tier">
+  <span class="tier-number">0{index+1}</span><p>{index===0?t(lang,'Spend','消费满'):t(lang,'Group order','团餐满')} <strong>${tier.minimum}</strong></p>
+  <b class="tier-discount">{t(lang,'10% OFF','享九折')}</b><span class="tier-gift">{tier.gift}</span>
+  <img src={'/assets/offers/'+tier.image+'.webp'} width="400" height="250" alt="" loading="lazy"/>
+</div>)}</div>:offer.id==='chicken-bucket'?<>
+  <div class="bucket-parts"><div><strong>6</strong><span>{t(lang,'Crispy Chicken','香脆炸鸡')}</span></div><div><strong>2</strong><span> Korean-Style</span></div><div><strong>3</strong><span>{t(lang,'Sides','小食')}</span></div></div>
+  <div class="blind-box-gift"><div><span class="eyebrow">{t(lang,'A LITTLE EXTRA JOY','随餐赠送 · 快乐加倍')}</span><h3>{t(lang,'FREE $20','赠价值 $20')}<br/>{t(lang,'Blind Box','盲盒')}</h3><p>{t(lang,'Ask in store about designs and availability.','款式及供应情况请向门店确认。')}</p></div><img src="/assets/offers/blind-box-toys.webp" width="1000" height="581" alt={t(lang,'Blind box toy designs from the promotion','活动盲盒玩偶款式展示')} loading="lazy"/></div>
+</>:<div class="leg-features">{[t(lang,'Crackling skin','酥脆外皮'),t(lang,'Juicy inside','鲜嫩多汁'),t(lang,'Freshly fried','现点现炸')].map(feature=><span>✳ {feature}</span>)}</div>}

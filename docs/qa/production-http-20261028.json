@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "url": "https://frydom-express.vercel.app/",
+    "bytes": 25686,
+    "newMenu": null,
+    "offers": null
+  },
+  {
+    "path": "/menu.html",
+    "status": 200,
+    "url": "https://frydom-express.vercel.app/menu.html",
+    "bytes": 45553,
+    "newMenu": true,
+    "offers": null
+  },
+  {
+    "path": "/en/menu.html",
+    "status": 200,
+    "url": "https://frydom-express.vercel.app/en/menu.html",
+    "bytes": 46580,
+    "newMenu": true,
+    "offers": null
+  },
+  {
+    "path": "/offers.html",
+    "status": 200,
+    "url": "https://frydom-express.vercel.app/offers.html",
+    "bytes": 9769,
+    "newMenu": null,
+    "offers": true
+  },
+  {
+    "path": "/assets/fonts/smiley-sans/SmileySans-Oblique.woff2",
+    "status": 200,
+    "url": "https://frydom-express.vercel.app/assets/fonts/smiley-sans/SmileySans-Oblique.woff2",
+    "bytes": 1150924,
+    "newMenu": null,
+    "offers": null
+  }
+]

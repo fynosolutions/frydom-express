@@ -1,4 +1,5 @@
 ---
+import BrandDetails from './BrandDetails.astro';
 import Arrow from './Arrow.astro';
 import PartnerBanner from './PartnerBanner.astro';
 import{asset,locale,t,url,type Language}from'../lib/site';
@@ -13,4 +14,5 @@ const sectionTitles=lang==='en'?['Our food','The store experience','Operating st
 <div class="story-principles wrap">{content.cards.map((card:any,index:number)=><section><span class="category-index">0{index+1}</span><h2>{sectionTitles[index]}</h2><h3>{card.title}</h3><p>{card.text}</p></section>)}</div>
 <section class="story-timeline section-pad wrap" aria-labelledby="vision-title"><div><span class="eyebrow">{t(lang,'THE STORY KEEPS GOING','好味道，继续向前')}</span><h2 id="vision-title">{t(lang,'Where we’re','我们的')}<br/><em>{t(lang,'headed.','下一步。')}</em></h2></div><ol>{content.timeline.map((step:any,index:number)=><li><span>0{index+1}</span><div><h3>{step.label}</h3><p>{step.text}</p></div></li>)}</ol></section>
 <section class="story-explore wrap"><h2>{t(lang,'Explore Frydom Express','继续了解 Frydom Express')}</h2><p>{content.contact}</p><div class="button-row"><a class="button button-dark" href={url(lang,'menu')}>{t(lang,'View the menu','查看菜单')}<Arrow/></a><a class="button button-outline" href={url(lang,'locations')}>{t(lang,'Find our locations','寻找门店')}<Arrow diagonal/></a><a class="text-link" href="mailto:info@frydomexpress.com">{t(lang,'Email us','邮件联系')} ↗</a></div></section>
+<BrandDetails lang={lang}/>
 <PartnerBanner lang={lang}/>

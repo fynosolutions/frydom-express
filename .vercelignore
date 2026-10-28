@@ -8,6 +8,7 @@ docs
 sources
 tests
 test-results
+tmp
 playwright-report
 .env
 .env.*

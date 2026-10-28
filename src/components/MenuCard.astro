@@ -10,6 +10,7 @@ const{item,lang,featured=false,index=0}=Astro.props as {item:any,lang:Language,f
   <div class="item-body">
     <h3>{featured?<a href={url(lang,'menu')+'#'+item.id}><span><BreakableText text={item.name}/></span><Arrow diagonal/></a>:<BreakableText text={item.name}/>}</h3>
     <p class="item-description">{item.description}</p>
+    {item.offerKind&&<a class="text-link" href={url(lang,item.offerKind)}>{t(lang,'View offer details','查看活动详情')} ↗</a>}
     <Price item={item} lang={lang} compact={featured}/>
     {!featured&&item.labels.filter((label:string)=>!/Photo update|图片更新/.test(label)).map((label:string)=><p class="item-note">{label}</p>)}
     {!featured&&item.notes.map((note:string)=><p class="item-note">{note}</p>)}

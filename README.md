@@ -1,5 +1,7 @@
 # Frydom Express 新官网
 
+2026-10-28：已按确认方案完成 Patty & Bun 参考风格改版，采用红色/奶油色、复古字体、精简导航、三列菜单与活动总览。Frydom 原文字和图片保留，长品牌内容移至故事页。当前本地版本及验证说明见 [改版记录](docs/patty-bun-redesign.md)；下方历史视觉参数以该记录为准。本轮已于 2026-10-28 发布至 https://frydom-express.vercel.app，含三个活动、菜单补充与中文得意黑字体。
+
 中英文完整静态网站。保留旧站 Logo 图标、品牌配色、真实餐品和门店素材、原业务路由与 HubSpot 加盟渠道；以更醒目的餐饮排版、滚动文字、食物图层和轻量动效呈现。
 
 ## 代码仓库
@@ -111,7 +113,7 @@ npm run test:browser
 - `docs/screenshots/`：各页桌面和手机截图，以及无脚本、减少动态示例。
 - `docs/qa/`：可复查的 JSON 报告、正文提取与固定问答结果。
 
-已部署到 Vercel：https://frydom-express.vercel.app ，项目 `wei34/frydom-express`，平台状态 Ready。当前网络访问 vercel.app 超时，线上网页复查未完成。部署细节见 `docs/deployment.md`。
+已部署到 Vercel：https://frydom-express.vercel.app ，项目 `wei34/frydom-express`，平台状态 Ready。2026-10-28 公网首页、中英文菜单、活动页及字体资源 HTTP 检查通过。部署细节见 `docs/deployment.md`。
 
 原正式域名未迁移；CRM 真实投递、Search Console 提交和搜索/AI 平台收录尚未验证。Vercel 域名上的加盟咨询使用页面邮箱，正式表单仍限原域名启用。
 

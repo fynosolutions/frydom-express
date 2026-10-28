@@ -1,0 +1,13 @@
+---
+import Arrow from './Arrow.astro';
+import {asset,locale,t,url,type Language} from '../lib/site';
+const {lang}=Astro.props as {lang:Language};
+const content=locale(lang);
+const storyImage=asset('/images/frydom-express-our3-800.webp');
+const food=asset('/images/Original Recipe Fried Chicken-440.webp');
+---
+<section class="story-split" id="why-frydom" aria-labelledby="why-title">
+  <div class="story-split-image"><img src={storyImage.src} width={storyImage.width} height={storyImage.height} alt={t(lang,'Frydom Express burger and branded food packaging','Frydom Express 汉堡与品牌包装')} loading="lazy" decoding="async"/><span class="image-stamp" aria-hidden="true">BIG FLAVOR.<br/>REAL FRYDOM.</span></div>
+  <div class="story-split-copy"><span class="eyebrow">{t(lang,'WHY FRYDOM EXPRESS','为什么是 Frydom')}</span><h2 id="why-title">{t(lang,'Serious about','认真对待')}<br/><em>{t(lang,'the good stuff.','每一份美味。')}</em></h2><p class="lead">{content.home.whyIntro}</p><ol class="reason-list">{content.home.whyList.map((reason:string,index:number)=><li><span>0{index+1}</span><p>{reason}</p></li>)}</ol><a class="text-link" href={url(lang,'story')}>{t(lang,'A little more about us','了解我们的故事')}<Arrow diagonal/></a></div>
+</section>
+<section class="flavor-section" aria-labelledby="flavor-title"><div class="wrap flavor-inner"><div><span class="eyebrow">{t(lang,'A WHOLE WORLD OF FLAVOR','环球风味，尽在这一口')}</span><h2 id="flavor-title">{t(lang,'Find your','找到你的')}<br/><em>{t(lang,'happy heat.','心动风味。')}</em></h2><p>{t(lang,'From mild to bold. Sweet, spicy, Korean-inspired and dry-seasoned. Our flavors are built to fit the neighborhood.','从温和到辛辣，从酸甜、甜辣、韩式到干料风味，我们的菜单会根据当地口味进行调整。')}</p><div class="flavor-tags">{content.home.scan.map((scan:any)=><div><span>{scan.label}</span><strong>{scan.value}</strong></div>)}</div></div><div class="flavor-visual"><div class="flavor-circle" aria-hidden="true">✳</div><img src={food.src} width={food.width} height={food.height} alt={t(lang,'Original Recipe Fried Chicken','经典原味炸鸡')} loading="lazy" decoding="async"/><a class="round-link" href={url(lang,'menu')+'#fried-chicken'} aria-label={t(lang,'Explore fried chicken','查看经典炸鸡')}><Arrow diagonal/></a></div></div></section>

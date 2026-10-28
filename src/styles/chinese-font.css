@@ -1,0 +1,23 @@
+/* Smiley Sans has one intentionally oblique face. Avoid synthetic bold/italic. */
+@font-face {
+  font-family: 'Smiley Sans';
+  src: url('/assets/fonts/smiley-sans/SmileySans-Oblique.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.locale-zh {
+  --display: 'Smiley Sans', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  --sans: 'Smiley Sans', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  font-family: var(--sans);
+  font-synthesis: none;
+}
+
+/* Older components that name their own font instead of the shared variables. */
+.locale-zh .brand-wordmark strong,
+.locale-zh .hero-sticker,
+.locale-zh .ribbon-track > span,
+.locale-zh .image-stamp {
+  font-family: var(--display);
+}

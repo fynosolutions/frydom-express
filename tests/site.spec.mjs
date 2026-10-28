@@ -57,7 +57,7 @@ for(const route of data.routes)test(`no JavaScript ${route.path}`,async({browser
   const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const page=await context.newPage();
   try{
     await page.goto('http://127.0.0.1:4321'+route.path);await expect(page.locator('h1')).toBeVisible();
-    await page.locator('summary').first().click();await expect(page.locator('.mobile-navigation nav')).toBeVisible();
+    await page.locator('#mobile-navigation summary').click();await expect(page.locator('.mobile-navigation nav')).toBeVisible();
     if(route.kind==='menu')for(const category of data.locales[route.lang].categories){await expect(page.locator('#'+category.id+' h2')).toBeVisible();}
     if(route.kind==='partner'){await expect(page.locator('#submit-inquiry')).toBeDisabled();await expect(page.locator('noscript a')).toBeVisible();await expect(page.locator('noscript a')).toHaveAttribute('href','mailto:info@frydomexpress.com');}
     if(route.kind==='locations')for(const location of data.locales[route.lang].locations)await expect(page.locator('#'+location.id+' address')).toContainText(location.address.streetAddress);
@@ -67,13 +67,13 @@ test('homepage responsive image and paused ribbon',async({page})=>{
   await page.setViewportSize({width:390,height:844});await page.goto('/en/');
   await page.locator('.hero-food').evaluate(image=>image.decode());expect(await page.locator('.hero-food').evaluate(image=>image.naturalWidth)).toBeGreaterThan(0);
   await page.locator('.ribbon-pause').click();await expect(page.locator('.ribbon-pause')).toHaveAttribute('aria-pressed','true');await expect(page.locator('.brand-ribbon')).toHaveClass(/is-paused/);
-  const gallery=page.locator('#favorites-gallery');await gallery.scrollIntoViewIfNeeded();await page.locator('[data-favorites-next]').click();await expect.poll(()=>gallery.evaluate(e=>e.scrollLeft)).toBeGreaterThan(0);
+  const gallery=page.locator('#favorites-gallery');await gallery.scrollIntoViewIfNeeded();await expect(gallery.locator('.favorite-card')).toHaveCount(3);expect(await gallery.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
 });
 test('reduced motion and blocked animation script preserve content',async({browser})=>{
   const context=await browser.newContext({reducedMotion:'reduce',viewport:{width:390,height:844}});const page=await context.newPage();
   try{
     await page.goto('http://127.0.0.1:4321/en/');expect(await page.locator('.ribbon-track').evaluate(e=>getComputedStyle(e).animationName)).toBe('none');
-    await page.route('**/_astro/*.js',route=>route.abort());await page.goto('http://127.0.0.1:4321/en/menu.html');await expect(page.locator('article[data-item-id]')).toHaveCount(26);await expect(page.locator('h1')).toBeVisible();
+    await page.route('**/_astro/*.js',route=>route.abort());await page.goto('http://127.0.0.1:4321/en/menu.html');await expect(page.locator('article[data-item-id]')).toHaveCount(data.locales.en.menu.length);await expect(page.locator('h1')).toBeVisible();
   }finally{await context.close();}
 });
 test('all legacy routes return full initial HTTP HTML, aliases redirect and missing URL is 404',async({request})=>{

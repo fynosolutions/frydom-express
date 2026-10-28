@@ -1,4 +1,5 @@
 ---
+import OfferCards from './OfferCards.astro';
 import Arrow from './Arrow.astro';
 import MenuCard from './MenuCard.astro';
 import PartnerBanner from './PartnerBanner.astro';
@@ -7,7 +8,8 @@ const{lang}=Astro.props as {lang:Language};
 const content=locale(lang);
 const hero=asset('/images/brand-new-1280-1280.webp');
 const storyImage=asset('/images/frydom-express-our3-800.webp');
-const food=asset('/images/Original Recipe Fried Chicken-440.webp');
+const store=content.locations[0].image;
+const leg=content.offers.find((o:any)=>o.id==='leg-quarter').image;
 const favorites=['original-recipe-fried-chicken','crispy-chicken-burger-combo','snow-cheese-wings'].map(id=>content.menu.find((item:any)=>item.id===id));
 const categoryDescriptions=lang==='en'?['Golden, crispy, made for sharing.','Your favorite sauce. Your kind of wings.','All the flavor. Bite-sized.','Big on comfort. Bigger on flavor.','A little something on the side.']:['金黄酥脆，分享刚刚好。','每一款酱料，都是新的喜欢。','轻松入口，一口一个好滋味。','经典汉堡与方便手持的卷饼。','小食与气泡，快乐再加一点。'];
 ---
@@ -22,11 +24,13 @@ const categoryDescriptions=lang==='en'?['Golden, crispy, made for sharing.','You
   <div class="hero-visual">
     <div class="hero-orbit" aria-hidden="true"></div>
     <span class="hero-handwriting" aria-hidden="true">{t(lang,'hello, happy place!','快乐，开吃！')}<svg viewBox="0 0 90 50" fill="none"><path d="M5 5c55 0 65 15 65 35m-10-8 10 9 8-13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-    <div class="hero-image-frame"><img class="hero-food" src={hero.src} srcset={`${asset('/images/brand-new-640-640.webp').src} 640w, ${hero.src} 1280w`} sizes="(max-width: 700px) 90vw, 48vw" width={hero.width} height={hero.height} alt={t(lang,'Frydom Express fried chicken, cheeseburger and fries','Frydom Express 炸鸡、芝士汉堡与薯条')} fetchpriority="high" decoding="async"/></div>
+    <div class="hero-image-frame"><img class="hero-food" src={hero.src} srcset={`${asset('/images/brand-new-640-640.webp').src} 640w, ${hero.src} 1280w`} sizes="(max-width: 700px) 100vw, 34vw" width={hero.width} height={hero.height} alt={t(lang,'Frydom Express fried chicken, cheeseburger and fries','Frydom Express 炸鸡、芝士汉堡与薯条')} fetchpriority="high" decoding="async"/><a class="hero-store-tile" href={url(lang,'locations')}><img src={store.src} width={store.width} height={store.height} alt={t(lang,'Frydom Express Brooklyn storefront','Frydom Express Brooklyn 门店')} loading="eager"/><span>{t(lang,'Find a location','寻找门店')} ↗</span></a><a class="hero-new-tile" href={url(lang,'leg-quarter')}><img src={leg.src} width={leg.width} height={leg.height} alt={t(lang,'Crispy-Skinned Chicken Leg Quarter','脆皮手枪腿')}/><span>{t(lang,'NEW · $6.45','新品 · $6.45')} ↗</span></a></div>
     <div class="hero-sticker"><span>{t(lang,'FRIED','现炸')}</span><strong>{t(lang,'TO ORDER','现做')}</strong><span>✦ FRYDOM EXPRESS ✦</span></div>
     <div class="hero-caption"><span>✳</span><span>{t(lang,'GOLDEN OUTSIDE.','外皮金黄酥脆。')}<br/><strong>{t(lang,'GOOD TIMES INSIDE.','每一口都是快乐。')}</strong></span></div>
   </div>
 </section>
+
+<OfferCards lang={lang} home/>
 
 <div class="brand-ribbon" data-ribbon><div class="ribbon-window"><div class="ribbon-track"><span>{t(lang,'CRISPY. JUICY. MADE FRESH.','金黄酥脆 · 一口爆汁')} <i aria-hidden="true">✳</i> {t(lang,'YOUR DAILY DOSE OF FRYDOM','一口好滋味，自在好心情')} <i aria-hidden="true">✳</i></span><span aria-hidden="true">{t(lang,'CRISPY. JUICY. MADE FRESH.','金黄酥脆 · 一口爆汁')} <i>✳</i> {t(lang,'YOUR DAILY DOSE OF FRYDOM','一口好滋味，自在好心情')} <i>✳</i></span></div></div><button class="ribbon-pause" type="button" aria-label={t(lang,'Pause moving text','暂停滚动文字')} aria-pressed="false" data-pause-label={t(lang,'Pause moving text','暂停滚动文字')} data-play-label={t(lang,'Resume moving text','继续滚动文字')}><span aria-hidden="true">Ⅱ</span></button></div>
 
@@ -34,23 +38,17 @@ const categoryDescriptions=lang==='en'?['Golden, crispy, made for sharing.','You
 
 <section class="favorites section-pad wrap" id="favorites" aria-labelledby="favorites-title">
   <div class="section-heading"><div><span class="eyebrow">{t(lang,'THE CROWD PLEASERS','这几款，先吃为敬')}</span><h2 id="favorites-title">{t(lang,'Meet your','来认识你的')}<br/><em>{t(lang,'new favorites.','心头好。')}</em></h2></div><div><p>{t(lang,'A golden crunch, a juicy bite, and plenty of reasons to come back. Ask in store about current favorites and new arrivals.','金黄酥脆，鲜嫩多汁。经典好滋味，每次都有回来的理由。到店时欢迎咨询当日热卖与新品。')}</p><a class="text-link" href={url(lang,'menu')}>{t(lang,'View the full menu','查看完整菜单')} <Arrow diagonal/></a></div></div>
-  <div class="favorites-grid" id="favorites-gallery" tabindex="0" aria-label={t(lang,'Customer favorite dishes; scroll horizontally on small screens','人气菜品，小屏可横向滑动查看')}>{favorites.map((item:any,index:number)=><MenuCard item={item} lang={lang} featured index={index}/>)}</div>
+  <div class="favorites-grid" id="favorites-gallery" aria-label={t(lang,'Customer favorite dishes','人气菜品')}>{favorites.map((item:any,index:number)=><MenuCard item={item} lang={lang} featured index={index}/>)}</div>
   <div class="favorite-controls" hidden><button type="button" data-favorites-prev aria-controls="favorites-gallery" aria-label={t(lang,'Previous favorite dish','上一道人气菜品')}>←</button><button type="button" data-favorites-next aria-controls="favorites-gallery" aria-label={t(lang,'Next favorite dish','下一道人气菜品')}>→</button></div>
   <p class="menu-disclaimer">{t(lang,'Representative menu. Availability and pricing may vary by location.','代表性菜单，产品供应及价格可能因门店而异。')}</p>
 </section>
 
-<section class="story-split" id="why-frydom" aria-labelledby="why-title">
-  <div class="story-split-image"><img src={storyImage.src} width={storyImage.width} height={storyImage.height} alt={t(lang,'Frydom Express burger and branded food packaging','Frydom Express 汉堡与品牌包装')} loading="lazy" decoding="async"/><span class="image-stamp" aria-hidden="true">BIG FLAVOR.<br/>REAL FRYDOM.</span></div>
-  <div class="story-split-copy"><span class="eyebrow">{t(lang,'WHY FRYDOM EXPRESS','为什么是 Frydom')}</span><h2 id="why-title">{t(lang,'Serious about','认真对待')}<br/><em>{t(lang,'the good stuff.','每一份美味。')}</em></h2><p class="lead">{content.home.whyIntro}</p><ol class="reason-list">{content.home.whyList.map((reason:string,index:number)=><li><span>0{index+1}</span><p>{reason}</p></li>)}</ol><a class="text-link" href={url(lang,'story')}>{t(lang,'A little more about us','了解我们的故事')}<Arrow diagonal/></a></div>
-</section>
-
 <section class="menu-explore section-pad wrap" id="menu-highlights" aria-labelledby="menu-highlights-title"><div class="section-heading"><div><span class="eyebrow">{t(lang,'WHATEVER YOUR CRAVING','今天，想吃点什么？')}</span><h2 id="menu-highlights-title">{t(lang,'Make it','让这一餐')} <em>{t(lang,'your kind.','合你心意。')}</em></h2></div><p>{t(lang,'Fried chicken, wings, boneless bites, burgers, wraps, sides and drinks. Pick a starting point.','炸鸡、鸡翅、无骨鸡、汉堡、卷饼、小食和饮品，从喜欢的开始。')}</p></div><div class="category-list">{content.categories.map((category:any,index:number)=><a href={url(lang,'menu')+'#'+category.id}><span class="category-index">0{index+1}</span><h3>{category.name}</h3><p>{categoryDescriptions[index]}</p><span class="category-arrow"><Arrow diagonal/></span></a>)}</div></section>
-
-<section class="flavor-section" aria-labelledby="flavor-title"><div class="wrap flavor-inner"><div><span class="eyebrow">{t(lang,'A WHOLE WORLD OF FLAVOR','环球风味，尽在这一口')}</span><h2 id="flavor-title">{t(lang,'Find your','找到你的')}<br/><em>{t(lang,'happy heat.','心动风味。')}</em></h2><p>{t(lang,'From mild to bold. Sweet, spicy, Korean-inspired and dry-seasoned. Our flavors are built to fit the neighborhood.','从温和到辛辣，从酸甜、甜辣、韩式到干料风味，我们的菜单会根据当地口味进行调整。')}</p><div class="flavor-tags">{content.home.scan.map((scan:any)=><div><span>{scan.label}</span><strong>{scan.value}</strong></div>)}</div></div><div class="flavor-visual"><div class="flavor-circle" aria-hidden="true">✳</div><img src={food.src} width={food.width} height={food.height} alt={t(lang,'Original Recipe Fried Chicken','经典原味炸鸡')} loading="lazy" decoding="async"/><a class="round-link" href={url(lang,'menu')+'#fried-chicken'} aria-label={t(lang,'Explore fried chicken','查看经典炸鸡')}><Arrow diagonal/></a></div></div></section>
 
 <section class="home-locations section-pad wrap" id="our-locations" aria-labelledby="locations-title"><div class="section-heading"><div><span class="eyebrow">{t(lang,'YOUR NEIGHBORHOOD CRUNCH','社区里的快乐味道')}</span><h2 id="locations-title">{t(lang,'Good food.','好味道。')}<br/><em>{t(lang,'Closer to you.','就在你身边。')}</em></h2></div><div><p>{t(lang,'The locations currently listed on our website are in Brooklyn, New York and Rolla, Missouri. Stop by for dine-in or takeout.','网站目前列示纽约布鲁克林与密苏里州 Rolla 两家门店，提供堂食与外带服务。')}</p><a class="text-link" href={url(lang,'locations')}>{t(lang,'Explore our locations','查看门店详情')}<Arrow diagonal/></a></div></div><div class="home-location-grid">{content.locations.map((location:any)=><a class="location-preview" href={url(lang,'locations')+'#'+location.id}><div class="location-preview-image"><img src={location.image.src} width={location.image.width} height={location.image.height} alt={'Frydom Express '+location.name} loading="lazy" decoding="async"/><span class="location-service">{t(lang,'DINE IN · TAKEOUT','堂食 · 外带')}</span></div><div class="location-preview-bottom"><div><h3>{location.name}</h3><p>{location.address.streetAddress}, {location.address.addressLocality}, {location.address.addressRegion} {location.address.postalCode}</p></div><span class="circle-arrow"><Arrow diagonal/></span></div></a>)}</div></section>
 
-<section class="offers wrap" id="special-offers" aria-labelledby="offers-title"><div class="offers-inner"><div class="offers-icon" aria-hidden="true">✳</div><div><span class="eyebrow">{t(lang,'A LITTLE SOMETHING EXTRA','美味，还有新惊喜')}</span><h2 id="offers-title">{t(lang,'Keep an eye on the good stuff.','新品与优惠，值得期待。')}</h2><p>{content.home.offerText} {t(lang,'Please ask the restaurant for current offers and terms.','现行活动与适用条件请咨询门店。')}</p><details><summary>{t(lang,'View the original promotional artwork','查看原网站活动海报')}</summary><p>{t(lang,'Original artwork for reference. Current dates, participating locations and offer conditions are not confirmed.','原网站海报仅供参考。活动日期、参与门店与现行条件尚未确认，请以门店告知为准。')}</p><img src={asset('/images/promo-s-1200-600_1-1200.webp')?.src||asset('/images/promo-s-1200-600-1-1200.webp')?.src} width="1200" height="600" loading="lazy" alt={t(lang,'Original Frydom Express promotional artwork; ask the restaurant for current terms','Frydom Express 原网站活动海报，现行条件请向门店确认')}/></details></div></div></section>
 
+
+<div class="home-story-link wrap"><h2>{t(lang,'Serious about the good stuff.','认真对待每一份美味。')}</h2><a class="text-link" href={url(lang,'story')}>{t(lang,'A little more about us','了解我们的故事')} ↗</a></div>
 <PartnerBanner lang={lang}/>
 <section class="home-contact wrap" id="contact"><span class="eyebrow">{t(lang,'CONTACT FRYDOM EXPRESS','联系 Frydom Express')}</span><p>{t(lang,'A question about the brand?','想了解品牌？')} <a href="mailto:info@frydomexpress.com">info@frydomexpress.com <Arrow diagonal/></a></p>{lang==='zh'&&<small>社交媒体：可在 Instagram / Facebook 搜索「Frydom Express」关注最新动态。</small>}</section>

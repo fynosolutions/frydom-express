@@ -33,7 +33,7 @@ function initializeMotion() {
       } catch {target.dataset.motion = 'revealed';}
     }
   },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
-  const selector = '.item-body,h1,h2,h3,h4,p,li,dl,.eyebrow';
+  const selector = '.item-body,h1,h2,h3,h4,p,li,dl,.eyebrow,.offer-art,.item-photo,.editorial-photo,.location-detail-photo,.support-detail-image';
   document.querySelectorAll<HTMLElement>(`main :is(${selector})`).forEach(target => {
     if (target.dataset.motion === 'revealed' || target.closest('form,nav,aside,[aria-hidden="true"],.hero-copy') || target.parentElement?.closest(selector)) return;
     target.dataset.motion = 'pending';
@@ -50,6 +50,7 @@ const header = document.querySelector<HTMLElement>('#site-header');
 if(header){
   const updateHeaderHeight=()=>{
     document.documentElement.style.setProperty('--site-header-height',`${header.getBoundingClientRect().height}px`);
+    document.documentElement.style.setProperty('--site-header-bottom',`${header.getBoundingClientRect().bottom}px`);
     document.documentElement.classList.add('header-measured');
   };
   updateHeaderHeight();
@@ -62,7 +63,8 @@ addEventListener('scroll',()=>{
   if(scrollQueued)return;scrollQueued=true;
   requestAnimationFrame(()=>{
     header?.classList.toggle('is-scrolled',scrollY>20);
-    if(heroFood&&innerWidth>950&&!reducedMotion.matches&&scrollY<innerHeight)heroFood.style.transform=`translateY(${Math.min(scrollY*.035,20)}px) scale(1.02)`;
+    if(header)document.documentElement.style.setProperty('--site-header-bottom',`${header.getBoundingClientRect().bottom}px`);
+    if(heroFood&&!reducedMotion.matches)heroFood.style.transform='none';
     scrollQueued=false;
   });
 },{passive:true});
@@ -70,6 +72,23 @@ const mobile = document.querySelector<HTMLDetailsElement>('#mobile-navigation');
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile?.open){mobile.open=false;mobile.querySelector('summary')?.focus();}});
 document.addEventListener('click',event=>{if(mobile?.open&&!mobile.contains(event.target as Node))mobile.open=false;});
 mobile?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobile.open=false;}));
+const more = document.querySelector<HTMLDetailsElement>('.more-navigation');
+document.addEventListener('click',event=>{if(more?.open&&!more.contains(event.target as Node))more.open=false;});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&more?.open){more.open=false;more.querySelector('summary')?.focus();}
+  if(event.key==='Tab'&&mobile?.open){
+    const items=[...mobile.querySelectorAll<HTMLElement>('summary,a[href]')];
+    const first=items[0],last=items[items.length-1];
+    if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+    else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+  }
+});
+mobile?.addEventListener('toggle',()=>{
+  const open=mobile.open&&innerWidth<=950;
+  document.documentElement.classList.toggle('nav-open',open);
+  document.querySelectorAll<HTMLElement>('main,.site-footer').forEach(el=>el.inert=open);
+});
+addEventListener('resize',()=>{if(innerWidth>950&&mobile?.open)mobile.open=false;});
 
 const ribbon = document.querySelector<HTMLElement>('[data-ribbon]');
 const pauseButton = ribbon?.querySelector<HTMLButtonElement>('.ribbon-pause');

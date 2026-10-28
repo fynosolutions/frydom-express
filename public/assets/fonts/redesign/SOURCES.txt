@@ -1,0 +1,7 @@
+Fraunces variable font and Courier Prime Regular/Bold
+Source: Google Fonts repository, retrieved 2026-10-28.
+https://github.com/google/fonts/tree/main/ofl/fraunces
+https://github.com/google/fonts/tree/main/ofl/courierprime
+
+These are open-source visual alternatives, not the commercial fonts used by
+Patty & Bun. License texts are included alongside the font files.

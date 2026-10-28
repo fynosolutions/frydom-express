@@ -1,18 +1,24 @@
 import site from '../data/site.json';
 
 export type Language = 'en' | 'zh';
-export type PageKind = 'home' | 'story' | 'menu' | 'locations' | 'partner' | 'support' | 'privacy' | 'terms';
+export type PageKind = 'home' | 'story' | 'menu' | 'locations' | 'partner' | 'support' | 'privacy' | 'terms' | 'offers' | 'staff-offer' | 'leg-quarter' | 'chicken-bucket';
 export const data = site as any;
 export const t = (lang: Language, en: string, zh: string) => lang === 'en' ? en : zh;
 export const locale = (lang: Language) => data.locales[lang];
 export const url = (lang: Language, kind: PageKind) => locale(lang).routes[kind];
-export const navigation: PageKind[] = ['home','story','menu','locations','partner','support','privacy'];
+export const navigation: PageKind[] = ['home','story','menu','offers','locations','partner','support','privacy'];
+export const primaryNavigation: PageKind[] = ['menu','offers','locations','partner'];
+export const secondaryNavigation: PageKind[] = ['story','support'];
 export const labels: Record<Language, Record<PageKind,string>> = {
-  en: { home:'Home',story:'Our Story',menu:'Menu',locations:'Locations',partner:'Become a Partner',support:'Partner Support',privacy:'Privacy Policy',terms:'Terms of Service' },
-  zh: { home:'首页',story:'品牌故事',menu:'菜单',locations:'门店',partner:'加盟合作',support:'总部支持',privacy:'隐私政策',terms:'服务条款' },
+  en: { offers:'Offers', 'staff-offer':'Staff & Group Offers', 'leg-quarter':'Crispy-Skinned Chicken Leg Quarter', 'chicken-bucket':'Ultimate Chicken Bucket', home:'Home',story:'Our Story',menu:'Menu',locations:'Locations',partner:'Become a Partner',support:'Partner Support',privacy:'Privacy Policy',terms:'Terms of Service' },
+  zh: { offers:'新品与优惠', 'staff-offer':'员工与团餐福利', 'leg-quarter':'脆皮手枪腿', 'chicken-bucket':'炸鸡桶与盲盒', home:'首页',story:'品牌故事',menu:'菜单',locations:'门店',partner:'加盟合作',support:'总部支持',privacy:'隐私政策',terms:'服务条款' },
 };
 const descriptions: Record<Language,Record<PageKind,string>> = {
   en: {
+    offers:'Explore new arrivals, staff and group meal benefits, and the Ultimate Chicken Bucket blind box offer.',
+    'staff-offer':'Show your work ID at our Brooklyn location for staff and group meal benefits. View qualifying amounts and contact details.',
+    'leg-quarter':'Discover our freshly fried Crispy-Skinned Chicken Leg Quarter, advertised at $6.45. Ask about participating locations.',
+    'chicken-bucket':'Discover the $38.99 Ultimate Chicken Bucket with a free $20 blind box. View the advertised meal and ask about availability.',
     home:'Meet Frydom Express: crispy fried chicken, wings, burgers, wraps and sides. Explore our menu and listed locations in Brooklyn, NY and Rolla, MO.',
     story:'Discover the Brooklyn roots of Frydom Express, our golden fried chicken, globally inspired sauces and neighborhood store experience.',
     menu:'Explore the Frydom Express representative menu: fried chicken, wings, boneless chicken, burgers, wraps, sides and drinks. Selection and pricing vary by location.',
@@ -23,6 +29,10 @@ const descriptions: Record<Language,Record<PageKind,string>> = {
     terms:'Read the Frydom Express Terms of Service, last updated August 28, 2026, including acceptable use, intellectual property and contact details.',
   },
   zh: {
+    offers:'探索 Frydom Express 新品、员工团餐福利及炸鸡桶赠盲盒活动，查看优惠详情与门店信息。',
+    'staff-offer':'Brooklyn 门店员工与团餐福利：出示工作证件 ID，查看九折门槛、赠品及电话咨询方式。',
+    'leg-quarter':'脆皮手枪腿新品，海报价格 $6.45，酥脆、多汁、现炸。查看商品介绍并咨询供应门店。',
+    'chicken-bucket':'Ultimate Chicken Bucket 炸鸡桶 $38.99，赠价值 $20 盲盒。查看套餐说明与活动详情。',
     home:'Frydom Express 炸鸡、风味鸡翅、汉堡、卷饼与小食。查看真实菜单，了解纽约布鲁克林与密苏里州 Rolla 门店。',
     story:'了解 Frydom Express 品牌故事、现炸鸡肉、环球风味蘸料与社区门店体验。',
     menu:'查看 Frydom Express 炸鸡、鸡翅、无骨鸡、汉堡、卷饼、小食与饮品菜单。产品供应及价格可能因门店而异。',

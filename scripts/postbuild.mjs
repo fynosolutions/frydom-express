@@ -11,4 +11,4 @@ await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<url
 await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile('dist/_redirects','/index.html / 301\n/en/index.html /en/ 301\n');
 await writeFile('dist/_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n');
-console.log('Validated 16 legacy routes; generated sitemap, robots, redirects and headers.');
+console.log(`Validated ${data.routes.length} routes; generated sitemap, robots, redirects and headers.`);

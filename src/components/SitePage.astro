@@ -7,12 +7,14 @@ import Story from './Story.astro';
 import Locations from './Locations.astro';
 import Partner from './Partner.astro';
 import Support from './Support.astro';
+import Offers from './Offers.astro';
 import Legal from './Legal.astro';
 import{type Language,type PageKind}from'../lib/site';
 const{lang,kind}=Astro.props as {lang:Language,kind:PageKind};
 ---
 <BaseLayout lang={lang} kind={kind}>
   {kind!=='home'&&<Breadcrumb lang={lang} kind={kind}/>}
+  {['offers','staff-offer','leg-quarter','chicken-bucket'].includes(kind)&&<Offers lang={lang} kind={kind}/>}
   {kind==='home'&&<Home lang={lang}/>}
   {kind==='menu'&&<Menu lang={lang}/>}
   {kind==='story'&&<Story lang={lang}/>}

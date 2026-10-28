@@ -1,8 +1,10 @@
 # 静态托管与上线检查
 
-已于 2026-10-20 更新至 Vercel 生产项目 `wei34/frydom-express`，平台状态为 Ready。公开地址：https://frydom-express.vercel.app 。部署 ID：`dpl_BX9TUkLEtqxHuZpyKgJBDMT4MikL`。本次更新为导航悬停放大与全站文字滚动入场，发布前 97 项静态检查及 121 项浏览器检查通过。
+已于 2026-10-28 发布当前版本至 Vercel 生产项目 `wei34/frydom-express`，状态 READY。公开地址：https://frydom-express.vercel.app 。部署 ID：`dpl_3YMrFNvgCzBehpT81YJY4XpANLLq`。
 
-当前执行环境访问 vercel.app 出现 DNS/连接超时，未完成公网 HTTP 路由和浏览器复查；不将本地验证计为线上验证。原 `frydomexpress.com` 域名未绑定或迁移，canonical 与站点地图继续指向原正式域名。加盟表单与统计仍只在原正式域名启用；Vercel 域名可通过页面提供的邮箱联系。
+本次发布包含 Patty & Bun 参考风格改版、三个活动及详情页、中英文各 12 个新增菜单条目、中文得意黑字体。发布前 137 项静态检查和 36 项中文页面/视口检查通过。公网直接访问首页、中英文菜单、活动页和字体文件均返回 HTTP 200，已确认新增菜单及活动内容。检查记录见 `docs/qa/production-http-20261028.json`。
+
+原 `frydomexpress.com` 域名未绑定或迁移，canonical 与站点地图继续指向原正式域名。加盟表单与统计仍只在原正式域名启用；Vercel 域名可通过页面提供的邮箱联系。
 
 Vercel 配置为根目录 `vercel.json`，使用 `npm ci` 安装、`npm run build` 构建，发布 `dist/`。`.vercelignore` 排除开发报告、快照、交付压缩包、依赖和本地环境文件。后续更新执行：
 

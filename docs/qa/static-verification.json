@@ -1,9 +1,9 @@
 {
-  "executedAt": "2026-10-19T17:47:48.746Z",
+  "executedAt": "2026-10-28T13:47:51.965Z",
   "method": "Production HTML parsed with Cheerio, without executing JavaScript. Not a search indexing or live CRM test.",
-  "routes": 16,
-  "checks": 97,
-  "passed": 97,
+  "routes": 24,
+  "checks": 137,
+  "passed": 137,
   "failures": [],
   "details": [
     {
@@ -380,6 +380,166 @@
     },
     {
       "name": "/terms-of-service.html legal text and dates preserved",
+      "status": "passed"
+    },
+    {
+      "name": "/offers.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/offers.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/offers.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/offers.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/offers.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/staff-offer.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/staff-offer.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/staff-offer.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/staff-offer.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/staff-offer.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/leg-quarter.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/leg-quarter.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/leg-quarter.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/leg-quarter.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/leg-quarter.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/chicken-bucket.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/chicken-bucket.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/chicken-bucket.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/chicken-bucket.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/chicken-bucket.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/offers.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/offers.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/offers.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/offers.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/offers.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/staff-offer.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/staff-offer.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/staff-offer.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/staff-offer.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/staff-offer.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/leg-quarter.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/leg-quarter.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/leg-quarter.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/leg-quarter.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/leg-quarter.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/chicken-bucket.html semantics",
+      "status": "passed"
+    },
+    {
+      "name": "/en/chicken-bucket.html canonical and language alternates",
+      "status": "passed"
+    },
+    {
+      "name": "/en/chicken-bucket.html unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "/en/chicken-bucket.html exact active navigation",
+      "status": "passed"
+    },
+    {
+      "name": "/en/chicken-bucket.html JSON-LD parses and contains only supported facts",
       "status": "passed"
     },
     {

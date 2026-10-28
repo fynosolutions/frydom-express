@@ -1,0 +1,17 @@
+{
+  "dataUnchanged": true,
+  "locales": {
+    "en": {
+      "missingText": [],
+      "missingImages": [],
+      "checkedText": 617,
+      "checkedImages": 42
+    },
+    "zh": {
+      "missingText": [],
+      "missingImages": [],
+      "checkedText": 604,
+      "checkedImages": 42
+    }
+  }
+}

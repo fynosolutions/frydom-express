@@ -1,17 +1,10 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-28",
   "project": "wei34/frydom-express",
-  "deploymentId": "dpl_BX9TUkLEtqxHuZpyKgJBDMT4MikL",
+  "deploymentId": "dpl_3YMrFNvgCzBehpT81YJY4XpANLLq",
   "url": "https://frydom-express.vercel.app",
-  "deploymentUrl": "https://frydom-express-kyse0ksgj-wei34.vercel.app",
-  "inspectorUrl": "https://vercel.com/wei34/frydom-express/BX9TUkLEtqxHuZpyKgJBDMT4MikL",
-  "target": "production",
-  "readyState": "READY",
-  "verifiedBy": "Vercel deploy result: READY and production alias assigned",
-  "localChecksPassed": 97,
-  "localBrowserChecksPassed": 121,
-  "changes": ["navigation hover and keyboard focus zoom", "scroll-triggered text reveal with reduced-motion cancellation"],
-  "publicHttpVerification": "incomplete: current network returned DNS/connect timeouts and connection resets",
-  "customDomainMigrated": false,
-  "liveCrmOnVercelDomain": false
+  "deploymentUrl": "https://frydom-express-6cqc8zln7-wei34.vercel.app",
+  "status": "READY",
+  "publicHttpVerification": "passed",
+  "originalDomainMigrated": false
 }

@@ -4,7 +4,7 @@ const scale=label=>label.evaluate(e=>{const t=getComputedStyle(e).transform;retu
 
 test('navigation zooms on hover, restores on exit and keeps its hit area stable',async({page})=>{
  await page.setViewportSize({width:1440,height:1000});await page.goto('/en/menu.html');await page.evaluate(()=>document.fonts.ready);
- for(const link of await page.locator('.desktop-nav a').all()){
+ for(const link of await page.locator('.desktop-nav > a').all()){
   const label=link.locator('.nav-label');const before=await link.boundingBox();
   await link.hover();await expect.poll(()=>scale(label)).toBeGreaterThan(1.095);
   expect(await link.boundingBox()).toEqual(before);
@@ -16,7 +16,7 @@ test('navigation zooms on hover, restores on exit and keeps its hit area stable'
 test('navigation zoom is available from the keyboard',async({page})=>{
  await page.goto('/en/menu.html');
  await page.keyboard.press('Tab');await page.keyboard.press('Tab');await page.keyboard.press('Tab');
- const link=page.locator('.desktop-nav a').first();await expect(link).toBeFocused();await expect.poll(()=>scale(link.locator('.nav-label'))).toBeGreaterThan(1.095);
+ const link=page.locator('.desktop-nav > a').first();await expect(link).toBeFocused();await expect.poll(()=>scale(link.locator('.nav-label'))).toBeGreaterThan(1.095);
 });
 
 test('touch menu stays readable without sticky hover enlargement',async({browser})=>{
@@ -54,7 +54,7 @@ test('reduced motion cancels a running reveal and suppresses navigation zoom',as
  await expect(title).toHaveAttribute('data-motion','entering');await page.emulateMedia({reducedMotion:'reduce'});
  await expect(title).toHaveAttribute('data-motion','revealed');expect(await title.evaluate(e=>e.getAnimations().length)).toBe(0);
  expect(await title.evaluate(e=>getComputedStyle(e).opacity)).toBe('1');
- const link=page.locator('.desktop-nav a').first();await link.hover();expect(await scale(link.locator('.nav-label'))).toBe(1);
+ const link=page.locator('.desktop-nav > a').first();await link.hover();expect(await scale(link.locator('.nav-label'))).toBe(1);
  await page.reload();await expect(page.locator('html')).not.toHaveClass(/motion-ready/);
  expect(await page.locator('[data-motion]').count()).toBe(0);
 });

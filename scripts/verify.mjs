@@ -14,7 +14,7 @@ for(const {lang,kind,path:route}of data.routes){
   check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');assert(q('main').text().trim().length>100);assert.equal(q('head meta[name=robots]').length,0);assert(!q('main').text().includes('< img'));});
   check(route+' canonical and language alternates',()=>{assert.equal(q('link[rel=canonical]').attr('href'),origin+route);for(const l of ['en','zh'])assert.equal(q(`link[hreflang="${l==='en'?'en':'zh-Hans'}"]`).attr('href'),origin+data.locales[l].routes[kind]);});
   check(route+' unique IDs',()=>{const ids=q('[id]').map((i,e)=>q(e).attr('id')).get();assert.equal(new Set(ids).size,ids.length);});
-  check(route+' exact active navigation',()=>{assert.equal(q('.desktop-nav a[aria-current=page]').length,kind==='terms'?0:1);assert.equal(q('.desktop-nav a').length,7);assert.equal(q('.desktop-nav[hidden]').length,0);});
+  check(route+' exact active navigation',()=>{assert.equal(q('.desktop-nav a[aria-current=page]').length,['home','privacy','terms'].includes(kind)?0:1);assert.equal(q('.desktop-nav a').length,6);assert.equal(q('.desktop-nav[hidden]').length,0);});
   let graph;
   check(route+' JSON-LD parses and contains only supported facts',()=>{graph=JSON.parse(q('script[type="application/ld+json"]').text())['@graph'];assert(graph.some(n=>n['@type']==='Organization'));assert(!JSON.stringify(graph).match(/OpeningHoursSpecification|aggregateRating|ratingValue|legalName|priceCurrency|Open now|OrderAction/));});
   for(const element of q('a[href]').toArray()){
@@ -52,7 +52,7 @@ for(const {lang,kind,path:route}of data.routes){
 }
 check('unique page titles and descriptions',()=>{const titles=[...cache.values()].map(q=>q('title').text());assert.equal(new Set(titles).size,data.routes.length);const descriptions=[...cache.values()].map(q=>q('meta[name=description]').attr('content'));assert.equal(new Set(descriptions).size,data.routes.length);});
 const sitemap=await readFile('dist/sitemap.xml','utf8');
-check('sitemap lists only canonical routes',()=>{const q=load(sitemap,{xml:true});assert.equal(q('url').length,16);for(const route of data.routes)assert(q('loc').map((i,e)=>q(e).text()).get().includes(origin+route.path));assert(!sitemap.includes('#'));assert(!sitemap.includes('localhost'));assert(!sitemap.includes('lastmod'));});
+check('sitemap lists only canonical routes',()=>{const q=load(sitemap,{xml:true});assert.equal(q('url').length,data.routes.length);for(const route of data.routes)assert(q('loc').map((i,e)=>q(e).text()).get().includes(origin+route.path));assert(!sitemap.includes('#'));assert(!sitemap.includes('localhost'));assert(!sitemap.includes('lastmod'));});
 check('robots and homepage aliases',()=>{assert(data.routes.some(r=>r.path==='/en/'));assert(data.routes.some(r=>r.path==='/'));});
 await mkdir('docs/qa',{recursive:true});
 function readable(q,node){if(node.type==='text')return node.data;if(['script','style','nav','footer'].includes(node.tagName))return'';const block=['h1','h2','h3','h4','p','li','section','article','dt','dd','address','div','br','summary'].includes(node.tagName);return(block?'\n':' ')+(node.children||[]).map(n=>readable(q,n)).join('')+(block?'\n':' ');}

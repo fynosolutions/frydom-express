@@ -2,12 +2,15 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HomeIntro from '../components/HomeIntro.astro';
-import { asset, metadata, structuredData, t, url, type Language, type PageKind } from '../lib/site';
+import { asset, locale, metadata, structuredData, t, url, type Language, type PageKind } from '../lib/site';
 import '../styles/global.css';
+import '../styles/redesign.css';
+import '../styles/chinese-font.css';
 const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
 const meta=metadata(lang,kind);
 const canonical='https://frydomexpress.com'+url(lang,kind);
 const hero=asset('/images/brand-new-1280-1280.webp');
+const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image||hero;
 ---
 <!DOCTYPE html>
 <html lang={lang==='en'?'en':'zh-Hans'}>
@@ -29,7 +32,7 @@ const hero=asset('/images/brand-new-1280-1280.webp');
     <meta property="og:title" content={meta.title}/>
     <meta property="og:description" content={meta.description}/>
     <meta property="og:url" content={canonical}/>
-    <meta property="og:image" content={'https://frydomexpress.com'+hero.src}/>
+    <meta property="og:image" content={'https://frydomexpress.com'+shareImage.src}/>
     <meta name="twitter:card" content="summary_large_image"/>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData(lang,kind)).replaceAll('<','\u003c')}/>
   </head>

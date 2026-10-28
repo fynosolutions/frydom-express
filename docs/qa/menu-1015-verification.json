@@ -1,0 +1,69 @@
+{
+  "previousContentPreserved": true,
+  "results": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "zh",
+      "width": 768,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "en",
+      "width": 768,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "newCards": 12,
+      "allPricesAndImages": true,
+      "noOverflow": true,
+      "noScriptErrors": true
+    }
+  ]
+}
