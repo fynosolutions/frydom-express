@@ -1,5 +1,20 @@
 # 静态托管与上线检查
 
+## 当前发布：2026-10-31
+
+- Vercel 项目：`wei34/frydom-express`；状态 READY。
+- 公开地址：https://frydom-express.vercel.app 。
+- 部署 ID：`dpl_CaXAZeHX7BpJQobqe3h5dPDgMucj`。
+- 部署地址：https://frydom-express-pxmne2amz-wei34.vercel.app 。
+- 站点源码提交：`fc316b2`（Update bilingual website, menu, ordering and partner experience）。
+- 包含 1015 新菜单、完整活动海报与双语说明、手机点餐/导航、门店电话和 11:00–22:00 营业时段、加盟分组及 Angus Beef Cheeseburger Combo 首页主图。
+- 构建与 127 项静态检查通过。136 项浏览器测试中 135 项首次通过；英文加盟页一次初始化等待超时，随后连续复测 3 次通过。
+- 发布后匿名 HTTP 检查 9 个页面/资源均为 200，确认主图、菜单各 35 款、营业时段、加盟分组、活动文字与 PDF 已更新；记录见 `docs/qa/production-http-20261031.json`。
+- 原 `frydomexpress.com` 域名未迁移；本轮更新现有 Vercel 站点。
+
+以下为历史发布记录与托管说明。
+
+
 已于 2026-10-28 发布当前版本至 Vercel 生产项目 `wei34/frydom-express`，状态 READY。公开地址：https://frydom-express.vercel.app 。部署 ID：`dpl_44yH3U9kPDNoqy597avAKXNjz6W8`。
 
 本次追加修复：中英文 Wings 全部 7 款统一显示 Small $5.95 / Large $11.25；选中文字改为红底奶油色字，解决红底红字不可读问题。经典鸡翅标题取消固定 6 块标注，以配合大小份规格，未推断每份块数。

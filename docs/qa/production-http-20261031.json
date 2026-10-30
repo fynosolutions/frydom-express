@@ -1,0 +1,51 @@
+{
+  "deployment": "dpl_CaXAZeHX7BpJQobqe3h5dPDgMucj",
+  "origin": "https://frydom-express.vercel.app",
+  "results": [
+    {
+      "route": "/",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/en/",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/menu.html",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/en/menu.html",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/stores.html",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/en/franchise.html",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/staff-offer.html",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/assets/menu-1015/angus-beef-cheeseburger-combo.webp",
+      "status": 200,
+      "verified": true
+    },
+    {
+      "route": "/assets/posters/staff-offer.pdf",
+      "status": 200,
+      "verified": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 顾客访问与点餐路径调整（2026-10-31）
 
-按 grilling 访谈确认实施；2026-10-31 已完成发布准备，线上状态见 deployment.md。
+按 grilling 访谈确认实施；2026-10-31 已发布至 https://frydom-express.vercel.app ，发布记录见 deployment.md。
 
 - 首页：单张餐品主图、Brooklyn 地址与营业时段、菜单与点餐入口，随后为三款招牌、简短分类链接、优惠、门店信息及简短加盟入口。保留现有配色与真实图片。
 - 桌面顶部突出点餐；手机底部固定点餐与地图导航。Uber Eats / Grubhub 并列选择，支持键盘、Escape、点击外部关闭及无 JavaScript。打开全屏导航时隐藏底栏并使其不可聚焦。

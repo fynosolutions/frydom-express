@@ -1,6 +1,6 @@
 # Frydom Express 新官网
 
-2026-10-31 更新：当前版本包含 1015 菜单（中英文各 8 类、35 款）、完整活动海报与双语说明、手机点餐/导航、11:00–22:00 营业时段、门店电话、加盟内容分组及 Angus Beef Cheeseburger Combo 首页主图。见 [顾客体验调整](docs/customer-experience-update.md)；历史记录中的旧菜单数量与时间以当前数据为准。
+2026-10-31 已发布至 https://frydom-express.vercel.app ：当前版本包含 1015 菜单（中英文各 8 类、35 款）、完整活动海报与双语说明、手机点餐/导航、11:00–22:00 营业时段、门店电话、加盟内容分组及 Angus Beef Cheeseburger Combo 首页主图。见 [顾客体验调整](docs/customer-experience-update.md)；历史记录中的旧菜单数量与时间以当前数据为准。
 
 2026-10-28：已按确认方案完成 Patty & Bun 参考风格改版，采用红色/奶油色、复古字体、精简导航、三列菜单与活动总览。Frydom 原文字和图片保留，长品牌内容移至故事页。当前本地版本及验证说明见 [改版记录](docs/patty-bun-redesign.md)；下方历史视觉参数以该记录为准。本轮已于 2026-10-28 发布至 https://frydom-express.vercel.app，含三个活动、菜单补充与中文得意黑字体。
 
