@@ -75,7 +75,6 @@ mobile?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{m
 const more = document.querySelector<HTMLDetailsElement>('.more-navigation');
 document.addEventListener('click',event=>{if(more?.open&&!more.contains(event.target as Node))more.open=false;});
 document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'&&more?.open){more.open=false;more.querySelector('summary')?.focus();}
   if(event.key==='Tab'&&mobile?.open){
     const items=[...mobile.querySelectorAll<HTMLElement>('summary,a[href]')];
     const first=items[0],last=items[items.length-1];
@@ -86,7 +85,7 @@ document.addEventListener('keydown',event=>{
 mobile?.addEventListener('toggle',()=>{
   const open=mobile.open&&innerWidth<=950;
   document.documentElement.classList.toggle('nav-open',open);
-  document.querySelectorAll<HTMLElement>('main,.site-footer').forEach(el=>el.inert=open);
+  document.querySelectorAll<HTMLElement>('main,.site-footer,.mobile-customer-actions').forEach(el=>el.inert=open);
 });
 addEventListener('resize',()=>{if(innerWidth>950&&mobile?.open)mobile.open=false;});
 
@@ -192,3 +191,21 @@ if(productionHost&&!(window as any).fbq){
   const pixel=document.createElement('script');pixel.async=true;pixel.src='https://connect.facebook.net/en_US/fbevents.js';document.head.append(pixel);
   fbq('init','4404293963139526');fbq('track','PageView');
 }
+
+// Native disclosures keep platform selection usable without JavaScript.
+const orderPickers = [...document.querySelectorAll<HTMLDetailsElement>('[data-order-picker]')];
+orderPickers.forEach(picker => picker.addEventListener('toggle', () => {
+  if (picker.open) orderPickers.forEach(other => { if (other !== picker) other.open = false; });
+}));
+document.addEventListener('click', event => {
+  orderPickers.forEach(picker => { if (!picker.contains(event.target as Node)) picker.open = false; });
+});
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  orderPickers.forEach(picker => {
+    if (picker.open) {
+      if (picker.contains(document.activeElement)) picker.querySelector<HTMLElement>('summary')?.focus();
+      picker.open = false;
+    }
+  });
+});

@@ -1,5 +1,6 @@
 ---
-import { data, primaryNavigation, secondaryNavigation, labels, t, url, type Language, type PageKind } from '../lib/site';
+import OrderPicker from './OrderPicker.astro';
+import { data, primaryNavigation, orderPlatforms, labels, t, url, type Language, type PageKind } from '../lib/site';
 const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
 const other=lang==='en'?'zh':'en';
 const active=(item:PageKind)=>kind===item||(item==='offers'&&['staff-offer','leg-quarter','chicken-bucket'].includes(kind));
@@ -13,14 +14,17 @@ const active=(item:PageKind)=>kind===item||(item==='offers'&&['staff-offer','leg
     </a>
     <nav class="desktop-nav" aria-label={t(lang,'Main navigation','主导航')}>
       {primaryNavigation.map(item=><a href={url(lang,item)} aria-current={active(item)?'page':undefined}><span class="nav-label">{labels[lang][item]}</span></a>)}
-      <details class="more-navigation"><summary>{t(lang,'More','更多')} <span aria-hidden="true">+</span></summary><div>{secondaryNavigation.map(item=><a href={url(lang,item)} aria-current={active(item)?'page':undefined}>{labels[lang][item]}</a>)}</div></details>
+      <OrderPicker lang={lang}/>
     </nav>
     <div class="header-actions">
       <a class="language-link" href={url(other,kind)} lang={other==='zh'?'zh-Hans':'en'} aria-label={t(lang,'切换到本页中文版','View this page in English')}><span aria-hidden="true">◎</span> {t(lang,'中文','EN')}</a>
       <details class="mobile-navigation" id="mobile-navigation">
         <summary aria-label={t(lang,'Open navigation','打开导航')}><span></span><span></span></summary>
         <nav aria-label={t(lang,'Mobile navigation','移动端导航')}>
-          {[...primaryNavigation,...secondaryNavigation].map(item=><a href={url(lang,item)} aria-current={active(item)?'page':undefined}><span class="nav-label">{labels[lang][item]}</span> <span aria-hidden="true">↗</span></a>)}
+          {primaryNavigation.map(item=><a href={url(lang,item)} aria-current={active(item)?'page':undefined}><span class="nav-label">{labels[lang][item]}</span> <span aria-hidden="true">↗</span></a>)}
+          <a href={url(lang,'support')}><span class="nav-label">{labels[lang].support}</span> <span aria-hidden="true">↗</span></a>
+          <span class="mobile-order-label">{t(lang,'Online Order','在线点餐')}</span>
+          {orderPlatforms.map(platform=><a href={platform.href} target="_blank" rel="noopener noreferrer"><span class="nav-label">{platform.name}</span> <span aria-hidden="true">↗</span></a>)}
         </nav>
       </details>
     </div>

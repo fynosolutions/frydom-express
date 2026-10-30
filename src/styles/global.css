@@ -33,7 +33,7 @@
 @layer base {
   :root{--orange:#ed8f21;--rust:#cd5817;--cream:#faeec9;--paper:#fff7e8;--gold:#e7c579;--heading:#a94a17;--body:#5c4a3a;--muted:#7a6552;--line:rgba(92,74,58,.22);--display:'FuturaPT','PingFang SC','Microsoft YaHei',sans-serif;--sans:'FuturaPT','PingFang SC','Microsoft YaHei',sans-serif}
   body{background:var(--cream);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  ::selection{background:#e52b2b;color:#f9ecd2}
+  ::selection{background:var(--rust);color:var(--cream)}
   :focus-visible{outline:3px solid var(--heading);outline-offset:5px}
   h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.97;color:var(--heading);letter-spacing:-.015em}
   h1,h2{text-transform:uppercase}

@@ -1,0 +1,80 @@
+/* Customer actions and concise home layout; retain the existing brand palette. */
+.order-picker { position: relative; font-family: var(--sans); flex: none; }
+.order-picker > summary { cursor: pointer; list-style: none; display: flex; justify-content: center; gap: 12px; }
+.order-picker > summary::-webkit-details-marker { display: none; }
+.order-picker[open] { z-index: 45; }
+.order-platforms { position: absolute; top: calc(100% + 8px); right: 0; width: min(310px, calc(100vw - 32px)); padding: 20px; background: var(--cream); color: var(--body); border: 2px solid var(--accent); box-shadow: 0 8px 24px #3b302825; text-align: left; }
+.order-picker:not([open]) .order-platforms { display: none; }
+.order-platforms > span { font-size: 16px; }
+.order-platforms a { display: block; padding: 12px 0; font-size: 20px; color: var(--accent); border-bottom: 1px solid var(--line); }
+.order-platforms small { display: block; margin-top: 12px; font-size: 14px; line-height: 1.5; }
+.desktop-nav .order-picker > summary { padding: 10px 18px; font-size: 18px; }
+.mobile-customer-actions { display: none; }
+#main .hero.wrap { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); width: calc(100% - 60px); max-width: 1400px; margin: 28px auto 0; padding: 0; gap: 36px; align-items: center; }
+#main .hero-copy { padding: 20px 0; max-width: none; min-width: 0; text-align: left; }
+#main .hero-copy::before { display: none; }
+#main .hero-visual { order: 0; padding: 0; min-width: 0; }
+#main .hero-visual > .hero-food { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; display: block; transform: none; border-radius: 24px; }
+#main .hero h1 { font-size: clamp(38px,4.1vw,62px); line-height: 1.15; }
+#main .hero-intro { background: none; padding: 0; margin: 20px 0 12px; border-radius: 0; }
+#main .hero-address { font: 600 17px/1.6 var(--sans); margin: 12px 0; }
+#main .hero-actions { justify-content: flex-start; margin-top: 20px; gap: 12px; }
+#main .hero-actions .order-platforms { left: 0; right: auto; }
+.home-menu-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-bottom: 28px; }
+.home-menu-links a { border: 1px solid var(--line); border-radius: 28px; padding: 10px 18px; font: 600 17px/1.5 var(--sans); color: var(--accent); }
+#main .home-visit { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 40px; align-items: center; border-top: 1px solid var(--line); }
+.home-visit > img { width: 100%; height: auto; border-radius: 24px; }
+#main .home-visit p { margin: 12px 0; }
+#main .visit-note { font-size: 18px; }
+.store-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.store-actions .button { font-size: 16px; padding: 12px 16px; }
+.home-partner-brief { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 30px; border-top: 1px solid var(--line); }
+#main .home-partner-brief h2 { font-size: 28px; }
+#main .home-partner-brief p { font-size: 18px; margin-top: 8px; }
+.campaign-copy { padding-block: 40px; max-width: 1100px; }
+#main .campaign-copy h1 { font-size: clamp(34px,4vw,56px); }
+#main .campaign-copy > p { margin: 18px 0; }
+#main .campaign-copy .campaign-price { font: 700 28px/1.4 var(--sans); color: var(--accent); }
+.campaign-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 28px 0; }
+.campaign-facts > div { padding: 26px; background: var(--geo-paper); border-radius: 24px; min-width: 0; }
+#main .campaign-facts h2 { font-size: 28px; margin-bottom: 20px; }
+.campaign-facts ul { padding-left: 24px; }
+.campaign-facts li { margin-block: 12px; font-size: 20px; line-height: 1.65; }
+.campaign-terms .button { margin-top: 20px; }
+.campaign-phone { display: block; font-family: var(--sans); margin-top: 12px; color: var(--accent); }
+#original-posters { scroll-margin-top: calc(var(--site-header-height,130px) + 20px); }
+@media (max-width: 1000px) and (min-width: 701px) {
+  #main .hero.wrap { gap: 24px; }
+  #main .hero h1 { font-size: 38px; }
+  #main .hero-intro { font-size: 18px; }
+}
+@media (max-width: 700px) {
+  body { padding-bottom: calc(78px + env(safe-area-inset-bottom)); }
+  .mobile-customer-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 55; background: var(--cream); border-top: 1px solid var(--accent); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+  .mobile-customer-actions .button { width: 100%; padding: 12px 8px; font-size: 16px; min-height: 48px; }
+  .mobile-customer-actions .order-platforms { top: auto; bottom: calc(100% + 12px); left: 0; right: auto; max-height: 60dvh; overflow-y: auto; }
+  #main .hero.wrap { width: calc(100% - 32px); margin-top: 16px; grid-template-columns: minmax(0,1fr); gap: 16px; }
+  #main .hero-visual { order: -1; }
+  #main .hero-visual > .hero-food { height: clamp(180px,52vw,280px); aspect-ratio: auto; object-fit: contain; object-position: center; border-radius: 20px; }
+  #main .hero-copy { padding: 0 0 12px; }
+  #main .hero h1 { font-size: clamp(30px,8vw,40px); }
+  #main .hero-copy .eyebrow { font-size: 12px; margin-bottom: 8px; }
+  #main .hero-intro { font-size: 18px; line-height: 1.6; margin-block: 12px; }
+  #main .hero-address { font-size: 14px; }
+  #main .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+  #main .hero-actions .button { padding: 12px 8px; width: 100%; font-size: 16px; }
+  #main .hero-actions .order-platforms { right: 0; left: auto; }
+  .home-menu-links { gap: 8px; }
+  .home-menu-links a { font-size: 15px; padding: 8px 12px; }
+  #main .home-visit { grid-template-columns: minmax(0,1fr); gap: 24px; }
+  #main .home-visit > img { max-height: 280px; object-fit: cover; }
+  .store-actions { display: grid; grid-template-columns: minmax(0,1fr); }
+  .store-actions .order-platforms { left: 0; right: auto; width: 100%; }
+  .home-partner-brief { display: block; }
+  .home-partner-brief > a { margin-top: 16px; }
+  .campaign-facts { grid-template-columns: minmax(0,1fr); gap: 16px; }
+  .campaign-facts > div { padding: 22px 18px; }
+}
+
+/* Keep the full-screen navigation unobstructed, including without scripts. */
+body:has(#mobile-navigation[open]) .mobile-customer-actions { visibility: hidden; }

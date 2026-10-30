@@ -3,5 +3,5 @@ import {t,type Language} from '../lib/site';
 const {item,lang,compact=false}=Astro.props as {item:any,lang:Language,compact?:boolean};
 const variants=item.variants.filter((variant:any)=>variant.status!=='conflict');
 ---
-{variants.length>0&&<dl class:list={['item-prices',{'is-compact':compact}]}>{variants.map((variant:any)=><div><dt>{variant.label}{variant.quantityText&&variant.quantityText!==variant.label&&<small> · {variant.quantityText}</small>}</dt><dd data-variant={variant.id}>${variant.price.toFixed(2)}</dd></div>)}</dl>}
+{variants.length>0&&<dl class:list={['item-prices',{'is-compact':compact}]}>{variants.map((variant:any)=><div><dt>{variant.label}{variant.quantityText&&variant.quantityText!==variant.label&&<small> · {variant.quantityText}</small>}</dt><dd data-variant={variant.id}><span class="price-currency">$</span><span class="price-amount">{variant.price.toFixed(2)}</span></dd></div>)}</dl>}
 {item.priceStatus==='conflict'?<p class="price-enquiry">{t(lang,'Please check with the restaurant for current pricing.','现行套餐价格请向门店确认。')}</p>:!variants.length&&<p class="price-enquiry">{t(lang,'Ask in store for pricing.','价格请咨询门店。')}</p>}

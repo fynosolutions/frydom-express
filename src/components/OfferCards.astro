@@ -3,10 +3,11 @@ import {locale,t,url,type Language} from '../lib/site';
 const {lang,home=false}=Astro.props as {lang:Language,home?:boolean};
 ---
 <section class="offer-showcase section-pad wrap" aria-labelledby="offer-showcase-title">
-  <div class="section-heading"><div><span class="eyebrow">{t(lang,'FRESH BITES. EXTRA JOY.','新品上桌 · 快乐加倍')}</span><h2 id="offer-showcase-title">{t(lang,'More to','美味，')} <em>{t(lang,'look forward to.','还有惊喜。')}</em></h2></div>{home&&<a class="text-link" href={url(lang,'offers')}>{t(lang,'Explore all offers','查看全部活动')} ↗</a>}</div>
+  <div class="section-heading"><div><span class="eyebrow">{t(lang,'FRESH BITES. EXTRA JOY.','新品上桌 · 快乐加倍')}</span><h2 id="offer-showcase-title"><span class="title-highlight">{t(lang,'More to','美味，')} <em>{t(lang,'look forward to.','还有惊喜。')}</em></span></h2></div>{home&&<a class="text-link" href={url(lang,'offers')}>{t(lang,'Explore all offers','查看全部活动')} ↗</a>}</div>
   <div class="offer-grid">{locale(lang).offers.map((offer:any)=><article class={'offer-card offer-'+offer.id}>
     <a class="offer-art" href={url(lang,offer.id)} tabindex="-1" aria-hidden="true"><img src={offer.image.src} width={offer.image.width} height={offer.image.height} alt="" loading="lazy" decoding="async"/>{offer.id==='chicken-bucket'&&<img class="offer-toys" src="/assets/offers/blind-box-toys.webp" width="1000" height="581" alt="" loading="lazy"/>}</a>
-    <div class="offer-copy"><span class="eyebrow">{offer.scope}</span><h3><a href={url(lang,offer.id)}>{offer.title}</a></h3><p class="offer-headline">{offer.headline}</p><p>{offer.description}</p></div>
-    <div class="offer-footer"><p>{offer.id==='staff-offer'?t(lang,'Work ID required. Group discounts exclude stored-value card payments.','需出示工作证件 ID；团餐优惠不可使用充值卡余额。'):offer.terms}</p><a class="text-link" href={url(lang,offer.id)}>{t(lang,'View details','查看活动详情')} ↗</a></div>
+    <div class="offer-text"><div class="offer-copy"><span class="eyebrow">{offer.scope}</span><h3><a href={url(lang,offer.id)}>{offer.title}</a></h3><p class="offer-headline">{offer.headline}</p></div>
+    <div class="offer-footer"><a class="text-link" href={url(lang,offer.id)}>{t(lang,'View details','查看活动详情')} ↗</a></div>
+    </div>
   </article>)}</div>
 </section>

@@ -3,7 +3,8 @@ import Arrow from './Arrow.astro';
 import Price from './Price.astro';
 import BreakableText from './BreakableText.astro';
 import {t,url,type Language}from'../lib/site';
-const{item,lang,featured=false,index=0}=Astro.props as {item:any,lang:Language,featured?:boolean,index?:number};
+const{item:sourceItem,lang,featured=false,index=0}=Astro.props as {item:any,lang:Language,featured?:boolean,index?:number};
+const item=featured&&sourceItem.featured?{...sourceItem,...sourceItem.featured,variants:sourceItem.variants.filter((v:any)=>v.id==='combo')}:sourceItem;
 ---
 <article class:list={['menu-item',{'favorite-card':featured}]} id={!featured?item.id:undefined} data-item-id={item.id}>
   <div class="item-photo"><img src={item.image.src} alt={'Frydom Express '+item.name} width={item.image.width} height={item.image.height} loading="lazy" decoding="async"/>{featured&&<span class="item-number">0{index+1}</span>}{item.imageStatus==='update_pending'&&<span class="photo-note">{t(lang,'Photo update coming soon','图片更新中')}</span>}</div>

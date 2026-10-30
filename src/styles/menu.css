@@ -1,0 +1,85 @@
+/* Shared price columns keep labels, currency signs and decimal points aligned. */
+#main .item-prices {
+  width: min(350px, 100%);
+  margin-inline: auto;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+#main .item-prices > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6.25ch;
+  align-items: baseline;
+  column-gap: 16px;
+  padding-block: 8px;
+  font: 700 22px/1.5 Arial, sans-serif;
+}
+#main .item-prices dt,
+#main .item-prices dd {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  letter-spacing: 0;
+}
+#main .item-prices dd {
+  display: grid;
+  grid-template-columns: 1ch 5.25ch;
+  align-items: baseline;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.price-currency { text-align: left; }
+.price-amount { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+#main .menu-pdf { display: inline-flex; align-items: baseline; gap: 12px; margin-top: 24px; }
+#main .menu-pdf > span { flex: none; }
+#main .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 28px;
+  align-items: stretch;
+}
+#main .menu-grid .menu-item {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  margin-bottom: 36px;
+  min-width: 0;
+}
+#main .menu-grid .item-photo {
+  grid-row: 1;
+  height: 260px;
+  margin-bottom: 22px;
+}
+#main .menu-grid .item-photo img { width: 100%; height: 100%; object-fit: contain; }
+#main .menu-grid .item-body {
+  display: grid;
+  grid-row: 2 / span 3;
+  grid-template-rows: subgrid;
+  row-gap: 18px;
+  text-align: center;
+}
+#main .menu-grid h3 { grid-row: 1; align-self: start; margin: 0; font-size: 30px; line-height: 1.25; }
+#main .menu-grid .item-description { grid-row: 2; align-self: start; margin-block: 0; }
+#main .menu-grid .item-prices { grid-row: 3; align-self: start; margin-block: 0; padding-top: 12px; }
+#main #special-combos .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#main #fried-chicken .menu-grid { grid-template-columns: minmax(0, 520px); justify-content: center; }
+#main .menu-footnotes { margin-block: 24px 80px; }
+#main .menu-footnotes p { padding: 22px 26px; border-radius: var(--geo-radius); background: var(--geo-paper); margin-inline: auto; text-align: center; }
+#main .category-list > a { min-width: 0; }
+#main .category-list h3 { max-width: 100%; overflow-wrap: anywhere; }
+@media (min-width: 1101px) {
+  #main .category-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  #main .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  #main .category-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #main .menu-grid, #main #special-combos .menu-grid { grid-template-columns: minmax(0, 1fr); }
+  #main .menu-grid .item-photo { height: 240px; }
+  #main .menu-grid h3 { font-size: 28px; }
+  #main .item-prices > div { font-size: 20px; column-gap: 12px; }
+}
+@media (max-width: 380px) {
+  #main .category-list { grid-template-columns: minmax(0, 1fr); }
+}

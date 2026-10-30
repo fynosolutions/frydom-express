@@ -1,0 +1,12 @@
+---
+import {orderPlatforms,t,type Language} from '../lib/site';
+const {lang}=Astro.props as {lang:Language};
+---
+<details class="order-picker" data-order-picker>
+  <summary class="button button-dark">{t(lang,'Order online','在线点餐')} <span aria-hidden="true">＋</span></summary>
+  <div class="order-platforms">
+    <span>{t(lang,'Choose a platform','选择点餐平台')}</span>
+    {orderPlatforms.map(platform=><a href={platform.href} target="_blank" rel="noopener noreferrer">{platform.name} ↗</a>)}
+    <small>{t(lang,'View prices and delivery options on your chosen platform. Opens a new tab.','价格与配送选项请查看所选平台，将在新标签页打开。')}</small>
+  </div>
+</details>

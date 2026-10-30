@@ -6,14 +6,13 @@ const browser=JSON.parse(await readFile('docs/qa/browser-verification.json','utf
 const perf=JSON.parse(await readFile('docs/qa/performance.json','utf8'));
 const screenshots=JSON.parse(await readFile('docs/qa/screenshot-report.json','utf8'));
 const en=d.locales.en;const checks=[];
-async function doc(kind){const route=en.routes[kind];return load(await readFile('dist'+(route.endsWith('/')?route+'index.html':route),'utf8'));}
+async function doc(kind){const route=en.routes[kind].split('#')[0];return load(await readFile('dist'+(route.endsWith('/')?route+'index.html':route),'utf8'));}
 function add(question,passed,answer,evidence){checks.push({question,status:passed?'passed':'failed',answer,evidence});}
 const home=await doc('home'),menu=await doc('menu'),locations=await doc('locations'),partner=await doc('partner'),support=await doc('support');
 add('What does Frydom Express serve?',home('.brand-facts').text().includes('fried chicken'),'Fried chicken, wings, boneless chicken, burgers, wraps, sides and drinks.','/en/#brand');
-add('Which locations are currently listed?',locations('.location-detail').length===2,'Brooklyn, New York; Rolla, Missouri. This is the current website listing, not a claim of total worldwide store count.','/en/stores.html');
+add('Which locations are currently listed?',locations('.location-detail').length===1,'Brooklyn, New York. This is the current website listing, not a claim of total worldwide store count.','/en/stores.html');
 add('What is the Brooklyn address?',locations('#brooklyn address').text().includes('781 61st St'),'781 61st St, Brooklyn, NY 11220, United States.','/en/stores.html#brooklyn');
-add('What is the Rolla address?',locations('#rolla address').text().includes('1049 Kingshighway Suite 2'),'1049 Kingshighway Suite 2, Rolla, MO 65401, United States.','/en/stores.html#rolla');
-add('What hours are listed? Are days specified?',locations('.location-detail').toArray().every(e=>locations(e).text().includes('11 AM – 9 PM')&&locations(e).text().includes('Days of operation are not specified.')),'11 AM – 9 PM. Weekdays are unspecified.','/en/stores.html#brooklyn; /en/stores.html#rolla');
+add('What hours are listed? Are days specified?',locations('.location-detail').toArray().every(e=>locations(e).text().includes('11 AM – 9 PM')&&locations(e).text().includes('Days of operation are not specified.')),'11 AM – 9 PM. Weekdays are unspecified.','/en/stores.html#brooklyn');
 add('What services are listed?',locations('.location-detail').toArray().every(e=>locations(e).text().includes('Dine-in · Takeout')),'Dine-in and takeout; do not infer delivery.','/en/stores.html');
 add('Where can I read the full menu?',menu('article[data-item-id]').length===26,'The full representative menu is in the initial HTML at /en/menu.html.','/en/menu.html#menu');
 add('What comes with Chicken Wrap Combo?',menu('#chicken-wrap-combo').text().includes('fries, and a drink'),'A crispy chicken wrap, fries and a drink.','/en/menu.html#chicken-wrap-combo');

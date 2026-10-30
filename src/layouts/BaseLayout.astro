@@ -1,15 +1,20 @@
 ---
 import Header from '../components/Header.astro';
+import MobileActions from '../components/MobileActions.astro';
 import Footer from '../components/Footer.astro';
 import HomeIntro from '../components/HomeIntro.astro';
 import { asset, locale, metadata, structuredData, t, url, type Language, type PageKind } from '../lib/site';
 import '../styles/global.css';
 import '../styles/redesign.css';
 import '../styles/chinese-font.css';
+import '../styles/reading.css';
+import '../styles/geometry.css';
+import '../styles/menu.css';
+import '../styles/customer.css';
 const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
 const meta=metadata(lang,kind);
 const canonical='https://frydomexpress.com'+url(lang,kind);
-const hero=asset('/images/brand-new-1280-1280.webp');
+const hero=kind==='home'?locale(lang).menu.find((item:any)=>item.id==='angus-beef-cheeseburger-combo').image:asset('/images/brand-new-1280-1280.webp');
 const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image||hero;
 ---
 <!DOCTYPE html>
@@ -17,7 +22,7 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="theme-color" content="#faeec9"/>
+    <meta name="theme-color" content="#f9ecd2"/>
     <title>{meta.title}</title>
     <meta name="description" content={meta.description}/>
     <link rel="canonical" href={canonical}/>
@@ -42,6 +47,7 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <Header lang={lang} kind={kind}/>
     <main id="main"><slot/></main>
     <Footer lang={lang}/>
+    <MobileActions lang={lang}/>
     <script>
       import '../scripts/site';
     </script>

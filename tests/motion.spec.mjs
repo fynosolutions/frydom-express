@@ -22,7 +22,7 @@ test('navigation zoom is available from the keyboard',async({page})=>{
 test('touch menu stays readable without sticky hover enlargement',async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:844},hasTouch:true,isMobile:true});const page=await context.newPage();
  try{
-  await page.goto('http://127.0.0.1:4321/en/menu.html');await page.locator('.mobile-navigation summary').tap();
+  await page.goto((process.env.FRYDOM_TEST_URL||'http://127.0.0.1:4321')+'/en/menu.html');await page.locator('.mobile-navigation summary').tap();
   const nav=page.locator('.mobile-navigation nav');
   expect(await nav.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
   for(const label of await nav.locator('.nav-label').all())expect(await scale(label)).toBe(1);

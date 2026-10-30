@@ -1,0 +1,9 @@
+---
+import OrderPicker from './OrderPicker.astro';
+import {locale,t,type Language} from '../lib/site';
+const {lang}=Astro.props as {lang:Language};
+---
+<nav class="mobile-customer-actions" aria-label={t(lang,'Order and directions','点餐与导航')}>
+  <OrderPicker lang={lang}/>
+  <a class="button button-outline" href={locale(lang).locations[0].mapUrl} target="_blank" rel="noopener noreferrer">{t(lang,'Get directions','门店导航')} ↗</a>
+</nav>

@@ -1,13 +1,13 @@
 ---
 import Arrow from './Arrow.astro';
-import { data, navigation, labels, t, url, type Language } from '../lib/site';
+import { data, locale, navigation, labels, t, url, type Language } from '../lib/site';
 const {lang} = Astro.props as {lang:Language};
 ---
 <footer class="site-footer">
   <div class="footer-top wrap">
     <div class="footer-invitation"><span class="eyebrow">{t(lang,'YOUR NEXT GOOD BITE','下一口，快乐开场')}</span><h2>{t(lang,'Got a craving?','馋了？')}<br/>{t(lang,'We get it.','我们懂你。')}</h2><a class="button button-cream" href={url(lang,'menu')}>{t(lang,'Explore the menu','看看吃什么')} <Arrow/></a></div>
     <div class="footer-links"><h3>{t(lang,'TAKE A LOOK','逛逛 Frydom')}</h3>{navigation.map(item=><a href={url(lang,item)}>{labels[lang][item]}</a>)}</div>
-    <div class="footer-contact"><h3>{t(lang,'SAY HELLO','联系我们')}</h3><p>{t(lang,'Brand inquiries','品牌咨询')}</p><a href={'mailto:'+data.brand.email}>{data.brand.email}</a><p>{t(lang,'Partnership line','合作热线')}</p><span>{data.brand.partnershipPhone}</span><a class="footer-partner" href={url(lang,'partner')+'#franchise-inquiry'}>{t(lang,'Bring Frydom to your city','把 Frydom 带到你的城市')} <Arrow diagonal/></a></div>
+    <div class="footer-contact"><h3>{t(lang,'SAY HELLO','联系我们')}</h3><p>{t(lang,'Brooklyn restaurant','Brooklyn 门店')}</p><a href={locale(lang).locations[0].phoneHref}>{locale(lang).locations[0].phone}</a><p>{t(lang,'Brand inquiries','品牌咨询')}</p><a href={'mailto:'+data.brand.email}>{data.brand.email}</a><p>{t(lang,'Partnership line','合作热线')}</p><span>{data.brand.partnershipPhone}</span><a class="footer-partner" href={url(lang,'partner')+'#franchise-inquiry'}>{t(lang,'Bring Frydom to your city','把 Frydom 带到你的城市')} <Arrow diagonal/></a></div>
   </div>
   <div class="footer-wordmark" aria-hidden="true">FRYDOM EXPRESS<span>✳</span></div>
   <div class="footer-bottom wrap"><span>© {new Date().getFullYear()} Frydom Express. {t(lang,'All rights reserved.','保留所有权利。')}</span><div><a href={url(lang,'privacy')}>{labels[lang].privacy}</a><a href={url(lang,'terms')}>{labels[lang].terms}</a><a href="#top" class="back-top">{t(lang,'Back to top','返回顶部')} ↑</a></div></div>

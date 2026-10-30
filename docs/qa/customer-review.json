@@ -1,0 +1,286 @@
+{
+  "pages": [
+    {
+      "pathname": "/",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/menu.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/stores.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/offers.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/staff-offer.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/leg-quarter.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/chicken-bucket.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/menu.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/stores.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/offers.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/staff-offer.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/leg-quarter.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/en/chicken-bucket.html",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "pathname": "/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/menu.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/stores.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/offers.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/staff-offer.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/leg-quarter.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/chicken-bucket.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/menu.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/stores.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/offers.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/staff-offer.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/leg-quarter.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/en/chicken-bucket.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "pathname": "/",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/menu.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/stores.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/offers.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/staff-offer.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/leg-quarter.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/chicken-bucket.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/menu.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/stores.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/offers.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/staff-offer.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/leg-quarter.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/en/chicken-bucket.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "pathname": "/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/menu.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/stores.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/offers.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/staff-offer.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/leg-quarter.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/chicken-bucket.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/menu.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/stores.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/offers.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/staff-offer.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/leg-quarter.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "pathname": "/en/chicken-bucket.html",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "jsErrors": [],
+  "noScriptPicker": true
+}

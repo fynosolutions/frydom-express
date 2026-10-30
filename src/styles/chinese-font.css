@@ -9,9 +9,9 @@
 
 .locale-zh {
   --display: 'Smiley Sans', 'Microsoft YaHei', 'PingFang SC', sans-serif;
-  --sans: 'Smiley Sans', 'Microsoft YaHei', 'PingFang SC', sans-serif;
-  font-family: var(--sans);
-  font-synthesis: none;
+  --sans: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  --reading: 'Noto Serif CJK SC', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
+  font-family: var(--reading);
 }
 
 /* Older components that name their own font instead of the shared variables. */
@@ -20,4 +20,9 @@
 .locale-zh .ribbon-track > span,
 .locale-zh .image-stamp {
   font-family: var(--display);
+}
+
+/* Keep the single display face unsynthesized; allow bold emphasis in prose. */
+.locale-zh :is(h1, h2, h3, h4, .brand-wordmark, .hero-sticker, .ribbon-track, .image-stamp, .footer-wordmark) {
+  font-synthesis: none;
 }

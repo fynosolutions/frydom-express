@@ -1,7 +1,7 @@
 ---
-import{asset,t,type Language}from'../lib/site';
+import{locale,t,type Language}from'../lib/site';
 const{lang}=Astro.props as {lang:Language};
-const picture=asset('/images/brand-new-1280-1280.webp');
+const picture=locale(lang).menu.find((item:any)=>item.id==='angus-beef-cheeseburger-combo').image;
 ---
 <div class="home-intro" id="home-intro" hidden data-image={picture.src}>
   <div class="intro-content" aria-hidden="true">

@@ -1,11 +1,11 @@
 ---
 import Arrow from './Arrow.astro';
-import{asset,locale,t,url,type Language}from'../lib/site';
-const{lang}=Astro.props as {lang:Language};
+import {locale,t,type Language} from '../lib/site';
+const {lang}=Astro.props as {lang:Language};
 const content=locale(lang).support;
-const photo=asset('/images/xiaoguo_1.jpg');
 ---
-<section class="editorial-hero wrap" id="content"><div><span class="eyebrow">{t(lang,'HEADQUARTERS SUPPORT SERVICES','总部支持服务')}</span><h1>{t(lang,'Behind every','每一份热爱，')}<br/><em>{t(lang,'good opening.','都有支持。')}</em></h1><p class="lead">{content.intro}</p><a class="button button-dark" href={url(lang,'partner')+'#franchise-inquiry'}>{t(lang,'Become a partner','成为合作伙伴')}<Arrow diagonal/></a></div><div class="editorial-photo"><img src={photo.src} width={photo.width} height={photo.height} alt={t(lang,'Frydom Express store concept','Frydom Express 门店设计效果图')} fetchpriority="high"/><span class="photo-caption">{t(lang,'STORE CONCEPT · FRYDOM EXPRESS','门店设计概念 · FRYDOM EXPRESS')}</span></div></section>
-<nav class="support-overview wrap" aria-label={t(lang,'Support services','支持服务导航')}>{content.overview.map((item:any,index:number)=><a href={'#'+content.sections[index].id}><span class="category-index">0{index+1}</span><h2>{item.title}</h2><p>{item.text}</p><Arrow diagonal/></a>)}</nav>
-<div class="support-details wrap">{content.sections.map((section:any,index:number)=><section class="support-detail" id={section.id} aria-labelledby={section.id+'-title'}><div class="support-detail-image"><img src={section.image.src} width={section.image.width} height={section.image.height} alt={section.title+' — Frydom Express'} loading="lazy" decoding="async"/></div><div><span class="eyebrow">0{index+1} / {t(lang,'PARTNER SUPPORT','总部支持')}</span><h2 id={section.id+'-title'}>{lang==='en'?section.subtitle||section.title:section.title}</h2>{section.paragraphs.map((p:string)=><p>{p}</p>)}<div class="support-tags">{section.tags.map((tag:string)=><span>{tag}</span>)}</div></div></section>)}</div>
-<section class="support-cta wrap"><span class="eyebrow">{t(lang,'A SHARED NEXT CHAPTER','一起创造下一站')}</span><h2>{content.ctaTitle}</h2><p>{content.ctaText}</p><a class="button button-dark" href={url(lang,'partner')+'#franchise-inquiry'}>{t(lang,'Start a conversation','开始沟通')}<Arrow diagonal/></a></section>
+<section class="partner-support section-pad" id="partner-support" aria-labelledby="partner-support-title">
+  <div class="section-heading wrap"><h2 id="partner-support-title"><span class="title-highlight">{t(lang,'Partner Support','总部支持')}</span></h2><p>{content.intro}</p></div>
+  <nav class="support-overview wrap" aria-label={t(lang,'Support services','支持服务导航')}>{content.overview.map((item:any,index:number)=><a href={'#'+content.sections[index].id}><span class="category-index">0{index+1}</span><h3>{item.title}</h3><p>{item.text}</p><Arrow diagonal/></a>)}</nav>
+  <div class="support-details wrap">{content.sections.map((section:any,index:number)=><section class="support-detail" id={section.id} aria-labelledby={section.id+'-title'}><div class="support-detail-image"><img src={section.image.src} width={section.image.width} height={section.image.height} alt={section.title+' — Frydom Express'} loading="lazy" decoding="async"/></div><div><span class="eyebrow">0{index+1} / {t(lang,'PARTNER SUPPORT','总部支持')}</span><h3 id={section.id+'-title'}>{lang==='en'?section.subtitle||section.title:section.title}</h3>{section.paragraphs.map((p:string)=><p>{p}</p>)}<div class="support-tags">{section.tags.map((tag:string)=><span>{tag}</span>)}</div></div></section>)}</div>
+</section>

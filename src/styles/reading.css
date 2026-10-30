@@ -1,0 +1,177 @@
+/* Reading styles load after the visual redesign and locale font definitions. */
+:root {
+  --prose-size: 22px;
+  --note-size: 18px;
+  --reading-width: 65ch;
+}
+
+body {
+  --text-color: var(--body);
+  font-size: var(--prose-size);
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+.locale-zh { --reading-width: 36em; }
+
+/* Give reversed sections their own inherited text color. */
+.story-split, .partner-banner, .site-footer, .hero-caption,
+.photo-caption, .location-service, .brand-ribbon, .home-intro {
+  --text-color: var(--cream);
+}
+
+#main p, #main dd, #main .legal-content, #main .partner-source :is(ul, ol, .flow-step) {
+  font-family: var(--reading);
+  font-size: var(--prose-size);
+  line-height: 1.75;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+#main p { max-width: var(--reading-width); }
+#main p + p { margin-top: 1em; }
+#main :is(.legal-content, .partner-source) li + li { margin-top: .45em; }
+#main :is(.legal-content, .partner-source) li { overflow-wrap: anywhere; }
+#main .legal-content { max-width: var(--reading-width); }
+#main .partner-source :is(.fr-card, .fr-local-card, .fr-local-item, .flow-card, .flow-step) { color: var(--body); }
+#main .partner-source h4 { color: var(--accent-strong); }
+
+/* Center explanatory copy only in sections that already have centered layouts. */
+#main :is(.hero-copy, .page-intro, .section-heading, .offer-copy, .item-body,
+  .category-list, .location-preview-bottom, .locations-note, .support-cta,
+  .home-story-link, .story-explore) p {
+  margin-inline: auto;
+}
+.locale-zh .hero-intro { max-width: var(--reading-width); }
+
+/* Interface controls and numbers use a separate, upright font. */
+.desktop-nav, .mobile-navigation nav, .mobile-navigation nav > a,
+.button, .category-nav a, .partner-index a, .legal-toc, .breadcrumb,
+.language-link, .topline, .text-link, .hero-location,
+.item-prices, .field, .footer-links, .footer-contact, .footer-bottom {
+  font-family: var(--sans);
+  letter-spacing: normal;
+}
+#main .item-prices :is(dt, dd, small) { font-family: var(--sans); }
+#main .item-prices { font-size: var(--note-size); }
+#main .item-prices dd { font-size: var(--prose-size); color: var(--accent-strong); }
+#main .item-prices > div { gap: 16px; }
+
+/* Notes remain smaller than prose, without returning to 10–12px text. */
+#main :is(.small-note, .item-note, .price-enquiry, .menu-disclaimer,
+  .partner-terms, .form-privacy, .form-status, .offer-footer p,
+  .campaign-terms p, .blind-box-gift p, .fr-mini),
+#main .intro-bottom .small-note,
+.field :is(label, input, textarea, small, .field-hint, .field-error),
+#main .location-detail :is(dt, dd small), #main .item-prices small,
+.photo-caption, .photo-note, .hero-caption, .location-service,
+.story-badges, .partner-tags, .support-tags, .tier-gift,
+.bucket-parts span, .leg-features, .footer-contact p,
+.footer-links > a, .footer-contact > a:not(.footer-partner),
+.footer-contact > span, .footer-partner, .footer-bottom,
+.legal-toc a, .breadcrumb, #main .text-link, .hero-location {
+  font-size: var(--note-size);
+  line-height: 1.6;
+  font-weight: 600;
+}
+.field :is(input, textarea) { color: var(--body); }
+.field :is(input, textarea)::placeholder { color: var(--muted); opacity: 1; }
+.field :is(label, small, .field-hint) { color: var(--body); }
+#main .eyebrow, #main .offer-copy .eyebrow, #main .page-intro .eyebrow {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--accent-strong);
+  line-height: 1.5;
+}
+#main .campaign-price { font: 700 28px/1.4 var(--sans); color: var(--accent-strong); }
+#main .offer-headline { color: var(--accent-strong); font-weight: 700; }
+.tier-number, .tier-discount, .benefit-tier strong, .bucket-parts strong { font-family: var(--sans); }
+.site-footer .footer-top h3 { font-size: 20px; }
+.button { font-size: 17px; }
+
+/* Keep the integrated support chapter readable at the larger body scale. */
+.partner-support { scroll-margin-top: calc(var(--site-header-height, 130px) + 24px); border-top: 1px solid var(--line); }
+.partner-support .support-overview h3 { font-size: 27px; line-height: 1.3; overflow-wrap: anywhere; }
+.partner-support .support-detail h3 { font-size: 38px; line-height: 1.3; margin-bottom: 20px; }
+.partner-support .support-detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.mobile-order-label { display: block; font: 600 18px/1.6 var(--sans); margin-top: 24px; }
+#main .partner-source :is(.fr-badge, .fr-chip, .fr-tag, .fr-mini),
+#main .home-contact small, .site-footer p, .support-tags > span {
+  font-size: var(--note-size);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Links remain identifiable within prose; card descriptions stay neutral. */
+#main :is(p, dd, .legal-content li) a, #main .text-link, #main .hero-location,
+.category-nav a, .partner-index a, .legal-toc a, .breadcrumb a { color: var(--accent-strong); }
+#main :is(p, dd, .legal-content li) a { text-decoration: underline; text-underline-offset: .18em; }
+#main :is(.story-split, .partner-banner) :is(p, .eyebrow, .text-link),
+#main :is(.story-split, .partner-banner) p a { color: var(--cream); }
+.site-footer :focus-visible, .brand-ribbon :focus-visible,
+.story-split :focus-visible, .partner-banner :focus-visible { outline-color: var(--cream); }
+
+/* Allow larger copy to wrap inside existing grid/flex columns. */
+.editorial-hero > *, .story-food > *, .story-timeline > *,
+.franchise-inquiry > *, .support-detail > *, .location-detail > *,
+.partner-source .flow-step > *, .footer-top > * { min-width: 0; }
+#main :is(p, dd), .footer-contact { overflow-wrap: anywhere; }
+
+/* Share text rows across homepage and offers cards even when a title wraps. */
+#main .favorites-grid .item-body { text-align: center; }
+#main .favorites-grid h3 a {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 24px;
+  gap: 0;
+  padding-inline: 0;
+}
+#main .favorites-grid h3 a > span { grid-column: 2; }
+#main .favorites-grid h3 a > .arrow { grid-column: 3; justify-self: end; }
+#main .favorites-grid :is(.item-prices, .price-enquiry) {
+  width: min(350px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.home-location-grid:has(> :only-child) {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+@media (min-width: 701px) {
+  #main .favorites-grid { grid-template-rows: 280px repeat(3, auto); row-gap: 12px; }
+  #main .favorites-grid .favorite-card { display: grid; grid-row: span 4; grid-template-rows: subgrid; }
+  #main .favorites-grid .item-photo { grid-row: 1; }
+  #main .favorites-grid .item-body { display: grid; grid-row: 2 / span 3; grid-template-rows: subgrid; padding-top: 8px; }
+  #main .favorites-grid h3 { grid-row: 1; align-self: start; }
+  #main .favorites-grid .item-description { grid-row: 2; margin-block: 0; align-self: start; }
+  #main .favorites-grid :is(.item-prices, .price-enquiry) { grid-row: 3; margin-block: 0; align-self: start; padding-top: 10px; }
+  :is(.page-home, .page-offers) .offer-grid { grid-template-rows: 300px repeat(4, auto); row-gap: 12px; }
+  :is(.page-home, .page-offers) .offer-card { display: grid; grid-row: span 5; grid-template-rows: subgrid; }
+  :is(.page-home, .page-offers) .offer-art { grid-row: 1; }
+  :is(.page-home, .page-offers) .offer-copy { display: contents; }
+  :is(.page-home, .page-offers) .offer-copy h3 { grid-row: 2; padding-top: 8px; }
+  :is(.page-home, .page-offers) .offer-headline { grid-row: 3; }
+  :is(.page-home, .page-offers) .offer-copy .eyebrow { grid-row: 4; align-self: start; }
+  :is(.page-home, .page-offers) .offer-footer { grid-row: 5; padding-top: 0; }
+}
+
+@media (max-width: 950px) {
+  .site-header :focus-visible { outline-color: var(--cream); }
+  .mobile-navigation nav a[aria-current=page],
+  .mobile-navigation nav a:focus-visible .nav-label,
+  .mobile-navigation nav a:hover .nav-label { color: var(--cream); }
+}
+
+@media (max-width: 700px) {
+  :root { --prose-size: 20px; }
+  body { font-size: var(--prose-size); }
+  .partner-support .support-overview h3 { font-size: 24px; }
+  .partner-support .support-detail h3 { font-size: 30px; }
+  #main .campaign-price { font-size: 24px; }
+  .location-detail dl > div { grid-template-columns: 90px minmax(0, 1fr); }
+  .hero-caption { flex-wrap: wrap; gap: 4px 8px; }
+  .image-stamp { font-size: clamp(28px, 10vw, 44px); left: 24px; max-width: calc(100% - 48px); }
+  .hero .button, .campaign-actions .button, .inquiry-form .button,
+  .story-explore .button { font-size: 16px; }
+}

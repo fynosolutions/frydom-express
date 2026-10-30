@@ -1,0 +1,82 @@
+[
+  {
+    "width": 1440,
+    "lang": "en",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 1440,
+    "lang": "zh",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 1024,
+    "lang": "en",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 1024,
+    "lang": "zh",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 768,
+    "lang": "en",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 768,
+    "lang": "zh",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 390,
+    "lang": "zh",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 320,
+    "lang": "en",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  },
+  {
+    "width": 320,
+    "lang": "zh",
+    "count": 35,
+    "sections": 8,
+    "overflow": false,
+    "alignment": "passed"
+  }
+]

@@ -224,8 +224,13 @@ for (const lang of ['en', 'zh']) {
   }
   locale.locations = [
     { id:'brooklyn',name:'Brooklyn, New York',address:{streetAddress:'781 61st St',addressLocality:'Brooklyn',addressRegion:'NY',postalCode:'11220',addressCountry:'US'},hoursText:'11 AM – 9 PM',schedule:null,services:['Dine-in','Takeout'],image:data.assets['/images/store-outside-800.webp'],sourceUrl:sources.locations.entry.sourceUrl },
-    { id:'rolla',name:'Rolla, Missouri',address:{streetAddress:'1049 Kingshighway Suite 2',addressLocality:'Rolla',addressRegion:'MO',postalCode:'65401',addressCountry:'US'},hoursText:'11 AM – 9 PM',schedule:null,services:['Dine-in','Takeout'],image:data.assets['/images/store-inside-665.webp'],sourceUrl:sources.locations.entry.sourceUrl },
   ];
+  // Publish only the retained New York location, including imported page text.
+  const locationText = locale.pages.locations.sourceText;
+  const removedStart = lang === 'en' ? 'Rolla, Missouri' : '密苏里门店';
+  const removedEnd = lang === 'en' ? 'More locations are on the way.' : '更多门店持续拓展中';
+  const start = locationText.indexOf(removedStart), end = locationText.indexOf(removedEnd);
+  if (start >= 0 && end > start) locale.pages.locations.sourceText = locationText.slice(0, start) + locationText.slice(end);
   data.locales[lang]=locale;
 }
 // A translation is not evidence that the same combo price conflict has been resolved.
@@ -255,6 +260,8 @@ for (const row of migration) {
   }
   if (/Only Wrap|Only Wings|无骨鸡肉裹上浓郁芝士风味/.test(row.source_text) && row.source_url===origin+'/') {row.action='unresolved';row.issue_id='ZH-LABELS';}
 }
+data.routes=data.routes.filter(route=>!['story','support'].includes(route.kind));
+for(const content of Object.values(data.locales)){content.routes.story=content.routes.home;content.routes.support=content.routes.partner+'#partner-support';}
 await writeFile('src/data/site.json',JSON.stringify(data,null,2));
 await writeFile('docs/content-migration.csv',csv(migration));
 await writeFile('docs/link-map.csv',csv(links));

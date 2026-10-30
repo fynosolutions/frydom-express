@@ -1,9 +1,9 @@
 {
-  "executedAt": "2026-10-28T14:08:47.072Z",
+  "executedAt": "2026-10-30T17:36:31.903Z",
   "method": "Production HTML parsed with Cheerio, without executing JavaScript. Not a search indexing or live CRM test.",
-  "routes": 24,
-  "checks": 137,
-  "passed": 137,
+  "routes": 20,
+  "checks": 127,
+  "passed": 127,
   "failures": [],
   "details": [
     {
@@ -27,30 +27,6 @@
       "status": "passed"
     },
     {
-      "name": "/en/about-us.html semantics",
-      "status": "passed"
-    },
-    {
-      "name": "/en/about-us.html canonical and language alternates",
-      "status": "passed"
-    },
-    {
-      "name": "/en/about-us.html unique IDs",
-      "status": "passed"
-    },
-    {
-      "name": "/en/about-us.html exact active navigation",
-      "status": "passed"
-    },
-    {
-      "name": "/en/about-us.html JSON-LD parses and contains only supported facts",
-      "status": "passed"
-    },
-    {
-      "name": "/en/about-us.html all original story paragraphs and development steps",
-      "status": "passed"
-    },
-    {
       "name": "/en/menu.html semantics",
       "status": "passed"
     },
@@ -68,6 +44,14 @@
     },
     {
       "name": "/en/menu.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html original poster PDF",
+      "status": "passed"
+    },
+    {
+      "name": "/en/menu.html approved printed menu prices and portions",
       "status": "passed"
     },
     {
@@ -95,7 +79,7 @@
       "status": "passed"
     },
     {
-      "name": "/en/stores.html locations are separate and accurate",
+      "name": "/en/stores.html only the Brooklyn location is published accurately",
       "status": "passed"
     },
     {
@@ -123,27 +107,7 @@
       "status": "passed"
     },
     {
-      "name": "/en/support.html semantics",
-      "status": "passed"
-    },
-    {
-      "name": "/en/support.html canonical and language alternates",
-      "status": "passed"
-    },
-    {
-      "name": "/en/support.html unique IDs",
-      "status": "passed"
-    },
-    {
-      "name": "/en/support.html exact active navigation",
-      "status": "passed"
-    },
-    {
-      "name": "/en/support.html JSON-LD parses and contains only supported facts",
-      "status": "passed"
-    },
-    {
-      "name": "/en/support.html five complete original support sections",
+      "name": "/en/franchise.html five complete original support sections",
       "status": "passed"
     },
     {
@@ -215,30 +179,6 @@
       "status": "passed"
     },
     {
-      "name": "/about-us.html semantics",
-      "status": "passed"
-    },
-    {
-      "name": "/about-us.html canonical and language alternates",
-      "status": "passed"
-    },
-    {
-      "name": "/about-us.html unique IDs",
-      "status": "passed"
-    },
-    {
-      "name": "/about-us.html exact active navigation",
-      "status": "passed"
-    },
-    {
-      "name": "/about-us.html JSON-LD parses and contains only supported facts",
-      "status": "passed"
-    },
-    {
-      "name": "/about-us.html all original story paragraphs and development steps",
-      "status": "passed"
-    },
-    {
       "name": "/menu.html semantics",
       "status": "passed"
     },
@@ -256,6 +196,14 @@
     },
     {
       "name": "/menu.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html original poster PDF",
+      "status": "passed"
+    },
+    {
+      "name": "/menu.html approved printed menu prices and portions",
       "status": "passed"
     },
     {
@@ -283,7 +231,7 @@
       "status": "passed"
     },
     {
-      "name": "/stores.html locations are separate and accurate",
+      "name": "/stores.html only the Brooklyn location is published accurately",
       "status": "passed"
     },
     {
@@ -311,27 +259,7 @@
       "status": "passed"
     },
     {
-      "name": "/fuwu.html semantics",
-      "status": "passed"
-    },
-    {
-      "name": "/fuwu.html canonical and language alternates",
-      "status": "passed"
-    },
-    {
-      "name": "/fuwu.html unique IDs",
-      "status": "passed"
-    },
-    {
-      "name": "/fuwu.html exact active navigation",
-      "status": "passed"
-    },
-    {
-      "name": "/fuwu.html JSON-LD parses and contains only supported facts",
-      "status": "passed"
-    },
-    {
-      "name": "/fuwu.html five complete original support sections",
+      "name": "/franchise.html five complete original support sections",
       "status": "passed"
     },
     {
@@ -423,6 +351,14 @@
       "status": "passed"
     },
     {
+      "name": "/staff-offer.html original poster PDF",
+      "status": "passed"
+    },
+    {
+      "name": "/staff-offer.html original poster PDF",
+      "status": "passed"
+    },
+    {
       "name": "/leg-quarter.html semantics",
       "status": "passed"
     },
@@ -443,6 +379,10 @@
       "status": "passed"
     },
     {
+      "name": "/leg-quarter.html original poster PDF",
+      "status": "passed"
+    },
+    {
       "name": "/chicken-bucket.html semantics",
       "status": "passed"
     },
@@ -460,6 +400,10 @@
     },
     {
       "name": "/chicken-bucket.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/chicken-bucket.html original poster PDF",
       "status": "passed"
     },
     {
@@ -503,6 +447,14 @@
       "status": "passed"
     },
     {
+      "name": "/en/staff-offer.html original poster PDF",
+      "status": "passed"
+    },
+    {
+      "name": "/en/staff-offer.html original poster PDF",
+      "status": "passed"
+    },
+    {
       "name": "/en/leg-quarter.html semantics",
       "status": "passed"
     },
@@ -523,6 +475,10 @@
       "status": "passed"
     },
     {
+      "name": "/en/leg-quarter.html original poster PDF",
+      "status": "passed"
+    },
+    {
       "name": "/en/chicken-bucket.html semantics",
       "status": "passed"
     },
@@ -540,6 +496,10 @@
     },
     {
       "name": "/en/chicken-bucket.html JSON-LD parses and contains only supported facts",
+      "status": "passed"
+    },
+    {
+      "name": "/en/chicken-bucket.html original poster PDF",
       "status": "passed"
     },
     {

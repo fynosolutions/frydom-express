@@ -5,13 +5,28 @@ import assert from 'node:assert/strict';
 const data=JSON.parse(await readFile('src/data/site.json','utf8'));
 const checks=[];const failures=[];const cache=new Map();
 const origin='https://frydomexpress.com';
+// Prices transcribed from the owner-approved 1015 printed menu, page 1.
+const printedPrices={
+  'original-recipe-fried-chicken':[9.95,18.95,26.95],
+  'golden-chicken-combo':[13.95], 'korean-fried-chicken-combo':[15.95],
+  'chicken-burger-fried-chicken-combo':[8.45], 'chicken-burger-lemon-tea-combo':[11.45],
+  'angus-beef-cheeseburger':[8.25], 'crispy-chicken-burger':[6.25],
+  'crispy-fish-fillet-burger':[6.75], 'chicken-wrap':[5.95], 'fried-wings-6-pcs':[7.95],
+  'angus-beef-cheeseburger-combo':[11.95], 'crispy-chicken-burger-combo':[9.95],
+  'crispy-fish-fillet-burger-combo':[10.75], 'chicken-wrap-combo':[9.25], 'wings-combo':[11.25],
+  ...Object.fromEntries(['sweet-plum','snow-cheese','cumin','amber','sweet-chili','honey-mustard'].flatMap(flavor=>[
+    [flavor+'-wings',[5.95,11.25]],[flavor+'-boneless-chicken',[4.95,8.95]]
+  ])),
+  'popcorn-chicken':[4.95], 'colonel-chicken-nuggets':[3.25,5.95], 'french-fries':[3.95], 'buttercorn':[3.95],
+  'cola':[1.50], 'sprite':[1.50], 'orange-soda':[1.50], 'bottled-water':[1.50]
+};
 const text=value=>String(value||'').replace(/\s+/g,' ').trim();
 const fileFor=route=>'dist'+(route.endsWith('/')?route+'index.html':route);
 async function document(route){if(cache.has(route))return cache.get(route);const q=load(await readFile(fileFor(route),'utf8'));cache.set(route,q);return q;}
 function check(name,run){try{run();checks.push({name,status:'passed'});}catch(error){failures.push({name,error:error.message});checks.push({name,status:'failed',error:error.message});}}
 for(const {lang,kind,path:route}of data.routes){
   const q=await document(route);const source=data.locales[lang];
-  check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');assert(q('main').text().trim().length>100);assert.equal(q('head meta[name=robots]').length,0);assert(!q('main').text().includes('< img'));});
+  check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');if(['staff-offer','leg-quarter','chicken-bucket'].includes(kind)){assert.equal(q('.campaign-posters img').length,kind==='staff-offer'?2:1);assert.equal(q('.campaign-copy').length,1);assert.equal(q('.campaign-terms').length,1);assert(q('.campaign-copy').text().includes(source.offers.find(o=>o.id===kind).headline));}else assert(q('main').text().trim().length>100);assert.equal(q('head meta[name=robots]').length,0);assert(!q('main').text().includes('< img'));});
   check(route+' canonical and language alternates',()=>{assert.equal(q('link[rel=canonical]').attr('href'),origin+route);for(const l of ['en','zh'])assert.equal(q(`link[hreflang="${l==='en'?'en':'zh-Hans'}"]`).attr('href'),origin+data.locales[l].routes[kind]);});
   check(route+' unique IDs',()=>{const ids=q('[id]').map((i,e)=>q(e).attr('id')).get();assert.equal(new Set(ids).size,ids.length);});
   check(route+' exact active navigation',()=>{assert.equal(q('.desktop-nav a[aria-current=page]').length,['home','privacy','terms'].includes(kind)?0:1);assert.equal(q('.desktop-nav a').length,6);assert.equal(q('.desktop-nav[hidden]').length,0);});
@@ -20,6 +35,7 @@ for(const {lang,kind,path:route}of data.routes){
   for(const element of q('a[href]').toArray()){
     const href=q(element).attr('href');let dest;try{dest=new URL(href,origin+route);}catch{failures.push({name:route+' link',error:href});continue;}
     if(dest.origin!==origin)continue;
+    if(dest.pathname.endsWith('.pdf')){const pdf=await readFile(path.join('dist',dest.pathname));check(route+' original poster PDF',()=>assert.equal(pdf.subarray(0,5).toString(),'%PDF-'));continue;}
     const destPath=['/en/index.html','/index.html'].includes(dest.pathname)?dest.pathname.startsWith('/en/')?'/en/':'/':dest.pathname;
     try{const target=await document(destPath);if(dest.hash)assert.equal(target('[id]').toArray().filter(e=>target(e).attr('id')===decodeURIComponent(dest.hash.slice(1))).length,1);}
     catch(error){failures.push({name:route+' link target',error:href+' — '+error.message});}
@@ -30,6 +46,18 @@ for(const {lang,kind,path:route}of data.routes){
     catch(error){failures.push({name:route+' image',error:src+' — '+error.message});}
   }
   if(kind==='menu'){
+    check(route+' approved printed menu prices and portions',()=>{
+      assert.deepEqual(Object.fromEntries(source.menu.map(i=>[i.id,i.variants.map(v=>v.price)])),printedPrices);
+      assert.deepEqual(source.categories.map(c=>source.menu.filter(i=>i.sectionId===c.id).length),[1,4,5,5,6,6,4,4]);
+      assert.equal(q('#combos .menu-item').length,5);
+      assert.equal(q('#burgers-wraps .menu-item').length,5);
+      assert.equal(q('.price-enquiry').length,0);
+      for(const item of source.menu.filter(i=>['wings','boneless-nuggets'].includes(i.sectionId))){
+        assert.deepEqual(item.variants.map(v=>v.id),['small','large']);
+        assert(item.variants.every(v=>!v.quantityText));
+      }
+      assert.equal(q('a.menu-pdf').attr('href'),'/assets/menu-1015/menu-1015.pdf');
+    });
     check(route+' full menu coverage and headings',()=>{
       assert.deepEqual(q('main article[data-item-id]').map((i,e)=>q(e).attr('id')).get().sort(),source.menu.map(item=>item.id).sort());
       for(const category of source.categories){const section=q('#'+category.id);assert.equal(section.find('h2').length,1);}
@@ -39,16 +67,15 @@ for(const {lang,kind,path:route}of data.routes){
       for(const item of source.menu)assert.equal(schemaItems.find(s=>s['@id'].endsWith('#'+item.id)).name,item.name);
     });
   }
-  if(kind==='locations')check(route+' locations are separate and accurate',()=>{
-    const restaurants=graph.filter(n=>n['@type']==='Restaurant');assert.equal(restaurants.length,2);
+  if(kind==='locations')check(route+' only the Brooklyn location is published accurately',()=>{
+    const restaurants=graph.filter(n=>n['@type']==='Restaurant');assert.equal(restaurants.length,1);assert.deepEqual(source.locations.map(location=>location.id),['brooklyn']);assert.equal(q('.location-detail').length,1);
     for(const location of source.locations){const card=q('#'+location.id);assert.equal(card.length,1);assert(text(card.find('address').text()).includes(location.address.streetAddress));assert(card.text().includes(location.hoursText));assert(!card.text().includes(data.brand.partnershipPhone));const restaurant=restaurants.find(r=>r['@id'].endsWith('#'+location.id));assert.deepEqual(restaurant.address,{'@type':'PostalAddress',...location.address});}
   });
   if(['privacy','terms'].includes(kind))check(route+' legal text and dates preserved',()=>{
     const old=load(source.pages[kind].bodyHtml);assert.equal(text(q('.legal-content').text()),text(old.root().text()));assert(q('.legal-content').text().includes(kind==='privacy'?'December 10, 2025':'2026-08-28'));assert.equal(q('.legal-content').attr('lang'),source.pages[kind].bodyLanguage);
   });
   if(kind==='partner')check(route+' original form contract and safe no-script fallback',()=>{assert.equal(q('form').length,1);const form=q('#franchise-form');assert.equal(form.attr('method'),'post');assert.equal(form.attr('data-endpoint'),data.forms.endpoint);assert.deepEqual(form.find('[required]').map((i,e)=>q(e).attr('name')).get().sort(),['name','phone']);assert.equal(form.find('button[type=submit][disabled]').length,1);assert.equal(form.find('noscript').length,1);for(const name of ['name','phone','wechat','email','note'])assert.equal(form.find(`[name="${name}"]`).length,1);});
-  if(kind==='story')check(route+' all original story paragraphs and development steps',()=>{for(const p of [...source.story.paragraphs,...source.story.cards.map(c=>c.text),...source.story.timeline.map(c=>c.text)])assert(text(q('main').text()).includes(p));});
-  if(kind==='support')check(route+' five complete original support sections',()=>{for(const section of source.support.sections){assert(q('#'+section.id).length);for(const p of section.paragraphs)assert(text(q('#'+section.id).text()).includes(p));}});
+  if(kind==='partner')check(route+' five complete original support sections',()=>{for(const section of source.support.sections){assert(q('#'+section.id).length);for(const p of section.paragraphs)assert(text(q('#'+section.id).text()).includes(p));}});
 }
 check('unique page titles and descriptions',()=>{const titles=[...cache.values()].map(q=>q('title').text());assert.equal(new Set(titles).size,data.routes.length);const descriptions=[...cache.values()].map(q=>q('meta[name=description]').attr('content'));assert.equal(new Set(descriptions).size,data.routes.length);});
 const sitemap=await readFile('dist/sitemap.xml','utf8');
