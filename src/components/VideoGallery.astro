@@ -1,0 +1,91 @@
+---
+import {t,type Language} from '../lib/site';
+const {lang}=Astro.props as {lang:Language};
+const clips=[
+ ['DUoxIoIjdYY','Fresh from the fryer','刚出锅的酥脆'],
+ ['DTLYg3NEbfN','Burgers or wings?','汉堡还是鸡翅？'],
+ ['Dfd1LfwhDeS','A table full of favorites','一桌都是心头好'],
+ ['DeJu3wOuTiv','One very good bite','这一口，真满足'],
+ ['DUzCyhmjb8J','Meet you in Brooklyn','布鲁克林见'],
+ ['DVZt0HwkVvE','Pass the chicken','炸鸡一起分享'],
+ ['DRezXP7DrXY','A little Frydom discovery','发现 Frydom 的好滋味'],
+];
+---
+<section class="video-gallery" id="gallery" aria-labelledby="gallery-title">
+ <div class="wrap">
+  <header class="gallery-heading"><div><span class="gallery-eyebrow">FRYDOM / BROOKLYN</span><h2 id="gallery-title">Gallery</h2><p>{t(lang,'Little moments. Big appetites.','记录小日常，装下好胃口。')}</p></div><p class="gallery-note">{t(lang,'Good food.','好吃的，')}<br/>{t(lang,'Good company.','一起分享。')}<span aria-hidden="true">♡</span></p></header>
+  <div class="gallery-board" tabindex="0" aria-label={t(lang,'Seven videos. Scroll to explore.','七段视频，滑动浏览。')}>
+   {clips.map(([id,en,zh],index)=><figure class="video-print" style={'--tilt:'+[-3,2,-2,3,2,-3,2][index]+'deg'}>
+    <div class="gallery-film"><video controls autoplay muted loop playsinline preload="auto" poster={'/assets/gallery/'+id+'.webp'} aria-label={t(lang,en,zh)} width="720" height="1280"><source src={'/assets/gallery/'+id+'.mp4'} type="video/mp4"/></video></div>
+    <figcaption><span class="clip-number">0{index+1}</span><h3>{t(lang,en,zh)}</h3><div class="clip-actions"><a href={'https://www.instagram.com/reel/'+id+'/'} target="_blank" rel="noopener noreferrer" aria-label={t(lang,'View original Instagram video: '+en,'查看 Instagram 原视频：'+zh)}>Instagram ↗</a><button type="button" data-gallery-expand hidden aria-label={t(lang,'Enlarge video: '+en,'放大视频：'+zh)}>⤢</button></div></figcaption>
+   </figure>)}
+   <aside class="gallery-endnote"><span aria-hidden="true">✳</span><p>{t(lang,'Wish you','好胃口，')}<br/>{t(lang,'were here!','等你来！')}</p><small>781 61st St<br/>Brooklyn, NY</small></aside>
+  </div>
+  <p class="gallery-hint">{t(lang,'A little Frydom, on repeat.','好滋味，循环放映。')}</p>
+ </div>
+ <dialog class="gallery-dialog" aria-label={t(lang,'Gallery video player','画廊视频播放器')}><button class="gallery-close" type="button" aria-label={t(lang,'Close video','关闭视频')}>×</button><video controls muted loop playsinline preload="none"></video></dialog>
+</section>
+<script>
+ const gallery=document.querySelector<HTMLElement>('.video-gallery');
+ if(gallery){
+  const dialog=gallery.querySelector<HTMLDialogElement>('dialog')!;
+  const player=dialog.querySelector('video')!;
+  const videos=Array.from(gallery.querySelectorAll('video'));
+  for(const video of videos){
+   video.muted=true;video.volume=0;
+   video.addEventListener('volumechange',()=>{if(!video.muted)video.muted=true;if(video.volume!==0)video.volume=0;});
+   if(video!==player)video.play().catch(()=>{});
+  }
+  for(const button of gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-expand]')){
+   button.hidden=false;
+   button.addEventListener('click',()=>{
+    const source=button.closest('figure')!.querySelector('video')!;
+    player.muted=true;player.volume=0;player.src=source.currentSrc||source.querySelector('source')!.src;
+    player.poster=source.poster;player.setAttribute('aria-label',source.getAttribute('aria-label')||'Video');
+    dialog.showModal();player.play().catch(()=>{});
+   });
+  }
+  dialog.querySelector('button')!.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+  dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();});
+  window.addEventListener('pagehide',()=>videos.forEach(video=>video.pause()));
+ }
+</script>
+<style>
+ .video-gallery{background:#ffda50;padding:85px 0 55px;overflow:clip;color:#722713}
+ .gallery-heading{display:flex;align-items:center;justify-content:space-between;padding:0 35px 60px;gap:30px}
+ .gallery-eyebrow{font:600 12px/1.5 var(--sans);letter-spacing:.12em}
+ :global(.page-home #main) .gallery-heading h2{font:400 clamp(80px,10vw,145px)/1 'Mouse Memoirs',sans-serif;color:#ed291c;margin:10px 0}
+ :global(.page-home #main) .gallery-heading p{font:500 18px/1.6 var(--sans)}
+ :global(.page-home #main) .gallery-heading .gallery-note{position:relative;background:#fff4bc;padding:25px 35px;rotate:6deg;box-shadow:3px 5px 0 #a36e2020;font:400 32px/1.2 'Mouse Memoirs',var(--display);margin-right:45px}
+ .gallery-note span{display:block;color:#ed291c;font-size:40px;text-align:right}
+ .gallery-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 30px;padding:20px 28px 35px}
+ .video-print{position:relative;margin:0;padding:12px 12px 16px;background:#fffdf5;rotate:var(--tilt);box-shadow:2px 6px 12px #70421e25;min-width:0;align-self:start}
+ .video-print::before{content:'';position:absolute;z-index:2;width:80px;height:27px;top:-15px;left:calc(50% - 40px);background:#f3dfaebd;rotate:-6deg;pointer-events:none}
+ .video-print:nth-child(even){margin-top:25px}
+ .gallery-film{aspect-ratio:9/16;background:#2f1d16}
+ .gallery-film video{display:block;width:100%;height:100%;object-fit:contain}
+ .video-print figcaption{padding:15px 5px 0}
+ .clip-number{font:500 11px/1 var(--sans);color:#795b45}
+ :global(.page-home #main) .video-print h3{font:400 27px/1.15 'Mouse Memoirs',var(--display);color:#a72e1d;margin:7px 0 12px}
+ .clip-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;font:500 12px/1.5 var(--sans)}
+ .clip-actions button{width:44px;height:44px;border:1px solid #a72e1d40;background:none;color:#a72e1d;font-size:25px;cursor:pointer;border-radius:50%}
+ .clip-actions button[hidden]{display:none}
+ .gallery-endnote{align-self:center;text-align:center;rotate:-5deg;padding:30px 12px;background:#fff1a5;box-shadow:2px 5px 0 #a36e2020}
+ .gallery-endnote>span{font-size:55px;color:#ed291c}
+ :global(.page-home #main) .gallery-endnote p{font:400 44px/1.1 'Mouse Memoirs',var(--display);margin:10px 0 25px}
+ .gallery-endnote small{font:500 14px/1.6 var(--sans)}
+ :global(.page-home #main) .gallery-hint{font:500 14px/1.5 var(--sans);text-align:center;margin-top:25px}
+ .gallery-dialog{border:0;padding:45px 12px 12px;background:#fffdf5;max-width:min(520px,94vw);max-height:92dvh}
+ .gallery-dialog::backdrop{background:#23130de6}
+ .gallery-dialog video{display:block;max-height:78dvh;max-width:100%;margin:auto}
+ .gallery-close{position:absolute;right:5px;top:0;width:44px;height:44px;border:0;background:none;color:#a72e1d;font-size:32px;cursor:pointer}
+ @media(max-width:1100px) and (min-width:701px){.gallery-board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+ @media(max-width:700px){
+  .video-gallery{padding-top:50px}.gallery-heading{padding:0 8px 35px;gap:12px}
+  :global(.page-home #main) .gallery-heading .gallery-note{padding:15px;margin:0;font-size:23px}
+  :global(.page-home #main) .gallery-heading p{font-size:15px}
+  .gallery-board{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:25px;padding:20px 16px 35px}
+  .video-print{flex:0 0 78%;scroll-snap-align:center}.gallery-endnote{flex:0 0 65%;scroll-snap-align:center}
+ }
+</style>

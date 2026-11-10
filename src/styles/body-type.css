@@ -1,0 +1,64 @@
+@font-face{font-family:'Frydom Display Wide';src:url('/assets/fonts/frydom-wide/FrydomDisplayWide.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Frydom Han Wide';src:url('/assets/fonts/frydom-wide/FrydomHanWide.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+/* Existing local reading faces; display lettering keeps its own role. */
+@font-face{font-family:'DM Sans';src:url('/assets/fonts/font-3.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('/assets/fonts/font-4.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('/assets/fonts/font-5.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('/assets/fonts/font-6.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+
+body.locale-en {
+  --body-face: 'DM Sans', Arial, sans-serif;
+  --sans: 'Frydom Display Wide', 'Mouse Memoirs', sans-serif;
+  --body-leading: 1.65;
+  --reading-width: 65ch;
+}
+body.locale-zh {
+  --body-face: 'DM Sans', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  --sans: 'Frydom Han Wide', 'Smiley Sans', sans-serif;
+  --body-leading: 1.8;
+  --reading-width: 34em;
+}
+body {
+  --reading: var(--body-face);
+  --prose-size: 1.125rem;
+  --note-size: 1rem;
+  font-family: var(--body-face);
+  font-weight: 400;
+}
+
+/* Older components name their own fonts. Override reading roles, not headings. */
+body :is(p,li,dt,dd,small,label,input,textarea,select,address,figcaption,
+  .clip-number,.clip-actions,.gallery-eyebrow,.footer-bottom,.poster-location,
+  .field-hint,.field-error,.photo-note,.inquiry-phone) {
+  font-family: var(--body-face) !important;
+  letter-spacing: normal;
+}
+body #main :is(p,dd,.legal-content,.partner-source ul,.partner-source ol) {
+  font-weight: 400;
+}
+body #main p, body #main .legal-content li, body #main .partner-source li {
+  line-height: var(--body-leading);
+  text-wrap: pretty;
+}
+body #main :is(.legal-content,.partner-source,.franchise-inquiry) :is(p,li) {
+  font-size: var(--prose-size);
+  line-height: var(--body-leading);
+}
+body :is(p,li,dd,figcaption) :is(strong,b) {
+  font-family: inherit;
+  font-weight: 700;
+}
+body :is(p,li,dd,figcaption) em { font-family: inherit; }
+body :is(.field label,.item-prices dd) { font-weight: 600; }
+body .field :is(input,textarea,select) { font-size: 1rem; line-height: 1.5; }
+body .field :is(.field-hint,.field-error) { font-weight: 400; line-height: 1.6; }
+body .item-prices { font-variant-numeric: lining-nums tabular-nums; }
+body #main .item-prices :is(dt,small) { font-size: 1rem; line-height: 1.5; }
+body #main .item-prices dd { font-weight: 600; white-space: nowrap; }
+
+/* Small reading text needs a clear fill instead of the poster's white edge. */
+body :is(.legal-content,.partner-source,.franchise-inquiry,.location-detail,.item-prices) :is(p,li,dt,dd,label,small),
+body :is(p,li,dd,label) :is(a,strong,b,em,span),
+body .poster-location p, body .field label > span {
+  -webkit-text-stroke-width: 0 !important;
+}

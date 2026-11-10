@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-30T17:36:31.903Z",
+  "executedAt": "2026-11-10T15:41:32.548Z",
   "method": "Production HTML parsed with Cheerio, without executing JavaScript. Not a search indexing or live CRM test.",
   "routes": 20,
   "checks": 127,

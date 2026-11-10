@@ -18,7 +18,7 @@ test('reference palette, three-column offers and preserved detail navigation',as
  await page.goto('/en/offers.html');await page.evaluate(()=>document.fonts.ready);
  expect(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(249, 236, 210)');
  expect(await page.locator('.offer-copy h3').first().evaluate(e=>getComputedStyle(e).color)).toBe('rgb(184, 74, 22)');
- expect(await page.locator('.offer-copy h3').first().evaluate(e=>getComputedStyle(e).fontFamily)).toContain('Fraunces');
+ expect(await page.locator('.offer-copy h3').first().evaluate(e=>getComputedStyle(e).fontFamily)).toContain('Mouse Memoirs');
  const cards=await page.locator('.offer-card').all();const boxes=await Promise.all(cards.map(c=>c.boundingBox()));
  expect(boxes).toHaveLength(3);for(const b of boxes)expect(Math.abs(b.y-boxes[0].y)).toBeLessThan(2);
  expect(boxes[1].x).toBeGreaterThan(boxes[0].x+boxes[0].width);
@@ -54,4 +54,26 @@ test('menu categories remain below the sticky header',async({page})=>{
   await page.locator('#wings').scrollIntoViewIfNeeded();
   await expect.poll(()=>page.evaluate(()=>Math.abs(document.querySelector('.category-nav').getBoundingClientRect().top-document.querySelector('#site-header').getBoundingClientRect().bottom))).toBeLessThan(2);
  }
+});
+
+test('menu product details work with keyboard without JavaScript and keep prices visible',async({browser,baseURL})=>{
+ const context=await browser.newContext({baseURL,javaScriptEnabled:false,reducedMotion:'reduce'});
+ const page=await context.newPage();
+ for(const width of [390,1440])for(const prefix of ['','/en']){
+  await page.setViewportSize({width,height:900});await page.goto(prefix+'/menu.html');
+  await expect(page.locator('.menu-product')).toHaveCount(35);
+  const card=page.locator('#special-combos .menu-product').first();
+  const details=card.locator('details'),control=details.locator('summary');
+  const price=card.locator('.price-amount').first(),originalPrice=await price.innerText();
+  await expect(details.locator('.product-detail-copy')).toBeHidden();
+  await control.focus();await page.keyboard.press('Enter');
+  await expect(details).toHaveAttribute('open','');
+  await expect(details.locator('.item-description')).toBeVisible();
+  await expect(price).toBeVisible();await expect(price).toHaveText(originalPrice);
+  const box=await card.boundingBox(),button=await control.boundingBox();
+  expect(button.x).toBeGreaterThanOrEqual(box.x);expect(button.x+button.width).toBeLessThanOrEqual(box.x+box.width);
+  expect(button.y).toBeGreaterThanOrEqual(box.y);expect(button.y+button.height).toBeLessThanOrEqual(box.y+box.height);
+  await page.keyboard.press('Enter');await expect(details.locator('.product-detail-copy')).toBeHidden();
+ }
+ await context.close();
 });
