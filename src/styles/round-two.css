@@ -52,12 +52,23 @@
 .page-menu #main .menu-pdf { color: var(--cream); margin: 0; font-size: 17px; }
 .page-menu .menu-intro-actions .button { color: var(--accent-strong); background: var(--cream); }
 .page-menu .menu-intro-actions .order-platforms { z-index: 46; color: var(--body); }
-.page-menu .campaign-callout { padding-block: 18px; gap: 24px; }
+.page-menu .campaign-callout { padding-block: 18px; gap: 24px; border: 0; }
 .page-menu #main .campaign-callout p { font: 500 16px/1.5 var(--sans); }
-.page-menu .category-nav { background: var(--cream); top: var(--site-header-height,88px); border-block: 1px solid var(--line); }
+.page-menu .category-nav { background: var(--cream); top: var(--site-header-height,88px); border: 0; }
 .page-menu .category-nav > .wrap { gap: 8px; padding-block: 10px; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--accent) var(--cream); }
-.page-menu .category-nav a { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; flex: none; font: 600 16px/1.4 var(--sans); }
-.page-menu .category-nav a:is(:hover,[aria-current]) { background: var(--accent-strong); color: var(--cream); border-color: var(--accent-strong); }
+.page-menu .category-nav a {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  flex: none;
+  background: var(--accent-strong);
+  color: var(--cream);
+  font: 600 20px/1.4 var(--sans);
+  letter-spacing: normal;
+  text-decoration: none;
+}
+.page-menu .category-nav a:is(:hover,[aria-current]) { background: #8d1e14; color: var(--cream); }
+.page-menu .category-nav a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
 .page-menu .menu-section { padding-top: 55px; scroll-margin-top: calc(var(--site-header-height,88px) + 98px); }
 .page-menu .menu-section-heading { display: flex; text-align: left; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 28px; }
 .page-menu .menu-section-heading > div { flex: 1; min-width: 0; }
@@ -126,8 +137,7 @@
   .menu-intro-actions { gap: 20px; }
   .page-menu #main .menu-pdf { font-size: 14px; }
   .page-menu .campaign-callout { display: block; }
-  .page-menu .campaign-callout .text-link { margin-top: 10px; }
-  .page-menu .category-nav a { font-size: 14px; padding: 9px 14px; }
+  .page-menu .category-nav a { font-size: 18px; padding: 9px 14px; }
   .page-menu .menu-section { padding-top: 36px; }
   .page-menu #main .menu-section-heading h2 { font-size: 34px; }
   .page-menu #main .menu-grid h3 { font-size: 30px; }

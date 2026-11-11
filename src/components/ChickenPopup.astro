@@ -1,0 +1,187 @@
+---
+import {locale, t, url, type Language, type PageKind} from '../lib/site';
+const {lang} = Astro.props as {lang: Language};
+const offers: {id: PageKind; title: string}[] = locale(lang).offers;
+---
+<dialog class="chicken-popup" aria-label={t(lang,'Original Recipe Chicken and offers','招牌原味鸡与活动优惠')}>
+  <button class="popup-close" type="button" autofocus aria-label={t(lang,'Close popup','关闭弹窗')}>×</button>
+  <div class="popup-stage">
+    <div class="popup-frame" data-slide>
+      <video muted playsinline preload="none" poster="/assets/gallery/DUoxIoIjdYY.webp"
+        data-src="/assets/gallery/DUoxIoIjdYY.mp4" aria-label={t(lang,'Fresh from the fryer','炸鸡出锅近景')}></video>
+      <a class="popup-menu" href={url(lang,'menu')+'#fried-chicken'}>{t(lang,'Explore Original Recipe Chicken','查看招牌原味鸡')} ↗</a>
+    </div>
+    {offers.map(offer => (
+      <a class="popup-frame popup-poster" data-slide inert href={url(lang,offer.id)}>
+        <img src={`/assets/posters/${offer.id}-1.webp`} alt={offer.title}
+          width={offer.id==='staff-offer'?1855:1701} height="2400" loading="lazy" decoding="async"/>
+      </a>
+    ))}
+  </div>
+  <div class="popup-controls">
+    <button type="button" data-previous aria-label={t(lang,'Previous slide','上一页')}>←</button>
+    <span aria-live="polite" aria-atomic="true">1 / {offers.length + 1}</span>
+    <button type="button" data-next aria-label={t(lang,'Next slide','下一页')}>→</button>
+    <button type="button" data-rotation data-pause={t(lang,'Pause slideshow','暂停轮播')}
+      data-resume={t(lang,'Resume slideshow','继续轮播')} aria-label={t(lang,'Pause slideshow','暂停轮播')}>Ⅱ</button>
+  </div>
+</dialog>
+<style>
+  .chicken-popup {
+    width: min(90vw, calc(50.625vh - 32px), 440px);
+    width: min(90vw, calc(50.625dvh - 32px), 440px);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    background: #392318;
+    overflow: hidden;
+  }
+  .chicken-popup::backdrop { background: rgb(28 16 10 / 76%); }
+  @media (prefers-reduced-motion: no-preference) {
+    .chicken-popup[open] {
+      transform-origin: center;
+      animation: popup-arrive 720ms cubic-bezier(.22,.7,.32,1);
+    }
+    .chicken-popup[open]::backdrop {
+      animation: popup-shade 480ms ease-out;
+    }
+  }
+  @keyframes popup-arrive {
+    from { opacity: 0; transform: scale(.45); }
+    72% { opacity: 1; transform: scale(1.035); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes popup-shade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  :global(html:has(.chicken-popup[open])) { overflow: hidden; }
+  .popup-stage { position: relative; isolation: isolate; aspect-ratio: 9 / 16; }
+  .popup-frame { position: absolute; inset: 0; display: block; background: #392318; z-index: 1; }
+  .popup-frame[inert] { opacity: 0; visibility: hidden; pointer-events: none; z-index: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .popup-frame { transition: opacity 440ms ease-in-out; }
+    /* Keep the outgoing media behind the incoming fade until it is covered. */
+    .popup-frame[inert] { transition: opacity 0s 440ms, visibility 0s 440ms; }
+  }
+  .popup-frame :is(video,img) { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .popup-poster { background: var(--cream); }
+  .popup-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 4px;
+    background: var(--cream);
+    color: #392318;
+    font: 400 22px/1.2 var(--display);
+  }
+  .popup-controls button {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: #b82517;
+    color: var(--cream);
+    font-size: 24px;
+  }
+  .popup-close, .popup-menu {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    color: var(--cream);
+    border-radius: 999px;
+    border: 2px solid var(--cream);
+    cursor: pointer;
+  }
+  .popup-close { z-index: 1; top: 12px; right: 12px; width: 44px; height: 44px; background: #392318; font: 28px/1 Arial,sans-serif; }
+  .popup-menu {
+    bottom: 20px; left: 50%; translate: -50% 0;
+    width: max-content; max-width: calc(100% - 24px); min-height: 48px;
+    padding: 10px 20px; background: #b82517;
+    font: 400 clamp(18px, 3vw, 24px)/1.16 var(--display); text-align: center;
+  }
+  .chicken-popup :focus-visible { outline: 3px solid #ffda50; outline-offset: 2px; }
+</style>
+<script>
+  const popup = document.querySelector<HTMLDialogElement>('.chicken-popup');
+  if (popup && typeof popup.showModal === 'function') {
+    const video = popup.querySelector('video')!;
+    const slides = [...popup.querySelectorAll<HTMLElement>('[data-slide]')];
+    const counter = popup.querySelector('.popup-controls span')!;
+    const rotation = popup.querySelector<HTMLButtonElement>('[data-rotation]')!;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+    let timer: number | undefined;
+    let slideTimer: number | undefined;
+    let rotating = !motion.matches;
+    function advance() {
+      if (popup!.open && rotating) showSlide(index + 1);
+    }
+    function updatePlayback() {
+      clearTimeout(slideTimer);
+      if (popup!.open && rotating) slideTimer = window.setTimeout(advance, 3000);
+      rotation.textContent = rotating ? 'Ⅱ' : '▶';
+      rotation.setAttribute('aria-label', rotating ? rotation.dataset.pause! : rotation.dataset.resume!);
+      counter.setAttribute('aria-live', rotating ? 'off' : 'polite');
+      if (!rotating || index !== 0) {
+        video.pause();
+        return;
+      }
+      video.muted = true;
+      if (!video.hasAttribute('src')) video.src = video.dataset.src!;
+      video.play().catch(() => { /* The poster stays visible until the next slide. */ });
+    }
+    function showSlide(next: number) {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => { slide.inert = i !== index; });
+      counter.textContent = (index + 1) + ' / ' + slides.length;
+      if (index === 0 && video.readyState >= 1) video.currentTime = 0;
+      updatePlayback();
+    }
+    rotation.addEventListener('click', () => { rotating = !rotating; updatePlayback(); });
+    motion.addEventListener('change', () => {
+      if (motion.matches && popup.open) { rotating = false; updatePlayback(); }
+    });
+    popup.querySelector('[data-previous]')!.addEventListener('click', () => showSlide(index - 1));
+    popup.querySelector('[data-next]')!.addEventListener('click', () => showSlide(index + 1));
+    const close = () => popup.close();
+    popup.querySelector('button')!.addEventListener('click', close);
+    popup.addEventListener('click', event => { if (event.target === popup) close(); });
+    popup.addEventListener('close', () => {
+      clearTimeout(slideTimer);
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    });
+    window.addEventListener('pagehide', () => {
+      clearTimeout(timer);
+      if (popup.open) close();
+    });
+
+    function showPopup() {
+      if (popup!.open) return;
+      popup!.showModal();
+      rotating = !motion.matches;
+      showSlide(0);
+    }
+    function schedule() {
+      clearTimeout(timer);
+      timer = window.setTimeout(showPopup, 3000);
+    }
+    window.addEventListener('pageshow', event => { if (event.persisted) schedule(); });
+    const intro = document.querySelector<HTMLElement>('#home-intro');
+    if (!intro || intro.hidden) {
+      schedule();
+    } else {
+      const observer = new MutationObserver(() => {
+        if (intro.hidden) {
+          observer.disconnect();
+          schedule();
+        }
+      });
+      observer.observe(intro, {attributes: true, attributeFilter: ['hidden']});
+    }
+  }
+</script>

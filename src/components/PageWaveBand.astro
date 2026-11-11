@@ -1,0 +1,11 @@
+---
+import '../styles/page-wave-bands.css';
+type Props = { tone: 'red' | 'yellow' };
+const {tone} = Astro.props;
+---
+<div class={'page-band band-' + tone}>
+  <svg class="band-edge" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0H1440V45C1200 135 1080 5 900 54S615 145 427 81S135 -5 0 55Z"/>
+  </svg>
+  <slot/>
+</div>

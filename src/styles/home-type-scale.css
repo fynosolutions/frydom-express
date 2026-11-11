@@ -1,12 +1,14 @@
 /* Oversized editorial type; scoped to the homepage. */
+@media (max-width: 350px) {
+  .page-home.page-home .poster-stage .sticker-juicy { right: calc(2% + 4px); }
+}
 .page-home.page-home #main .taste-gallery figcaption{padding-top:38px;text-align:center}
 .page-home.page-home #main .taste-gallery figcaption h3{font-family:var(--display);font-weight:400;font-size:clamp(32px,3.5vw,50px);line-height:1.15;min-height:2.3em;margin:0;background:none}
-.page-home.page-home #main .taste-gallery figcaption :is(p,.text-link){font-size:24px;line-height:1.4;margin-top:18px}
+.page-home.page-home #main .taste-gallery .taste-caption {margin-top:18px;--body-face:var(--display)}
+.page-home.page-home #main .taste-gallery .taste-caption > :is(p,.text-link){font:400 24px/1.4 var(--display);margin:0}
 .page-home.page-home #main .taste-signoff{max-width:1190px;margin:35px auto 0;padding:24px 35px 0;align-items:center}
 .page-home.page-home #main .taste-signoff .creative-note{font-size:24px;line-height:1.5;margin:0;max-width:38em}
-.page-home.locale-en #main .poster-copy{container-type:inline-size;grid-column:1 / -1;grid-row:1}
-.page-home.locale-en #main .poster-location{grid-row:2}
-.page-home.locale-en #main .poster-explore{grid-row:2;grid-column:3}
+.page-home.locale-en #main .poster-copy{container-type:inline-size}
 .page-home.locale-en.page-home #main #hero-title{font-size:min(clamp(104px,12vw,176px),19cqw);line-height:1.02;overflow:clip;padding:.12em 0;overflow-wrap:normal}
 .hero-title-line{display:block;white-space:nowrap;height:1.02em}
 .page-home.page-home #main :is(.poster-copy h1,.gallery-heading h2,.home-visit h2,.home-partner-brief h2,.video-print h3){overflow-wrap:anywhere}
@@ -34,17 +36,13 @@
 .page-home.page-home .sticker-crispy{left:5%;top:46%}
 .page-home.page-home .sticker-juicy{right:4%;top:62%}
 .page-home.page-home .poster-caption{font-size:clamp(18px,1.7vw,24px);letter-spacing:.025em}
-.page-home.page-home .poster-location>span{font-size:17px}
-.page-home.page-home #main .poster-location p{font-size:18px}
-.page-home.page-home .poster-explore{font-size:28px;line-height:1.2}
 .page-home.page-home #main .poster-copy h1 {font-size:clamp(104px,12vw,176px);line-height:1.02}
 .page-home.page-home #main .taste-copy h2 {font-size:clamp(96px,14vw,202px);line-height:.9}
 .page-home.page-home #main .gallery-heading h2 {font-size:clamp(160px,20vw,290px) !important;line-height:.95}
 .page-home.page-home #main .home-visit h2 {font-size:clamp(136px,16vw,232px);line-height:.95}
 .page-home.page-home #main .home-partner-brief h2 {font-size:clamp(108px,12vw,172px);line-height:1.05}
-.page-home.page-home #main :is(.poster-copy,.taste-copy,.home-visit,.home-partner-brief,.gallery-heading)>p {font-size:clamp(20px,1.8vw,26px);line-height:1.55}
+.page-home.page-home #main :is(.taste-copy,.home-visit,.home-partner-brief,.gallery-heading)>p {font-size:clamp(20px,1.8vw,26px);line-height:1.55}
 .page-home.page-home #main .taste-gallery figcaption h3 {font-size:clamp(32px,3.5vw,50px);line-height:1.1}
-.page-home.page-home #main .taste-gallery figcaption p {font-size:20px;line-height:1.5}
 .page-home.page-home #main .video-print h3 {font-size:54px !important;line-height:1.1}
 .page-home.page-home #main :is(.text-link,.hero-actions .button) {font-size:28px}
 .page-home.page-home #main .poster-copy,.page-home.page-home #main .home-visit>div {min-width:0}
@@ -55,78 +53,40 @@
  .page-home.page-home .sticker-crispy{left:2%;top:38%}
  .page-home.page-home .sticker-juicy{right:2%;top:66%}
  .page-home.page-home .poster-caption{font-size:clamp(15px,4vw,21px);bottom:-15px}
- .page-home.page-home .poster-location>span{font-size:15px}
- .page-home.page-home #main .poster-location p{font-size:16px}
  .page-home.page-home #main .poster-copy h1{font-size:clamp(84px,22vw,140px)}
  .page-home.page-home #main .taste-copy h2{font-size:clamp(72px,21vw,140px)}
  .page-home.page-home #main .gallery-heading h2{font-size:clamp(160px,20vw,290px) !important}
  .page-home.page-home #main .home-visit h2{font-size:clamp(120px,34vw,200px)}
  .page-home.page-home #main .home-partner-brief h2{font-size:96px}
- .page-home.page-home #main :is(.poster-copy,.taste-copy,.home-visit,.home-partner-brief,.gallery-heading)>p{font-size:19px}
+ .page-home.page-home #main :is(.taste-copy,.home-visit,.home-partner-brief,.gallery-heading)>p{font-size:19px}
  .page-home.page-home #main .taste-gallery figcaption h3{font-size:26px;overflow-wrap:anywhere}
- .page-home.page-home #main .taste-gallery figcaption p{font-size:16px}
  .page-home.page-home #main :is(.text-link,.hero-actions .button){font-size:23px}
- .page-home.page-home #main .taste-gallery .text-link{font-size:19px}
  .page-home.page-home #main .video-print h3{font-size:54px !important}
  .page-home.locale-zh #main .taste-copy h2{font-size:clamp(58px,16vw,100px)}
  .page-home.locale-zh #main .home-visit h2{font-size:clamp(96px,26vw,160px)}
  .page-home.page-home #main .taste-gallery figcaption h3{font-size:clamp(15px,4.1vw,26px);line-height:1.15;min-height:2.3em}
- .page-home.page-home #main .taste-gallery figcaption :is(p,.text-link){font-size:16px;line-height:1.4;margin-top:14px}
+ .page-home.page-home #main .taste-gallery .taste-caption{margin-top:14px}
+ .page-home.page-home #main .taste-gallery .taste-caption > :is(p,.text-link){font-size:16px}
  .page-home.page-home #main .taste-signoff{padding:20px 10px 0;margin-top:24px;align-items:flex-start}
  .page-home.page-home #main .taste-signoff .creative-note{font-size:20px;line-height:1.5}
 }
 
-/* Homepage footer: one type step below the invitation, with room for contact copy. */
-.page-home .site-footer {
- --footer-invitation-size: 42px;
- --footer-detail-size: calc(var(--footer-invitation-size) - 8px);
+.page-home .poster-copy {
+  --hero-copy-size: clamp(20px, 1.8vw, 26px);
+  --body-face: var(--display);
 }
-.page-home .footer-top {
- grid-template-columns: minmax(0,1fr) minmax(0,.85fr) minmax(0,1.35fr);
- gap: 48px 40px;
- align-items: start;
- padding-bottom: 48px;
+.page-home #main .poster-copy > p,
+.page-home #main .poster-location {
+  font: 400 var(--hero-copy-size)/1.55 var(--display);
+  text-align: center;
 }
-.page-home .footer-invitation h2 { font-size: var(--footer-invitation-size); }
-.page-home .site-footer :is(.footer-links,.footer-contact) > :is(h3,a,p,span) {
- font-size: var(--footer-detail-size);
- line-height: 1.4;
- letter-spacing: normal;
+.page-home .poster-location { margin-top: 24px; }
+.page-home #main .poster-location p {
+  margin: 0 auto;
+  color: var(--accent-strong);
+  font: inherit;
 }
-.page-home .site-footer :is(.footer-links,.footer-contact) > h3 {
- margin: 0 0 24px;
- line-height: 1.15;
-}
-.page-home .footer-links > a {
- width: fit-content;
- max-width: 100%;
- min-height: 44px;
- margin-bottom: 8px;
-}
-.page-home .footer-contact > p {
- margin: 28px 0 8px;
- opacity: 1;
- text-wrap: pretty;
-}
-.page-home .footer-contact > p:first-of-type { margin-top: 0; }
-.page-home .footer-contact > :is(a,span) { overflow-wrap: anywhere; }
-.page-home .footer-contact > a:not(.footer-partner) {
- display: inline-block;
- max-width: 100%;
- min-height: 44px;
-}
-.page-home .footer-contact .footer-partner {
- margin-top: 32px;
- align-items: baseline;
- gap: 12px;
-}
-.page-home .footer-partner .arrow { flex-shrink: 0; width: 24px; height: 24px; margin-inline: 5px; }
-@media(max-width:1099px) {
- .page-home .footer-top { grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); gap: 48px 32px; }
- .page-home .footer-invitation { grid-column: 1 / -1; }
-}
-@media(max-width:700px) {
- .page-home .site-footer { --footer-invitation-size: 38px; }
- .page-home .footer-top { grid-template-columns: minmax(0,1fr); gap: 40px; }
- .page-home .site-footer :is(.footer-links,.footer-contact) > h3 { margin-bottom: 20px; }
+.page-home .poster-hours { white-space: nowrap; }
+@media (max-width: 700px) {
+  .page-home .poster-copy { --hero-copy-size: 19px; }
 }

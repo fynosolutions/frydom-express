@@ -20,15 +20,24 @@ const photo='/assets/food-closeups/';
         <div class="taste-photo">
         <img src={photo+'crispy-chicken-pull-v1.webp'} srcset={photo+'crispy-chicken-pull-v1-768.webp 768w, '+photo+'crispy-chicken-pull-v1.webp 1536w'} sizes="(max-width: 700px) 92vw, 58vw" width="1536" height="1024" alt={t(lang,'Creative close-up of golden fried chicken pulled apart to reveal the tender center','金黄炸鸡掰开后露出鸡肉纹理的创意近景')} loading="lazy" decoding="async"/>
         </div>
-        <figcaption><h3>{t(lang,'Crispy outside.','外酥')}<br/>{' '}{t(lang,'Tender inside.','里嫩')}</h3></figcaption>
+        <figcaption>
+          <h3>{t(lang,'Crispy outside.','外酥')}<br/>{' '}{t(lang,'Tender inside.','里嫩')}</h3>
+          <div class="taste-caption"><a class="text-link" href={url(lang,'menu')+'#fried-chicken'}>{t(lang,'Meet the fried chicken','看看招牌炸鸡')} <Arrow diagonal/></a></div>
+        </figcaption>
       </figure>
       <figure class="taste-detail" data-food-reveal>
         <div class="taste-photo"><img src={photo+'cheeseburger-macro-v1.webp'} srcset={photo+'cheeseburger-macro-v1-768.webp 768w, '+photo+'cheeseburger-macro-v1.webp 1536w'} sizes="(max-width: 700px) 92vw, 43vw" width="1536" height="1024" alt={t(lang,'Creative close-up of cheese, sauce and the layers of an Angus beef burger','安格斯牛肉堡芝士、酱汁与食材层次的创意特写')} loading="lazy" decoding="async"/></div>
-        <figcaption><h3>{t(lang,'Every layer.','层层叠叠，')}<br/>{' '}{t(lang,'All flavor.','口口有味。')}</h3><p>{t(lang,'Cheese, sauce, and a bite worth slowing down for.','芝士与酱汁交融，每一层都值得细细品尝。')}</p></figcaption>
+        <figcaption>
+          <h3>{t(lang,'Every layer.','层层叠叠，')}<br/>{' '}{t(lang,'All flavor.','口口有味。')}</h3>
+          <div class="taste-caption"><p>{t(lang,'Cheese, sauce, and a bite worth slowing down for.','芝士与酱汁交融，每一层都值得细细品尝。')}</p></div>
+        </figcaption>
       </figure>
       <figure class="taste-handheld" data-food-reveal>
         <div class="taste-photo"><img src={photo+'handheld-burger-v1.webp'} srcset={photo+'handheld-burger-v1-768.webp 768w, '+photo+'handheld-burger-v1.webp 1536w'} sizes="(max-width: 700px) 92vw, 49vw" width="1536" height="1024" alt={t(lang,'Creative image of a cheeseburger held in a paper sleeve against a red backdrop','红色背景前，双手拿着纸套芝士汉堡的创意展示')} loading="lazy" decoding="async"/></div>
-        <figcaption><h3>{t(lang,'Good mood.','双手捧起，')}<br/>{' '}{t(lang,'Both hands.','大口满足。')}</h3><a class="text-link" href={url(lang,'menu')+'#burgers-wraps'}>{t(lang,'Meet the burgers','看看汉堡与卷饼')} <Arrow diagonal/></a></figcaption>
+        <figcaption>
+          <h3>{t(lang,'Good mood.','双手捧起，')}<br/>{' '}{t(lang,'Both hands.','大口满足。')}</h3>
+          <div class="taste-caption"><a class="text-link" href={url(lang,'menu')+'#burgers-wraps'}>{t(lang,'Meet the burgers','看看汉堡与卷饼')} <Arrow diagonal/></a></div>
+        </figcaption>
       </figure>
     </div>
     <div class="taste-signoff">
@@ -43,7 +52,7 @@ const photo='/assets/food-closeups/';
   .taste-story .taste-copy p { margin-inline: auto !important; max-width: 38em !important; }
   :global(.page-home #main) .taste-copy > .text-link { display: inline-flex; justify-content: center; padding: 20px 42px; border: 3px solid #fffdf8; border-radius: 50%; background: #ed291c; color: #fffdf8; text-decoration: none; }
   .taste-gallery { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; max-width: 1190px; margin: 100px auto 0; padding: 0 35px; }
-  .taste-gallery > figure { margin: 0; min-width: 0; aspect-ratio: auto; rotate: none; }
+  .taste-gallery > figure { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; margin: 0; min-width: 0; aspect-ratio: auto; rotate: none; }
   .taste-gallery .taste-photo { aspect-ratio: 4 / 5; border-radius: 18px; }
   .taste-gallery .taste-chicken .taste-photo { rotate: 3deg; }
   .taste-gallery .taste-detail .taste-photo { rotate: -5deg; }
@@ -51,9 +60,9 @@ const photo='/assets/food-closeups/';
   .taste-gallery .taste-photo img { height: 100%; object-fit: cover; }
   .taste-gallery figcaption { position: static; background: none; color: inherit; border-radius: 0; padding: 38px 0 0; text-align: center; }
   .taste-gallery figcaption h3 { font-size: clamp(26px,2.5vw,38px); line-height: 1.15; }
-  :global(.page-home #main) .taste-gallery figcaption p { margin-top: 12px; font: 500 16px/1.6 var(--sans); }
-  .taste-gallery figcaption .text-link { margin-top: 14px; }
-  .taste-gallery .taste-chicken figcaption { font: 600 16px/1.6 var(--sans); }
+  .taste-gallery figcaption { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+  .taste-caption { align-self: start; display: grid; justify-items: center; }
+  .taste-caption[data-motion="entering"] { overflow: clip; }
   .taste-sticker { position: absolute; z-index: 2; width: clamp(115px,16vw,215px); height: auto; top: -120px; left: -75px; rotate: -18deg; pointer-events: none; filter: drop-shadow(0 5px 3px #43231130); }
   .taste-story .taste-signoff { padding-top: 30px; align-items: center; gap: 24px; }
   .taste-cheer { font: 400 32px/1 'Mouse Memoirs',sans-serif; color: #ed291c; }
@@ -63,7 +72,6 @@ const photo='/assets/food-closeups/';
     .taste-sticker { width: 90px; left: -12px; top: -63px; }
     .taste-gallery figcaption { padding-top: 24px; }
     .taste-gallery figcaption h3 { font-size: 22px; }
-    .taste-gallery figcaption p,.taste-gallery figcaption .text-link,.taste-gallery .taste-chicken figcaption { font-size: 13px; }
     .taste-story .taste-signoff { flex-wrap: wrap; }
   }
 </style>

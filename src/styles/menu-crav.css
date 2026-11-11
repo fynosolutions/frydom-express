@@ -1,6 +1,14 @@
 /* Reference: CRAV /menu — photographic cover, outlined display type,
    white product cards, diner checker strip, yellow detail controls. */
-.page-menu { --menu-red: #ed291c; --menu-yellow: #ffda50; --menu-white: #fffdf8; }
+.page-menu {
+  --menu-red: #ed291c;
+  --menu-yellow: #ffda50;
+  --menu-white: #fffdf8;
+  --menu-copy-size: clamp(26px, calc(2.2vw + 4px), 32px);
+  --menu-label-size: clamp(24px, calc(1.8vw + 4px), 28px);
+  --menu-note-size: clamp(22px, calc(1.6vw + 4px), 26px);
+}
+.page-menu #main { --body-face: var(--display); }
 .page-menu .breadcrumb { position: absolute; z-index: 3; top: 100px; left: 30px; width: auto; padding: 0; color: var(--menu-white); }
 .page-menu .breadcrumb a { color: inherit; }
 .page-menu #main .menu-cover {
@@ -22,11 +30,31 @@
 .menu-cover-wave { position: absolute; bottom: -1px; left: 0; width: 100%; max-width: none; height: 65px; color: var(--cream); }
 .menu-summary { display: flex; justify-content: space-between; gap: 45px; align-items: center; padding-block: 30px; }
 .page-menu #main .menu-summary .intro-bottom { margin: 0; max-width: 600px; }
-.page-menu #main .menu-summary .intro-bottom > p { color: var(--body); margin: 0; text-align: left; font-size: 17px; }
-.page-menu .menu-summary .menu-intro-actions { margin: 0; flex: none; gap: 20px; }
-.page-menu .menu-summary .button { background: var(--accent-strong); color: var(--cream); }
-.page-menu #main .menu-summary .menu-pdf { color: var(--accent-strong); }
-.page-menu .campaign-callout { padding-top: 0; }
+.page-menu #main .menu-summary .intro-bottom > p { color: var(--body); margin: 0; text-align: left; font-size: var(--menu-copy-size); line-height: 1.4; }
+.page-menu #main .menu-summary .menu-pdf { color: var(--accent-strong); flex: none; }
+.page-menu #main .menu-offer-wave {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(42px, 5vw, 76px) max(24px, 6vw);
+  margin: 0;
+  text-align: center;
+}
+.menu-offer-wave svg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  color: var(--menu-yellow);
+}
+.page-menu #main .menu-offer-wave p {
+  margin: 0 auto;
+  font: 400 clamp(32px, 4.2vw, 64px)/1.15 var(--display);
+  color: var(--menu-red);
+  text-wrap: balance;
+  -webkit-text-stroke: .09em white;
+  paint-order: stroke fill;
+}
 .page-menu .category-nav { z-index: 25; }
 .page-menu .category-nav > .wrap { padding-block: 12px; }
 .page-menu #main .menu-sections { padding-bottom: 30px; }
@@ -38,7 +66,7 @@
   max-width: 1000px;
 }
 .page-menu.locale-zh #main .menu-section-heading h2 { font-size: clamp(50px,6vw,86px); line-height: 1.15; -webkit-text-stroke-width: 4px; }
-.page-menu #main .menu-section-heading p { margin: 20px 0 0; }
+.page-menu #main .menu-section-heading p { margin: 20px 0 0; font-size: var(--menu-copy-size); line-height: 1.4; }
 .page-menu #main .menu-grid,
 .page-menu #main #special-combos .menu-grid,
 .page-menu #main #fried-chicken .menu-grid {
@@ -67,17 +95,28 @@
 .page-menu #main .menu-product h3 { font-size: 36px; line-height: 1.1; color: var(--menu-red); text-transform: none; text-align: left; }
 .page-menu.locale-zh #main .menu-product h3 { font-size: 29px; }
 .page-menu #main .menu-product .item-prices { width: 100%; max-width: none; margin: 16px 0 0; padding: 0; }
-.page-menu #main .menu-product .item-prices > div { padding-block: 5px; font-size: 18px; column-gap: 12px; }
-.page-menu #main .menu-product .item-prices dt { font: 500 15px/1.5 var(--sans); }
-.page-menu #main .menu-product .item-prices dd { color: #30221b; font: 700 20px/1.5 var(--sans); }
-.page-menu #main .menu-product .price-enquiry { font-size: 15px; text-align: left; margin-top: 16px; }
+.page-menu #main .menu-product .item-prices > div {
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding-block: 6px;
+  column-gap: 12px;
+}
+.page-menu #main .menu-product .item-prices dt { font-size: var(--menu-label-size); line-height: 1.4; }
+.page-menu #main .menu-product .item-prices small { font-size: var(--menu-note-size); }
+.page-menu #main .menu-product .item-prices dd {
+  display: flex;
+  justify-content: flex-end;
+  color: #30221b;
+  font-size: clamp(28px, 2.4vw, 34px);
+  line-height: 1.25;
+}
+.page-menu #main .menu-product .price-enquiry { font-size: var(--menu-note-size); text-align: left; margin-top: 16px; }
 .page-menu .single-price .product-meta { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 14px; align-items: start; }
 .page-menu #main .single-price .product-meta h3 { grid-column: 1; grid-row: 1; }
 .page-menu #main .single-price .item-prices { grid-column: 2; grid-row: 1; margin: 0; width: auto; }
 .page-menu #main .single-price .price-enquiry { grid-column: 1 / -1; }
 .page-menu #main .single-price .item-prices > div { display: flex; flex-direction: column-reverse; align-items: end; gap: 2px; padding: 0; }
-.page-menu #main .single-price .item-prices dd { display: flex; gap: 1px; font: 400 30px/1 'Mouse Memoirs',sans-serif; }
-.page-menu #main .single-price .item-prices dt { font-size: 12px; }
+.page-menu #main .single-price .item-prices dd { gap: 1px; font-size: clamp(34px, 3vw, 42px); line-height: 1.1; }
+.page-menu #main .single-price .item-prices dt { font-size: var(--menu-label-size); }
 .product-details summary {
   position: absolute; right: 22px; top: 22px; width: 44px; height: 44px; border-radius: 50%;
   display: grid; place-items: center; background: var(--menu-yellow); color: #593117;
@@ -86,11 +125,13 @@
 .product-details summary::-webkit-details-marker { display: none; }
 .product-details[open] summary svg { rotate: 45deg; }
 .product-details summary:hover { background: #ffca16; }
-.product-detail-copy { border-top: 1px solid #c82c1b30; padding-top: 18px; margin-top: 20px; }
-.page-menu #main .menu-product .item-description { font: 500 16px/1.65 var(--sans); margin: 0; max-width: none; }
-.page-menu #main .menu-product .item-note { font: 500 14px/1.6 var(--sans); margin-top: 10px; }
+.menu-product .product-details { margin-inline: 28px; }
+.product-detail-copy { margin-top: 20px; }
+.page-menu #main .menu-product .item-description { font-size: var(--menu-copy-size); line-height: 1.5; margin: 0; max-width: none; }
+.page-menu #main .menu-product .item-note { font-size: var(--menu-note-size); line-height: 1.5; margin-top: 10px; }
 .page-menu .menu-product .photo-note { position: absolute; left: 14px; bottom: 5px; padding: 5px 10px; border-radius: 999px; font-size: 12px; }
 .page-menu #main .menu-footnotes { margin-top: 60px; }
+.page-menu #main .menu-footnotes p { font-size: var(--menu-label-size); line-height: 1.5; }
 @media (prefers-reduced-motion: no-preference) and (hover: hover) {
   .menu-product .item-photo img { transition: transform 450ms cubic-bezier(.16,1,.3,1); }
   .menu-product:hover .item-photo img { transform: translateY(-5px) scale(1.025); }
@@ -114,8 +155,7 @@
   .menu-cover-mascot { top: 60px; left: 12%; width: 88px; }
   .menu-cover-wave { height: 40px; }
   .menu-summary { padding-block: 24px; }
-  .page-menu #main .menu-summary .intro-bottom > p { font-size: 16px; }
-  .page-menu .menu-summary .menu-intro-actions { flex-wrap: wrap; }
+  .menu-product .product-details { margin-inline: 24px; }
   .page-menu #main .menu-section { padding-top: 42px; }
   .page-menu #main .menu-section-heading { margin-bottom: 26px; }
   .page-menu #main .menu-section-heading h2 { font-size: 54px; -webkit-text-stroke-width: 3px; }
@@ -131,5 +171,4 @@
   .page-menu #main #fried-chicken .menu-product .item-body { padding: 0 24px; }
   .page-menu #main .menu-product h3 { font-size: 34px; }
   .page-menu.locale-zh #main .menu-product h3 { font-size: 28px; }
-  .page-menu #main .menu-section-heading p { font-size: 15px; }
 }

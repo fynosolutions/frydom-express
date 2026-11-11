@@ -19,13 +19,15 @@ const hero=content.menu.find((item:any)=>item.id==='angus-beef-cheeseburger').im
     <span class="poster-caption">{t(lang,'ANGUS BEEF CHEESEBURGER','安格斯芝士牛肉堡')}</span>
   </div>
   <div class="poster-bottom wrap">
-    <div class="poster-location"><span>BROOKLYN, NEW YORK</span><p>781 61st St <span class="poster-hours">{content.locations[0].hoursText}</span></p></div>
     <div class="poster-copy">
       <h1 id="hero-title">{lang==='en'?<><span class="hero-title-line">Big crunch.</span>{' '}<span class="hero-title-line">Bigger cravings.</span></>:'金黄酥脆，一口爆汁。'}</h1>
       <p>{t(lang,'Fried chicken. Stacked burgers. Your next good bite.','炸鸡、汉堡，还有让你惦记的好滋味。')}</p>
       <div class="hero-actions"><OrderPicker lang={lang}/><a class="button button-outline" href={url(lang,'menu')}>{t(lang,'Explore the menu','查看菜单')} <Arrow/></a></div>
+      <div class="poster-location">
+        <span>BROOKLYN, NEW YORK</span>
+        <p>781 61st St · <span class="poster-hours">{content.locations[0].hoursText}</span></p>
+      </div>
     </div>
-    <a class="poster-explore" href={url(lang,'menu')}>{t(lang,'MEET YOUR','来认识你的')}<br/>{t(lang,'NEW FAVORITES','心头好')}<Arrow/></a>
   </div>
 </section>
 

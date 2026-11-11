@@ -1,0 +1,41 @@
+/* Morph only the curved edges. The SVG viewport and its outside edges stay fixed. */
+@media (prefers-reduced-motion: no-preference) {
+  .taste-wave-top > path,
+  .offer-wave-top > path {
+    animation: taste-upper-tide 20s ease-in-out infinite;
+  }
+
+  .taste-wave-bottom > path,
+  .offer-wave-bottom > path {
+    animation: taste-lower-tide 24s ease-in-out -5s infinite;
+  }
+
+  .menu-cover-wave > path {
+    animation: menu-cover-tide 22s ease-in-out -3s infinite;
+  }
+
+  .menu-offer-wave > svg > path {
+    animation: menu-offer-tide 26s ease-in-out -8s infinite;
+  }
+}
+
+/* The original paths in the markup supply both ends of each loop. */
+@keyframes taste-upper-tide {
+  33% { d: path("M0 0H1440V32C1270 146 1160 18 1000 55S730 189 510 108S205 -12 0 56Z"); }
+  67% { d: path("M0 0H1440V15C1160 112 1050 -5 840 39S580 159 370 85S110 -22 0 35Z"); }
+}
+
+@keyframes taste-lower-tide {
+  33% { d: path("M0 40C180 -26 300 100 550 54S950 -7 1120 33S1310 72 1440 20V100H0Z"); }
+  67% { d: path("M0 58C290 -20 420 124 695 72S1080 5 1250 54S1390 86 1440 42V100H0Z"); }
+}
+
+@keyframes menu-cover-tide {
+  33% { d: path("M0 48Q240 3 430 48T790 48T1150 48T1440 48V80H0Z"); }
+  67% { d: path("M0 33Q120 -6 290 33T650 33T1010 33T1440 33V80H0Z"); }
+}
+
+@keyframes menu-offer-tide {
+  33% { d: path("M0 23Q235 -7 425 23T785 23T1145 23T1440 23V147Q1210 167 1020 147T660 147T300 147T0 147Z"); }
+  67% { d: path("M0 14Q125 -5 300 14T660 14T1020 14T1440 14V136Q1320 167 1145 136T785 136T425 136T0 136Z"); }
+}

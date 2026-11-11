@@ -4,7 +4,7 @@ const heroFood=document.querySelector<HTMLImageElement>('.poster-stage .hero-foo
 let heroFoodAnimation:Animation|undefined;
 const canAnimate=()=>!preference.matches&&typeof window.IntersectionObserver==='function'&&Boolean(Element.prototype.animate);
 if(heroFood&&canAnimate())heroFood.dataset.heroFoodMotion='waiting';
-const selector='main h1,main h2,.poster-wordmark,.page-home main :is(h3,p,.poster-caption,.food-sticker,.poster-location>span,.poster-explore,.gallery-eyebrow,.taste-cheer,.taste-chicken figcaption),.page-home .site-footer :is(h2,h3,p,.footer-wordmark)';
+const selector='main h1,main h2,.poster-wordmark,.page-home main :is(h3,p,.poster-caption,.poster-location>span,.food-sticker,.poster-explore,.gallery-eyebrow,.taste-cheer,.taste-caption),.site-footer :is(h2,h3,p)';
 const candidates=Array.from(document.querySelectorAll<HTMLElement>(selector));
 const targets=candidates.filter(element=>!candidates.some(parent=>parent!==element&&parent.contains(element)));
 const observers:IntersectionObserver[]=[];
@@ -68,6 +68,13 @@ function split(target:HTMLElement,lines:boolean){
 }
 function reveal(target:HTMLElement,lines:boolean){
  target.dataset.motion='entering';target.dataset.textEffect=lines?'lines':'pop';
+ const lineFrames=lines?sampleFrames(t=>({transform:`translateY(${100*Math.pow(1-t,5)}%)`})):undefined;
+ if(target.matches('.taste-caption') && lineFrames){
+  const animation=target.firstElementChild!.animate(lineFrames,{duration:1400,delay:250,fill:'backwards'});
+  active.add(animation);
+  animation.finished.catch(()=>{}).finally(()=>{active.delete(animation);target.dataset.motion='revealed';});
+  return;
+ }
  const words=split(target,lines);
  const tops:number[]=[];
  const lineIndices=words.map(word=>{
@@ -78,7 +85,7 @@ function reveal(target:HTMLElement,lines:boolean){
  const wordAnimations:Animation[]=[];
  const promises=words.map((word,index)=>{
   const y=18+Math.random()*22,rotation=-16+Math.random()*32;
-  const frames=lines?sampleFrames(t=>({transform:`translateY(${100*Math.pow(1-t,5)}%)`})):
+  const frames=lineFrames??
    sampleFrames(t=>{const progress=backOut(t);return {opacity:Math.min(1,Math.max(0,progress)),transform:`translateY(${y*(1-progress)}px) rotate(${rotation*(1-progress)}deg) scale(${progress})`};});
   const heroDelay=target.matches('.food-sticker')?150:target.matches('.poster-caption')?300:0;
   const animation=word.animate(frames,{duration:lines?1400:720,delay:lines?250+lineIndices[index]*150:heroDelay+index*55,fill:'backwards',easing:'linear'});
@@ -108,7 +115,7 @@ function initialize(){
   },{threshold:0,rootMargin:lines?'0px 0px -5% 0px':'0px 0px -12% 0px'});
   observers.push(observer);
   for(const target of targets){
-   const isBody=target.matches('p')&&!target.matches('.food-sticker,.poster-caption,.gallery-note');
+   const isBody=target.matches('p,.taste-caption')&&!target.matches('.food-sticker,.poster-caption,.gallery-note');
    if(isBody!==lines||target.dataset.motion==='revealed'||target.dataset.motion==='entering')continue;
    target.dataset.motion='pending';
    const bounds=target.getBoundingClientRect();

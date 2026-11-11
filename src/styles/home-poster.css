@@ -57,16 +57,11 @@
   position: absolute; right: 5%; bottom: 0; font: 600 12px/1.4 var(--sans);
   letter-spacing: .08em; color: var(--accent-strong);
 }
-.page-home .poster-bottom { display: grid; grid-template-columns: 1fr 2.6fr 1fr; gap: 24px; align-items: end; margin-top: 12px; }
+.page-home .poster-bottom { margin-top: 12px; }
 .poster-copy { text-align: center; }
 .page-home #main .poster-copy h1 { font: 900 clamp(30px,3.1vw,46px)/1.18 var(--display); letter-spacing: -.025em; }
 .page-home #main .poster-copy > p { margin: 12px auto 0; font: 500 17px/1.6 var(--sans); }
-.page-home #main .poster-location p { margin: 8px 0 0; font: 500 15px/1.6 var(--sans); color: var(--accent-strong); }
-.poster-location > span { font: 800 12px/1.4 var(--sans); letter-spacing: .07em; }
-.poster-hours { display: block; }
 .page-home #main .hero-actions { display: flex; justify-content: center; gap: 12px; margin-top: 22px; }
-.poster-explore { justify-self: end; font: 600 13px/1.5 var(--sans); text-align: right; }
-.poster-explore .arrow { margin: 12px 0 0 auto; rotate: 90deg; }
 .favorites-band { position: relative; background: var(--poster-red); color: var(--cream); scroll-margin-top: 110px; }
 .section-wave { position: absolute; width: 100%; max-width: none; height: 64px; top: -63px; left: 0; color: var(--poster-red); pointer-events: none; }
 .page-home .favorites { padding-block: 55px 60px; }
@@ -117,8 +112,6 @@
   .page-home .header-inner { gap: 18px; }
   .page-home .desktop-nav { gap: 16px; }
   .page-home .desktop-nav > a { font-size: 14px; }
-  .page-home .poster-bottom { grid-template-columns: 1fr 3fr; }
-  .poster-explore { display: none; }
   .poster-stage { height: 400px; }
   .page-home .poster-stage .hero-food { width: 48%; }
   .sticker-crispy { left: 5%; }
@@ -147,17 +140,11 @@
   .sticker-crispy { left: 3%; top: 36%; }
   .sticker-juicy { right: 2%; top: 64%; }
   .poster-caption { bottom: -4px; right: 0; width: 100%; text-align: center; font-size: 10px; }
-  .page-home .poster-bottom { display: flex; flex-direction: column; align-items: center; width: calc(100% - 32px); gap: 24px; margin-top: 28px; }
-  .poster-copy { order: -1; width: 100%; }
+  .page-home .poster-bottom { width: calc(100% - 32px); margin-top: 28px; }
   .page-home #main .poster-copy h1 { font-size: clamp(25px,7.1vw,42px); }
   .page-home #main .poster-copy > p { font-size: 14px; margin-top: 12px; }
   .page-home #main .hero-actions { display: flex; gap: 10px; margin-top: 20px; }
   .page-home #main .hero-actions .button { width: auto; padding: 12px 17px; font-size: 15px; }
-  .poster-location { text-align: center; }
-  .poster-location > span { font-size: 10px; }
-  .page-home #main .poster-location p { font-size: 12px; margin-top: 3px; }
-  .poster-hours { display: inline; }
-  .poster-hours::before { content: ' · '; }
   .section-wave { height: 40px; top: -39px; }
   .page-home .favorites { padding-block: 40px; }
   .page-home .favorites .section-heading { margin-bottom: 30px; }
