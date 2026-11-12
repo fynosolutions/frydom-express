@@ -20,8 +20,8 @@ test('reference palette, three-column offers and preserved detail navigation',as
  const cards=await page.locator('.offer-poster').all();const boxes=await Promise.all(cards.map(c=>c.boundingBox()));
  expect(boxes).toHaveLength(3);for(const b of boxes)expect(Math.abs(b.y-boxes[0].y)).toBeLessThan(2);
  expect(boxes[1].x).toBeGreaterThan(boxes[0].x+boxes[0].width);
- await page.locator('.offer-poster[href="/en/staff-offer.html"]').click();await expect(page.locator('.poster-page img')).toHaveCount(2);
- await expect(page.locator('.poster-page').first()).toHaveAttribute('href','/assets/posters/staff-offer.pdf#page=1');
+ await page.locator('.offer-poster[href="/en/staff-offer.html"]').click();await expect(page.locator('.poster-page img')).toHaveCount(1);
+ await expect(page.locator('.poster-page').first()).toHaveAttribute('href','/assets/posters/staff-offer-combined.pdf#page=1');
 });
 
 test('online ordering is accessible with keyboard and Escape',async({page})=>{

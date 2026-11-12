@@ -4,7 +4,7 @@ import {locale,t,type Language,type PageKind} from '../lib/site';
 const {lang,kind}=Astro.props as {lang:Language,kind:PageKind};
 const offer=locale(lang).offers.find((o:any)=>o.id===kind);
 const store=locale(lang).locations[0];
-const posterPages=kind==='staff-offer'?2:1;
+const posterPdf=kind==='staff-offer'?'staff-offer-combined':kind;
 const posterWidth=kind==='staff-offer'?1855:1701;
 ---
 {kind==='offers'?<OfferCards lang={lang}/>:<>
@@ -32,36 +32,10 @@ const posterWidth=kind==='staff-offer'?1855:1701;
   <div class="offer-poster-link wrap"><a class="text-link" href="#original-posters">{t(lang,'View original poster','查看原版海报')} ↓</a></div>
 </section>
 <section class="campaign-posters" id="original-posters" aria-label={t(lang,'Original promotion posters','活动原版海报')}>
-  {posterPages > 1 && <div class="poster-controls" hidden>
-    <button type="button" data-prev aria-label={t(lang,'Previous poster page','上一页海报')} disabled>←</button>
-    <span aria-live="polite" aria-atomic="true">1 / {posterPages}</span>
-    <button type="button" data-next aria-label={t(lang,'Next poster page','下一页海报')}>→</button>
-  </div>}
-  {Array.from({length:posterPages},(_,index)=><a class="poster-page" hidden={index>0} href={`/assets/posters/${kind}.pdf#page=${index+1}`} target="_blank" rel="noopener" aria-label={t(lang,`Open ${offer.title} original PDF, page ${index+1}`,`打开${offer.title}原始 PDF，第 ${index+1} 页`)}>
-    <img src={`/assets/posters/${kind}-${index+1}.webp`} width={posterWidth} height="2400" alt={t(lang,`${offer.title} — original poster, page ${index+1}`,`${offer.title}原版海报，第 ${index+1} 页`)} loading="lazy" decoding="async"/>
-  </a>)}
+  <a class="poster-page" href={`/assets/posters/${posterPdf}.pdf#page=1`} target="_blank" rel="noopener" aria-label={t(lang,`Open ${offer.title} poster PDF`,`打开${offer.title}海报 PDF`)}>
+    <img src={`/assets/posters/${kind}-1.webp`} width={posterWidth} height="2400" alt={offer.title} loading="lazy" decoding="async"/>
+  </a>
 </section></>}
-
-<script>
-  const controls = document.querySelector<HTMLElement>('.poster-controls');
-  if (controls) {
-    const pages = controls.parentElement!.querySelectorAll<HTMLAnchorElement>('.poster-page');
-    const previous = controls.querySelector<HTMLButtonElement>('[data-prev]')!;
-    const next = controls.querySelector<HTMLButtonElement>('[data-next]')!;
-    const counter = controls.querySelector('span')!;
-    let current = 0;
-    function show(index: number) {
-      current = Math.max(0, Math.min(pages.length - 1, index));
-      pages.forEach((page, i) => { page.hidden = i !== current; });
-      counter.textContent = (current + 1) + ' / ' + pages.length;
-      previous.disabled = current === 0;
-      next.disabled = current === pages.length - 1;
-    }
-    previous.addEventListener('click', () => show(current - 1));
-    next.addEventListener('click', () => show(current + 1));
-    controls.hidden = false;
-  }
-</script>
 
 <style>
   .campaign-copy { --body-face: var(--display); max-width: none; padding-bottom: 0; }
@@ -141,10 +115,6 @@ const posterWidth=kind==='staff-offer'?1855:1701;
     :global(#main) .offer-band :is(p,li) { font-size: 22px; }
   }
   .campaign-posters { width: min(1000px, calc(100% - 40px)); margin: 28px auto 48px; display: grid; gap: 24px; }
-  .poster-controls { display: flex; align-items: center; justify-content: center; gap: 20px; font: 400 24px/1.3 var(--display); }
-  .poster-controls button { width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--accent-strong); color: var(--cream); font-size: 24px; }
-  .poster-controls button:disabled { opacity: .4; cursor: default; }
-  .poster-controls[hidden], .poster-page[hidden] { display: none; }
   .poster-page { display: block; line-height: 0; }
   .poster-page img { display: block; width: 100%; height: auto; }
   @media (max-width: 700px) { .campaign-posters { width: calc(100% - 24px); margin-block: 12px 24px; gap: 16px; } }

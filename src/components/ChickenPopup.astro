@@ -9,7 +9,7 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
     <div class="popup-frame" data-slide>
       <video muted playsinline preload="none" poster="/assets/gallery/DUoxIoIjdYY.webp"
         data-src="/assets/gallery/DUoxIoIjdYY.mp4" aria-label={t(lang,'Fresh from the fryer','炸鸡出锅近景')}></video>
-      <a class="popup-menu" href={url(lang,'menu')+'#fried-chicken'}>{t(lang,'Explore Original Recipe Chicken','查看招牌原味鸡')} ↗</a>
+      <a class="popup-menu" href={url(lang,'menu')+'#original-recipe-fried-chicken'}>{t(lang,'Explore Original Recipe Chicken','查看招牌原味鸡')} ↗</a>
     </div>
     {offers.map(offer => (
       <a class="popup-frame popup-poster" data-slide inert href={url(lang,offer.id)}>

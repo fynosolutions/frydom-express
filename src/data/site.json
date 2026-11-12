@@ -139,7 +139,7 @@
       "menu": [
         {
           "id": "original-recipe-fried-chicken",
-          "sectionId": "fried-chicken",
+          "sectionId": "special-combos",
           "name": "Original Recipe Fried Chicken",
           "sourceName": "Original Recipe Fried Chicken",
           "description": "Original or spicy. Available in 3, 6 or 9 pieces.",
@@ -1778,14 +1778,9 @@
       ],
       "categories": [
         {
-          "id": "fried-chicken",
-          "name": "Original Recipe Chicken",
-          "description": "Golden and crispy. Original or spicy."
-        },
-        {
           "id": "special-combos",
           "name": "Signature & Value Combos",
-          "description": "Four combinations, each with its own favorites."
+          "description": "Original Recipe Fried Chicken and four signature combos."
         },
         {
           "id": "combos",
@@ -2288,7 +2283,7 @@
       "menu": [
         {
           "id": "original-recipe-fried-chicken",
-          "sectionId": "fried-chicken",
+          "sectionId": "special-combos",
           "name": "吮指原味鸡",
           "sourceName": "吮指原味鸡",
           "description": "原味或辣味，3 块、6 块或 9 块可选。",
@@ -3927,14 +3922,9 @@
       ],
       "categories": [
         {
-          "id": "fried-chicken",
-          "name": "招牌原味鸡",
-          "description": "金黄酥脆，原味与辣味可选。"
-        },
-        {
           "id": "special-combos",
           "name": "特色与超值套餐",
-          "description": "四款特色组合，搭配各有不同。"
+          "description": "招牌原味鸡与四款特色套餐。"
         },
         {
           "id": "combos",

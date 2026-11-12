@@ -30,11 +30,6 @@
 .page-menu .topline { display: none; }
 .page-menu .site-header { border-bottom: 0; }
 .page-menu .header-inner { min-height: 88px; padding: 14px 0; display: flex; justify-content: space-between; gap: 24px; align-items: center; max-width: 1440px; }
-.page-menu .brand-lockup { display: flex; align-items: center; gap: 10px; text-align: left; flex: none; }
-.page-menu .brand-lockup > img { position: static; width: 52px; height: 52px; }
-.page-menu .brand-wordmark strong { font: 400 28px/1 'Modak','FuturaPT',sans-serif; letter-spacing: 0; }
-.page-menu .brand-wordmark strong span { display: block; font: 400 16px/1 'Mouse Memoirs',sans-serif; letter-spacing: .18em; margin: 5px 0 0; }
-.page-menu .brand-wordmark small { display: none; }
 .page-menu .desktop-nav { margin-left: auto; gap: 24px; flex-wrap: nowrap; }
 .page-menu .desktop-nav > a { font-size: 22px; }
 .page-menu.locale-zh .desktop-nav > a { font: 600 16px/1.4 var(--sans); }
@@ -127,10 +122,6 @@
   .mascot-greeting span { font-size: 22px; padding: 16px 20px; }
   .page-home #main .creative-note { margin-bottom: 20px; font-size: 11px; }
   .page-menu .header-inner { width: calc(100% - 32px); gap: 12px; }
-  .page-menu .brand-lockup { gap: 8px; }
-  .page-menu .brand-lockup > img { width: 44px; height: 44px; }
-  .page-menu .brand-wordmark strong { font-size: 24px; }
-  .page-menu .brand-wordmark strong span { font-size: 13px; }
   .page-menu #main .page-intro { padding: 30px 18px; }
   .page-menu #main .page-intro h1 { font-size: 52px; }
   .page-menu #main .intro-bottom > p { font-size: 16px; }

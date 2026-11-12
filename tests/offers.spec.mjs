@@ -5,14 +5,8 @@ for(const prefix of ['', '/en'])test(`original posters, offer navigation and lan
  await page.goto(prefix+'/offers.html');
  await expect(page.locator('.offer-poster')).toHaveCount(3);
  await page.locator('.offer-poster[href$="/staff-offer.html"]').click();
- await expect(page.locator('.poster-page img')).toHaveCount(2);
- await expect(page.locator('.poster-page').last()).toHaveAttribute('href','/assets/posters/staff-offer.pdf#page=2');
- await expect(page.locator('.poster-page:visible')).toHaveCount(1);
- await page.locator('[data-next]').click();
- await expect(page.locator('.poster-page:visible')).toHaveAttribute('href','/assets/posters/staff-offer.pdf#page=2');
- await expect(page.locator('.poster-controls span')).toHaveText('2 / 2');
- await page.locator('[data-prev]').click();
- await expect(page.locator('.poster-controls span')).toHaveText('1 / 2');
+ await expect(page.locator('.poster-page img')).toHaveCount(1);
+ await expect(page.locator('.poster-page')).toHaveAttribute('href','/assets/posters/staff-offer-combined.pdf#page=1');
  await expect(page.locator('.campaign-copy h1')).toBeVisible();
  await expect(page.locator('.campaign-terms a[href="tel:+19298050718"]').first()).toBeVisible();
  await page.locator('.language-link').click();

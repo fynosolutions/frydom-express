@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import PageWave from '../components/PageWave.astro';
 import MobileActions from '../components/MobileActions.astro';
 import Footer from '../components/Footer.astro';
 import HomeIntro from '../components/HomeIntro.astro';
@@ -55,6 +56,7 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <script type="application/ld+json" set:html={JSON.stringify(structuredData(lang,kind)).replaceAll('<','\u003c')}/>
   </head>
   <body id="top" class:list={[`page-${kind}`,`locale-${lang}`]}>
+    <PageWave/>
     {kind==='home'&&<HomeIntro lang={lang}/>}
     <a href="#main" class="skip-link">{t(lang,'Skip to content','跳转到正文')}</a>
     <Header lang={lang} kind={kind}/>

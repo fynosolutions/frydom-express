@@ -1,9 +1,9 @@
 {
-  "executedAt": "2026-11-11T17:20:52.699Z",
+  "executedAt": "2026-11-12T17:23:14.679Z",
   "method": "Production HTML parsed with Cheerio, without executing JavaScript. Not a search indexing or live CRM test.",
   "routes": 20,
-  "checks": 127,
-  "passed": 127,
+  "checks": 125,
+  "passed": 125,
   "failures": [],
   "details": [
     {
@@ -355,10 +355,6 @@
       "status": "passed"
     },
     {
-      "name": "/staff-offer.html original poster PDF",
-      "status": "passed"
-    },
-    {
       "name": "/leg-quarter.html semantics",
       "status": "passed"
     },
@@ -444,10 +440,6 @@
     },
     {
       "name": "/en/staff-offer.html JSON-LD parses and contains only supported facts",
-      "status": "passed"
-    },
-    {
-      "name": "/en/staff-offer.html original poster PDF",
       "status": "passed"
     },
     {

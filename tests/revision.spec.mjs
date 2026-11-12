@@ -31,7 +31,7 @@ for (const [prefix, width] of [['/en', 1440], ['', 390]]) {
   expect(frames.at(-1).opacity).toBe('1');
   expect(frames.at(-1).transform).toBe('scale(1)');
   await expect.poll(()=>popup.locator('video').evaluate(v=>v.currentTime>0 && v.muted && !v.loop)).toBe(true);
-  await expect(popup.locator('.popup-menu')).toHaveAttribute('href',prefix+'/menu.html#fried-chicken');
+  await expect(popup.locator('.popup-menu')).toHaveAttribute('href',prefix+'/menu.html#original-recipe-fried-chicken');
   for(const [i,offer] of ['staff-offer','leg-quarter','chicken-bucket'].entries()){
    await popup.locator('[data-next]').click();
    await expect(popup.locator('.popup-poster:not([inert])')).toHaveAttribute('href',prefix+'/'+offer+'.html');
@@ -47,7 +47,7 @@ for (const [prefix, width] of [['/en', 1440], ['', 390]]) {
    await expect.poll(()=>popup.locator('video').evaluate(v=>v.paused)).toBe(true);
   }else{
    await popup.locator('.popup-menu').click();
-   await expect(page).toHaveURL(/\/menu\.html#fried-chicken$/);
+   await expect(page).toHaveURL(/\/menu\.html#original-recipe-fried-chicken$/);
    await expect(page.locator('.chicken-popup')).toHaveCount(0);
   }
   if(prefix) await page.reload({waitUntil:'domcontentloaded'});

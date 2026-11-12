@@ -26,7 +26,7 @@ async function document(route){if(cache.has(route))return cache.get(route);const
 function check(name,run){try{run();checks.push({name,status:'passed'});}catch(error){failures.push({name,error:error.message});checks.push({name,status:'failed',error:error.message});}}
 for(const {lang,kind,path:route}of data.routes){
   const q=await document(route);const source=data.locales[lang];
-  check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');if(['staff-offer','leg-quarter','chicken-bucket'].includes(kind)){assert.equal(q('.campaign-posters img').length,kind==='staff-offer'?2:1);assert.equal(q('.campaign-copy').length,1);assert.equal(q('.campaign-terms').length,1);assert(q('.campaign-copy').text().includes(source.offers.find(o=>o.id===kind).headline));}else if(kind==='offers'){assert.equal(q('main .offer-poster img').length,3);}else assert(q('main').text().trim().length>100);assert.equal(q('head meta[name=robots]').length,0);assert(!q('main').text().includes('< img'));});
+  check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');if(['staff-offer','leg-quarter','chicken-bucket'].includes(kind)){assert.equal(q('.campaign-posters img').length,1);assert.equal(q('.campaign-copy').length,1);assert.equal(q('.campaign-terms').length,1);assert(q('.campaign-copy').text().includes(source.offers.find(o=>o.id===kind).headline));}else if(kind==='offers'){assert.equal(q('main .offer-poster img').length,3);}else assert(q('main').text().trim().length>100);assert.equal(q('head meta[name=robots]').length,0);assert(!q('main').text().includes('< img'));});
   check(route+' canonical and language alternates',()=>{assert.equal(q('link[rel=canonical]').attr('href'),origin+route);for(const l of ['en','zh'])assert.equal(q(`link[hreflang="${l==='en'?'en':'zh-Hans'}"]`).attr('href'),origin+data.locales[l].routes[kind]);});
   check(route+' unique IDs',()=>{const ids=q('[id]').map((i,e)=>q(e).attr('id')).get();assert.equal(new Set(ids).size,ids.length);});
   check(route+' exact active navigation',()=>{assert.equal(q('.desktop-nav a[aria-current=page]').length,['home','privacy','terms'].includes(kind)?0:1);assert.equal(q('.desktop-nav a').length,6);assert.equal(q('.desktop-nav[hidden]').length,0);});
@@ -48,7 +48,7 @@ for(const {lang,kind,path:route}of data.routes){
   if(kind==='menu'){
     check(route+' approved printed menu prices and portions',()=>{
       assert.deepEqual(Object.fromEntries(source.menu.map(i=>[i.id,i.variants.map(v=>v.price)])),printedPrices);
-      assert.deepEqual(source.categories.map(c=>source.menu.filter(i=>i.sectionId===c.id).length),[1,4,5,5,6,6,4,4]);
+      assert.deepEqual(source.categories.map(c=>source.menu.filter(i=>i.sectionId===c.id).length),[5,5,5,6,6,4,4]);
       assert.equal(q('#combos .menu-item').length,5);
       assert.equal(q('#burgers-wraps .menu-item').length,5);
       assert.equal(q('.price-enquiry').length,0);
