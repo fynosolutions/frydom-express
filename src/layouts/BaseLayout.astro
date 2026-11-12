@@ -1,8 +1,10 @@
 ---
 import Header from '../components/Header.astro';
+import PageWave from '../components/PageWave.astro';
 import MobileActions from '../components/MobileActions.astro';
 import Footer from '../components/Footer.astro';
 import HomeIntro from '../components/HomeIntro.astro';
+import ChickenPopup from '../components/ChickenPopup.astro';
 import { asset, locale, metadata, structuredData, t, url, type Language, type PageKind } from '../lib/site';
 import '../styles/global.css';
 import '../styles/redesign.css';
@@ -11,10 +13,20 @@ import '../styles/reading.css';
 import '../styles/geometry.css';
 import '../styles/menu.css';
 import '../styles/customer.css';
+import '../styles/home-poster.css';
+import '../styles/brand-type.css';
+import '../styles/round-two.css';
+import '../styles/menu-crav.css';
+import '../styles/home-type-scale.css';
+import '../styles/white-type-outline.css';
+import '../styles/body-type.css';
+import '../styles/home-refinements.css';
+import '../styles/wave-motion.css';
+import '../styles/footer.css';
 const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
 const meta=metadata(lang,kind);
 const canonical='https://frydomexpress.com'+url(lang,kind);
-const hero=kind==='home'?locale(lang).menu.find((item:any)=>item.id==='angus-beef-cheeseburger-combo').image:asset('/images/brand-new-1280-1280.webp');
+const hero=kind==='home'?locale(lang).menu.find((item:any)=>item.id==='angus-beef-cheeseburger').image:asset('/images/brand-new-1280-1280.webp');
 const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image||hero;
 ---
 <!DOCTYPE html>
@@ -31,6 +43,8 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <link rel="icon" href={asset('/favicon-32.png').src} type="image/png"/>
     <link rel="apple-touch-icon" href={asset('/apple-touch-icon.png').src}/>
     <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+    {kind==='home'&&<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/crav/MouseMemoirs-latin.woff2" crossorigin/>}
+    {kind==='home'&&<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/crav/Modak-latin.woff2" crossorigin/>}
     {kind==='home'&&<link rel="preload" as="image" href={hero.src}/>}
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Frydom Express"/>
@@ -42,12 +56,14 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <script type="application/ld+json" set:html={JSON.stringify(structuredData(lang,kind)).replaceAll('<','\u003c')}/>
   </head>
   <body id="top" class:list={[`page-${kind}`,`locale-${lang}`]}>
+    <PageWave/>
     {kind==='home'&&<HomeIntro lang={lang}/>}
     <a href="#main" class="skip-link">{t(lang,'Skip to content','跳转到正文')}</a>
     <Header lang={lang} kind={kind}/>
     <main id="main"><slot/></main>
     <Footer lang={lang}/>
     <MobileActions lang={lang}/>
+    {kind==='home'&&<ChickenPopup lang={lang}/>}
     <script>
       import '../scripts/site';
     </script>

@@ -1,3 +1,4 @@
+import './heading-motion';
 const productionHost = ['frydomexpress.com','www.frydomexpress.com'].includes(location.hostname) && location.protocol === 'https:';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -35,7 +36,7 @@ function initializeMotion() {
   },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
   const selector = '.item-body,h1,h2,h3,h4,p,li,dl,.eyebrow,.offer-art,.item-photo,.editorial-photo,.location-detail-photo,.support-detail-image';
   document.querySelectorAll<HTMLElement>(`main :is(${selector})`).forEach(target => {
-    if (target.dataset.motion === 'revealed' || target.closest('form,nav,aside,[aria-hidden="true"],.hero-copy') || target.parentElement?.closest(selector)) return;
+    if (target.hasAttribute('data-pop-heading') || target.dataset.motion === 'revealed' || target.closest('form,nav,aside,[aria-hidden="true"],.hero-copy,.taste-story') || target.parentElement?.closest(selector)) return;
     target.dataset.motion = 'pending';
     textObserver!.observe(target);
   });
@@ -98,18 +99,6 @@ pauseButton?.addEventListener('click',()=>{
   pauseButton.firstElementChild!.textContent=paused?'▶':'Ⅱ';
 });
 if(ribbon&&typeof window.IntersectionObserver==='function'){new IntersectionObserver(([entry])=>ribbon.classList.toggle('is-offscreen',!entry.isIntersecting)).observe(ribbon);}
-
-const gallery=document.querySelector<HTMLElement>('#favorites-gallery');
-if(gallery){
-  const controls=document.querySelector<HTMLElement>('.favorite-controls')!;
-  controls.hidden=false;
-  const previous=controls.querySelector<HTMLButtonElement>('[data-favorites-prev]')!;
-  const next=controls.querySelector<HTMLButtonElement>('[data-favorites-next]')!;
-  const sync=()=>{previous.disabled=gallery.scrollLeft<2;next.disabled=gallery.scrollLeft+gallery.clientWidth>=gallery.scrollWidth-2;};
-  previous.addEventListener('click',()=>gallery.scrollBy({left:-gallery.clientWidth*.85,behavior:reducedMotion.matches?'instant':'smooth'}));
-  next.addEventListener('click',()=>gallery.scrollBy({left:gallery.clientWidth*.85,behavior:reducedMotion.matches?'instant':'smooth'}));
-  gallery.addEventListener('scroll',sync,{passive:true});addEventListener('resize',sync);sync();
-}
 
 const categoryLinks = [...document.querySelectorAll<HTMLAnchorElement>('.category-nav a')];
 if(categoryLinks.length && typeof window.IntersectionObserver==='function'){

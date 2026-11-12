@@ -1,0 +1,83 @@
+---
+import wordmark from '../assets/transition-wordmark.svg?raw';
+---
+<div popover="manual" class="wave-art" aria-hidden="true">
+  <svg class="wave-sheet" viewBox="0 0 100 120" preserveAspectRatio="none">
+    <path d="M0 9C18 13 28 9 44 6S74 0 100 4V120H0Z"/>
+  </svg>
+  <div class="wave-brand" set:html={wordmark} />
+</div>
+<style is:global>
+  .wave-art {
+    position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+    border: 0; margin: 0; padding: 0; overflow: hidden; pointer-events: none; background: transparent;
+  }
+  .wave-art::backdrop { background: transparent; }
+  .wave-sheet { position: absolute; inset: 0; width: 100%; height: 120%; }
+  .wave-sheet { fill: #ed291c; }
+  .wave-brand {
+    position: absolute; inset: 0; display: grid; place-items: center;
+  }
+  .wave-brand svg { display: block; width: min(54vw, 784px); height: auto; }
+  .wave-art[data-phase="up"] .wave-sheet { animation: wave-up 1s cubic-bezier(.45,0,.25,1) both; }
+  .wave-art[data-phase="up"] .wave-brand { animation: brand-in .22s .78s both; }
+  .wave-art[data-phase="down"] .wave-sheet { animation: wave-down 1s cubic-bezier(.45,0,.25,1) var(--hold) both,
+      wave-color var(--hold) ease both; }
+
+  .wave-art[data-phase="down"] .wave-brand { animation: brand-out .2s var(--hold) both; }
+  @keyframes wave-up { from { transform: translateY(100vh); } to { transform: translateY(-14vh); } }
+  @keyframes wave-down { from { transform: translateY(-14vh); } to { transform: translateY(100vh); } }
+  @keyframes wave-color { 0%, 35% { fill: #ed291c; } 100% { fill: #ffda50; } }
+  @keyframes brand-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes brand-out { to { opacity: 0; } }
+</style>
+<script is:inline>
+  (() => {
+    const wave = document.querySelector('.wave-art');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    if (!wave.showPopover) { wave.hidden = true; return; }
+    const key = 'frydom-wave-destination';
+    let incoming;
+    try {
+      incoming = JSON.parse(sessionStorage.getItem(key));
+      sessionStorage.removeItem(key);
+    } catch { return; }
+    let timer;
+    function reset() {
+      clearTimeout(timer);
+      wave.hidePopover();
+      delete wave.dataset.phase;
+    }
+    // Keep the outgoing curtain painted through the document handoff.
+    window.addEventListener('pageshow', event => { if (event.persisted) reset(); });
+    if (incoming?.href === location.href && performance.getEntriesByType('navigation')[0]?.type === 'navigate' && !reduced.matches) {
+      document.documentElement.dataset.waveArrival = '';
+      const hold = 500;
+      wave.style.setProperty('--hold', hold + 'ms');
+      wave.dataset.phase = 'down';
+      wave.showPopover();
+      wave.querySelector('.wave-sheet').addEventListener('animationend', function finished(event) {
+        if (event.animationName !== 'wave-down') return;
+        this.removeEventListener('animationend', finished);
+        reset();
+      });
+    }
+    document.addEventListener('click', event => {
+      const link = event.target.closest?.('a[href]');
+      if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey ||
+          event.shiftKey || event.altKey || (link.target && link.target !== '_self') || link.hasAttribute('download') || reduced.matches) return;
+      const dest = new URL(link.href);
+      if (dest.origin !== location.origin || !/\/(?:[^/]+\.html)?$/.test(dest.pathname) ||
+          (dest.pathname === location.pathname && dest.search === location.search)) return;
+      event.preventDefault();
+      if (wave.dataset.phase === 'up') return;
+      reset();
+      wave.dataset.phase = 'up';
+      wave.showPopover();
+      timer = setTimeout(() => {
+        try { sessionStorage.setItem(key, JSON.stringify({href: dest.href})); } catch {}
+        location.assign(dest.href);
+      }, 1000);
+    });
+  })();
+</script>

@@ -1,0 +1,80 @@
+/* CRAV's actual pairing, self-hosted from Google Fonts under SIL OFL 1.1.
+   These Latin faces do not replace the existing Chinese glyphs. */
+@font-face {
+  font-family: 'Mouse Memoirs';
+  src: url('/assets/fonts/crav/MouseMemoirs-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Modak';
+  src: url('/assets/fonts/crav/Modak-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.locale-en { --display: 'Mouse Memoirs', 'FuturaPT', sans-serif; }
+.locale-en :is(h1,h2,h3,h4) {
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+.locale-en :is(.desktop-nav,.mobile-navigation nav,.button,.text-link) {
+  font-family: 'Mouse Memoirs', 'FuturaPT', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+}
+.locale-en .button { font-size: 22px; }
+.locale-en .desktop-nav > a { font-family: 'Mouse Memoirs',sans-serif; font-size: 22px; font-weight: 400; }
+:is(.page-home, .page-menu) .brand-wordmark strong {
+  font-family: 'Modak', 'FuturaPT', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  font-synthesis: none;
+}
+:is(.page-home, .page-menu) .brand-wordmark strong span { font-family: 'Mouse Memoirs',sans-serif; font-size: inherit; letter-spacing: .18em; }
+.page-home .poster-wordmark {
+  font-family: 'Mouse Memoirs', 'FuturaPT', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: clamp(180px,30vw,432px);
+  line-height: .9;
+  letter-spacing: -.02em;
+  -webkit-text-stroke: 7px #fff8ed;
+  paint-order: stroke fill;
+}
+.page-home.locale-en .food-sticker {
+  font-family: 'Modak', 'FuturaPT', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: clamp(22px,2.6vw,36px);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+.page-home.locale-en #main .poster-copy h1 {
+  font-weight: 400;
+  font-size: clamp(36px,4vw,58px);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.page-home.locale-en #main :is(.favorites,.home-offers-band,.home-visit) h2 { text-transform: uppercase; }
+.page-home.locale-en .desktop-nav .order-picker > summary { font-size: 22px; }
+.page-home.locale-en #main .text-link { font-size: 22px; font-weight: 400; }
+.page-home.locale-en .poster-explore { font-family: 'Mouse Memoirs',sans-serif; font-size: 18px; font-weight: 400; }
+.page-home .footer-wordmark { font-family: 'Modak','FuturaPT',sans-serif; font-weight: 400; font-synthesis: none; letter-spacing: -.02em; }
+@media (max-width: 1100px) {
+  .page-home.locale-en .desktop-nav > a { font-size: 20px; }
+}
+@media (max-width: 700px) {
+  .page-home .poster-wordmark { font-size: 30vw; -webkit-text-stroke-width: 3px; }
+  :is(.page-home, .page-menu) .brand-wordmark strong { font-size: 24px; }
+  :is(.page-home, .page-menu) .brand-wordmark strong span { font-size: inherit; }
+  .page-home.locale-en .food-sticker { font-size: clamp(15px,4vw,24px); }
+  .page-home.locale-en #main .poster-copy h1 { font-size: clamp(30px,8.5vw,44px); }
+  .page-home.locale-en #main .hero-actions .button { font-size: 21px; }
+  .locale-en .mobile-customer-actions .button { font-size: 21px; }
+  .page-home .footer-wordmark { font-size: 8vw; }
+}

@@ -14,7 +14,7 @@ const picture=locale(lang).menu.find((item:any)=>item.id==='angus-beef-cheesebur
 <script is:inline>
   (()=>{
     const intro=document.getElementById('home-intro');
-    if(!intro||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    if(!intro||document.documentElement.hasAttribute('data-wave-arrival')||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     let frame=0,finished=false;
     const root=document.documentElement;
     const finish=()=>{

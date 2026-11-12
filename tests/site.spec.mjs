@@ -65,9 +65,10 @@ for(const route of data.routes)test(`no JavaScript ${route.path}`,async({browser
 });
 test('homepage responsive image and direct ordering',async({page})=>{
   await page.setViewportSize({width:390,height:844});await page.goto('/en/');
+  await page.locator('.popup-close').click();
   await page.locator('.hero-food').evaluate(image=>image.decode());expect(await page.locator('.hero-food').evaluate(image=>image.naturalWidth)).toBeGreaterThan(0);
   await page.locator('.mobile-customer-actions summary').click();await expect(page.locator('.mobile-customer-actions .order-platforms a')).toHaveCount(2);
-  const gallery=page.locator('#favorites-gallery');await gallery.scrollIntoViewIfNeeded();await expect(gallery.locator('.favorite-card')).toHaveCount(3);expect(await gallery.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
+  await expect(page.locator('.hero-actions a.button-outline')).toHaveAttribute('href','/en/menu.html');
 });
 test('reduced motion and blocked animation script preserve content',async({browser})=>{
   const context=await browser.newContext({reducedMotion:'reduce',viewport:{width:390,height:844}});const page=await context.newPage();

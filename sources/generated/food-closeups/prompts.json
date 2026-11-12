@@ -1,0 +1,32 @@
+[
+  {
+    "name": "crispy-chicken-pull",
+    "reference": "C:/Users/WZ/Desktop/frydom_express/public/assets/menu-1015/original-recipe-fried-chicken.webp",
+    "prompt": "Use case: ads-marketing. Asset: Frydom Express website food close-up, single landscape 3:2 photograph. Use the supplied fried chicken image as the product appearance reference, particularly the natural golden breading, irregular flaky crust and realistic chicken piece proportions. Create an editorial food photograph of two anatomically natural adult hands gently pulling one fried chicken piece into two halves, revealing moist fully cooked white chicken fibers with a fine wisp of steam, no cheese inside the chicken. Hands enter from opposite lower corners, food is centered and fills most of the frame, keep hand joints and fingernails realistic. A few natural golden crumbs on plain cream greaseproof paper, with another reference-matching chicken piece softly out of focus behind. Warm cream backdrop with a small out-of-focus restaurant-red surface near an edge, the Frydom cream/red/golden palette. Soft directional studio daylight, delicious tactile crust, restrained natural highlights, shallow depth of field with both torn surfaces sharp. Photorealistic high-end food campaign, no oversaturated CGI sheen. No text, logos, watermarks, layout panels or collage. This is a generated campaign asset based on real menu photography; preserve the recognizable breading and avoid inventing toppings. Opaque background.",
+    "method": "built-in image_gen",
+    "generated": true,
+    "date": "2026-11-10",
+    "original": "sources/generated/food-closeups/crispy-chicken-pull-v1.png",
+    "web": "public/assets/food-closeups/crispy-chicken-pull-v1.webp"
+  },
+  {
+    "name": "cheeseburger-macro",
+    "reference": "C:/Users/WZ/Desktop/frydom_express/public/assets/menu-1015/angus-beef-cheeseburger.webp",
+    "prompt": "Use case: ads-marketing. Asset: Frydom Express website ingredient close-up, single landscape 3:2 photograph. Use the supplied Angus beef cheeseburger as the exact visual recipe reference. Recompose into an extreme appetizing three-quarter macro photo focusing on the folded melted yellow cheese at the edge of the single beef patty and the glossy brown-gold sauce already visible under the smooth toasted bun. Keep the reference ingredients and order: smooth golden bun (no sesame seeds), pickle slices, brown-gold sauce, tomato, yellow cheese, one beef patty, green lettuce, bottom bun. Do not add bacon, a second patty, extra cheeses or different sauce. Show natural cheese softness and a modest bead of sauce, not exaggerated dripping or stretchy mozzarella. Crop close so the textured bun top and patty edges partly leave the frame, but the central cheese/patty/tomato layers remain clearly recognizable. A warm cream paper surface and softly blurred rich restaurant-red background, consistent with a premium playful burger campaign. Warm directional daylight, detailed beef and bread texture, shallow depth of field, restrained highlights, genuinely photographic natural food. No hands in this image. No lettering, logo, watermark, border or collage. Opaque background.",
+    "method": "built-in image_gen",
+    "generated": true,
+    "date": "2026-11-10",
+    "original": "sources/generated/food-closeups/cheeseburger-macro-v1.png",
+    "web": "public/assets/food-closeups/cheeseburger-macro-v1.webp"
+  },
+  {
+    "name": "handheld-burger",
+    "reference": "C:/Users/WZ/Desktop/frydom_express/public/assets/menu-1015/angus-beef-cheeseburger.webp",
+    "prompt": "Use case: ads-marketing. Asset: Frydom Express website lifestyle close-up, single landscape 3:2 photograph. Use the supplied Angus beef cheeseburger as the product appearance reference, preserving the recognizable smooth golden bun without sesame, pickles, brown-gold sauce, tomato slices, melted yellow cheese, a single beef patty and green leaf lettuce. Photograph a pair of anatomically natural adult hands holding this burger in a plain cream paper sleeve, bringing it towards the camera. Burger centered, fills roughly 60 percent of frame width, viewed from a slightly low front three-quarter angle, ingredients sharp and naturally proportioned. Paper sleeve covers only bottom quarter, no branding or invented text. Hands enter from lower left and right, believable thumbs and fingers supporting the food, no face or body needed. Rich warm red restaurant studio backdrop with subtle real light falloff, golden/cream/red campaign palette. Soft warm side light, tangible bun and lettuce texture, shallow depth of field, natural skin texture and clean nails. Delicious premium editorial food photography, not a plastic render, no cartoon styling. No extra patties or toppings, no text, logo, watermark, borders, collage or UI. Opaque background.",
+    "method": "built-in image_gen",
+    "generated": true,
+    "date": "2026-11-10",
+    "original": "sources/generated/food-closeups/handheld-burger-v1.png",
+    "web": "public/assets/food-closeups/handheld-burger-v1.webp"
+  }
+]

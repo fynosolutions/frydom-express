@@ -1,0 +1,50 @@
+/* Keep the expanded lettering with the original close-set poster spacing. */
+.page-home .poster-wordmark {
+  font-family: 'Frydom Display Wide', 'Mouse Memoirs', sans-serif;
+  font-size: min(30vw, 432px);
+  letter-spacing: -.02em;
+  padding-left: 0;
+  white-space: nowrap;
+}
+.page-home #hero-title > span { background-image: none; padding-inline: 0; }
+.page-home.page-home #main .taste-signoff { justify-content: center; }
+
+/* Enlarge the navigation labels without changing their established lettering. */
+body.locale-en .site-header .desktop-nav > a {
+  font-family: 'Frydom Display Wide', 'Mouse Memoirs', sans-serif;
+  font-size: 44px;
+  font-weight: 400;
+}
+body.locale-zh .site-header .desktop-nav > a {
+  font-family: 'Frydom Han Wide', 'Smiley Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+body.locale-zh:is(.page-home,.page-menu) .site-header .desktop-nav > a { font-size: 32px; }
+body .site-header .desktop-nav { gap: 24px; }
+body .site-header .desktop-nav > a { line-height: 1.2; }
+body.locale-en .site-header .mobile-navigation nav > a { font-family: 'Frydom Display Wide', 'Mouse Memoirs', sans-serif; }
+body.locale-zh .site-header .mobile-navigation nav > a { font-family: 'Frydom Han Wide', 'Smiley Sans', sans-serif; }
+body .site-header .mobile-navigation nav > a {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+body .site-header .mobile-navigation .nav-label {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+@media(min-width:951px) and (max-width:1279px) {
+  body:is(.page-home,.page-menu) .header-inner { flex-wrap: wrap; }
+  body:is(.page-home,.page-menu) .desktop-nav {
+    order: 3;
+    flex-basis: 100%;
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+  body:not(.page-home):not(.page-menu) .desktop-nav { grid-column: 1 / -1; }
+}

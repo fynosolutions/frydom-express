@@ -3,6 +3,7 @@ import {test,expect} from '@playwright/test';
 for(const prefix of ['', '/en'])test(`customer actions and confirmed hours ${prefix||'zh'}`,async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.goto(prefix+'/');
+ await page.locator('.popup-close').click();
  const bar=page.locator('.mobile-customer-actions');
  await bar.locator('summary').click();
  await expect(bar.getByRole('link',{name:'Uber Eats ↗'})).toBeVisible();
@@ -21,7 +22,9 @@ for(const prefix of ['', '/en'])test(`customer actions and confirmed hours ${pre
  await expect(page.locator('.campaign-copy')).toContainText('$10');
  await expect(page.locator('.campaign-copy')).toContainText('$50');
  await expect(page.locator('.campaign-copy')).toContainText('$100');
- for(const poster of await page.locator('.poster-page img').all()){
+ const posters=await page.locator('.poster-page img').all();
+ for(const [index,poster] of posters.entries()){
+   if(index>0)await page.locator('[data-next]').click();
    await poster.scrollIntoViewIfNeeded();
    await expect.poll(()=>poster.evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
  }

@@ -1,0 +1,138 @@
+/* Food storytelling and the companion menu surface. */
+.taste-story { padding-top: 92px; background: var(--cream); }
+.taste-lead { display: grid; grid-template-columns: .78fr 1.22fr; gap: 60px; align-items: center; }
+.page-home #main .taste-copy h2 { font-size: clamp(48px,6.5vw,94px); line-height: 1.05; }
+.locale-en .taste-story :is(h2,h3) { text-transform: uppercase; }
+.page-home #main .taste-copy p { font: 500 18px/1.7 var(--sans); margin: 25px 0; max-width: 28em; }
+.taste-photo { position: relative; border-radius: 12px; overflow: hidden; }
+.taste-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.taste-chicken { rotate: 2deg; aspect-ratio: 1.3; }
+.taste-chicken img { object-position: center; }
+.taste-chicken > figcaption { position: absolute; left: 22px; bottom: 20px; padding: 9px 16px; background: var(--poster-yellow); color: var(--poster-ink); border-radius: 999px; font: 600 13px/1.4 var(--sans); }
+.taste-pair { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; margin-top: 90px; align-items: start; }
+.taste-detail { margin-top: 70px; }
+.taste-detail .taste-photo { aspect-ratio: 1.3; }
+.taste-handheld .taste-photo { aspect-ratio: 1.4; }
+.taste-pair figcaption { padding: 24px 0 0; }
+.page-home #main .taste-pair h3 { font-size: clamp(28px,3.2vw,46px); line-height: 1.2; }
+.page-home #main .taste-pair p { font: 500 17px/1.6 var(--sans); margin-top: 12px; }
+.taste-pair .text-link { margin-top: 14px; }
+.taste-signoff { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-top: 25px; }
+.page-home #main .creative-note { font: 500 12px/1.5 var(--sans); color: var(--muted); margin: 0 0 30px; }
+.mascot-greeting { display: flex; align-items: center; margin-right: 4%; }
+.mascot-greeting img { width: 175px; height: 205px; object-fit: contain; object-position: top; align-self: end; }
+.mascot-greeting span { background: var(--poster-yellow); color: var(--poster-ink); padding: 20px 26px; border-radius: 50%; rotate: -10deg; font: 400 30px/1 'Modak',var(--display); margin-right: -12px; z-index: 1; }
+.locale-zh .mascot-greeting span { font-family: var(--display); font-size: 36px; }
+.home-offers-band { position: relative; }
+
+/* Menu shares the compact brand header and red/cream/yellow palette. */
+.page-menu { --accent: #c82c1b; --accent-strong: #b82517; --heading: #c82c1b; --line: #c82c1b40; }
+.page-menu .topline { display: none; }
+.page-menu .site-header { border-bottom: 0; }
+.page-menu .header-inner { min-height: 88px; padding: 14px 0; display: flex; justify-content: space-between; gap: 24px; align-items: center; max-width: 1440px; }
+.page-menu .desktop-nav { margin-left: auto; gap: 24px; flex-wrap: nowrap; }
+.page-menu .desktop-nav > a { font-size: 22px; }
+.page-menu.locale-zh .desktop-nav > a { font: 600 16px/1.4 var(--sans); }
+.page-menu .header-actions { position: static; }
+.page-menu .language-link { min-height: 44px; display: flex; align-items: center; }
+.page-menu .button { border-radius: 999px; padding: 12px 24px; min-height: 48px; }
+.page-menu .breadcrumb { padding-block: 12px; }
+.page-menu .page-intro::before { display: none; }
+.page-menu #main .page-intro { width: 100%; max-width: none; padding: 48px max(24px,calc((100% - 1380px)/2)) 40px; background: var(--accent); color: var(--cream); }
+.page-menu #main .page-intro h1 { color: var(--cream); font-size: clamp(56px,7vw,100px); line-height: 1.08; }
+.page-menu.locale-en #main .page-intro h1 { text-transform: uppercase; }
+.page-menu .title-highlight { background: none; padding: 0; }
+.page-menu #main .intro-bottom > p { background: none; padding: 0; border-radius: 0; color: var(--cream); font: 500 18px/1.6 var(--sans); max-width: 42em; }
+.menu-intro-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px; margin-top: 26px; }
+.page-menu #main .menu-pdf { color: var(--cream); margin: 0; font-size: 17px; }
+.page-menu .menu-intro-actions .button { color: var(--accent-strong); background: var(--cream); }
+.page-menu .menu-intro-actions .order-platforms { z-index: 46; color: var(--body); }
+.page-menu .campaign-callout { padding-block: 18px; gap: 24px; border: 0; }
+.page-menu #main .campaign-callout p { font: 500 16px/1.5 var(--sans); }
+.page-menu .category-nav { background: var(--cream); top: var(--site-header-height,88px); border: 0; }
+.page-menu .category-nav > .wrap { gap: 8px; padding-block: 10px; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--accent) var(--cream); }
+.page-menu .category-nav a {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  flex: none;
+  background: var(--accent-strong);
+  color: var(--cream);
+  font: 600 20px/1.4 var(--sans);
+  letter-spacing: normal;
+  text-decoration: none;
+}
+.page-menu .category-nav a:is(:hover,[aria-current]) { background: #8d1e14; color: var(--cream); }
+.page-menu .category-nav a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+.page-menu .menu-section { padding-top: 55px; scroll-margin-top: calc(var(--site-header-height,88px) + 98px); }
+.page-menu .menu-section-heading { display: flex; text-align: left; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 28px; }
+.page-menu .menu-section-heading > div { flex: 1; min-width: 0; }
+.page-menu #main .menu-section-heading h2 { font-size: clamp(34px,4vw,54px); }
+.page-menu #main .menu-section-heading p { font: 500 16px/1.6 var(--sans); margin-top: 12px; }
+.page-menu .section-top { position: static; width: 44px; height: 44px; flex: none; color: var(--accent-strong); border-color: var(--line); }
+.page-menu #main .menu-grid .item-body { background: none; border-radius: 0; padding: 22px 0 0; border-top: 1px solid var(--line); }
+.page-menu #main .menu-grid .item-description { font: 500 16px/1.65 var(--sans); }
+.page-menu #main .menu-grid h3 { color: var(--accent-strong); font-size: 32px; }
+.page-menu #main .menu-grid .item-photo { height: 250px; }
+.page-menu #main .menu-grid .item-prices { border-top: 0; }
+.page-menu #main .item-prices > div { font-size: 20px; }
+.page-menu #main #fried-chicken .menu-grid { grid-template-columns: minmax(0,1fr); }
+.page-menu #main #fried-chicken .menu-item { display: grid; grid-template: auto / 1fr 1fr; align-items: center; gap: 60px; max-width: 1000px; width: 100%; margin-inline: auto; }
+.page-menu #main #fried-chicken .item-photo { grid-row: auto; height: 330px; margin: 0; }
+.page-menu #main #fried-chicken .item-body { display: block; grid-row: auto; border-top: 0; padding-top: 0; }
+.page-menu #main #fried-chicken .item-description { margin-block: 20px; }
+.page-menu #main #fried-chicken .item-prices { margin-inline: auto; }
+.page-menu #main .menu-footnotes p { background: #f4dfb3; border-radius: 12px; font: 500 16px/1.7 var(--sans); }
+.page-menu :focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+.page-menu ::selection { background: #fbd65b; color: #382318; }
+@media (prefers-reduced-motion: no-preference) {
+  .sticker-crispy { animation: sticker-settle 650ms cubic-bezier(.16,1,.3,1) 1.45s backwards; }
+  .sticker-juicy { animation: sticker-settle 650ms cubic-bezier(.16,1,.3,1) 1.6s backwards; }
+  @keyframes sticker-settle { from { scale: .85; } to { scale: 1; } }
+}
+@media (max-width: 1100px) {
+  .taste-lead { gap: 32px; }
+  .taste-pair { gap: 36px; }
+  .page-menu .header-inner { gap: 18px; }
+  .page-menu .desktop-nav { gap: 16px; }
+  .page-menu .desktop-nav > a { font-size: 20px; }
+  .page-menu.locale-zh .desktop-nav > a { font-size: 14px; }
+}
+@media (max-width: 950px) {
+  .page-menu .desktop-nav { display: none; }
+  .page-menu .mobile-navigation { display: block; }
+  .page-menu .header-inner { min-height: 78px; padding-block: 10px; }
+}
+@media (max-width: 700px) {
+  .taste-story { padding-top: 48px; }
+  .taste-lead { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .page-home #main .taste-copy h2 { font-size: 52px; }
+  .page-home #main .taste-copy p { font-size: 16px; margin-block: 20px; }
+  .taste-chicken { rotate: 0deg; aspect-ratio: 1.3; }
+  .taste-chicken > figcaption { left: 14px; bottom: 14px; font-size: 11px; }
+  .taste-pair { grid-template-columns: minmax(0,1fr); gap: 36px; margin-top: 36px; }
+  .taste-detail { margin-top: 0; }
+  .taste-detail .taste-photo,.taste-handheld .taste-photo { aspect-ratio: 1.5; }
+  .taste-pair figcaption { padding-top: 18px; }
+  .page-home #main .taste-pair h3 { font-size: 30px; }
+  .page-home #main .taste-pair p { font-size: 15px; }
+  .taste-signoff { flex-direction: column-reverse; align-items: stretch; padding-top: 24px; gap: 10px; }
+  .mascot-greeting { justify-content: end; margin-right: 0; }
+  .mascot-greeting img { width: 130px; height: 150px; }
+  .mascot-greeting span { font-size: 22px; padding: 16px 20px; }
+  .page-home #main .creative-note { margin-bottom: 20px; font-size: 11px; }
+  .page-menu .header-inner { width: calc(100% - 32px); gap: 12px; }
+  .page-menu #main .page-intro { padding: 30px 18px; }
+  .page-menu #main .page-intro h1 { font-size: 52px; }
+  .page-menu #main .intro-bottom > p { font-size: 16px; }
+  .menu-intro-actions { gap: 20px; }
+  .page-menu #main .menu-pdf { font-size: 14px; }
+  .page-menu .campaign-callout { display: block; }
+  .page-menu .category-nav a { font-size: 18px; padding: 9px 14px; }
+  .page-menu .menu-section { padding-top: 36px; }
+  .page-menu #main .menu-section-heading h2 { font-size: 34px; }
+  .page-menu #main .menu-grid h3 { font-size: 30px; }
+  .page-menu #main #fried-chicken .menu-item { display: block; }
+  .page-menu #main #fried-chicken .item-photo { height: 240px; margin-bottom: 24px; }
+  .page-menu #main #fried-chicken .item-body { border-top: 1px solid var(--line); padding-top: 22px; }
+}
