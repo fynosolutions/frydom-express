@@ -110,3 +110,35 @@
 }
 @media (max-width: 700px) { .video-print .gallery-film { height: min(44vh, 420px) !important; } .video-print figcaption { max-width: calc(min(44vh, 420px) * 9 / 16); } }
 .site-footer .footer-contact > span { font: 500 16px/1.5 var(--sans) !important; letter-spacing: 0 !important; }
+
+/* Scale pass 2: in-between window widths (tablet, split-screen, embedded browser panes ~600–1100px).
+   This is where a single burger card used to fill the whole screen. */
+@media (max-width: 950px) {
+  body .brand-lockup > img { width: 52px !important; height: 52px !important; }
+  body .header-inner { min-height: 62px !important; padding-block: 5px !important; }
+  body .topline { display: none !important; }
+}
+@media (min-width: 951px) and (max-width: 1199px) {
+  body .header-inner { flex-wrap: nowrap !important; gap: 14px !important; }
+  body .desktop-nav { flex-wrap: nowrap !important; gap: 14px !important; }
+  body .site-header .desktop-nav > a { font-size: 20px !important; }
+  body .site-header .desktop-nav .order-picker > summary { font-size: 15px !important; padding: 8px 16px !important; min-height: 40px !important; white-space: nowrap; }
+  body .brand-lockup > img { width: 56px !important; height: 56px !important; }
+  body .brand-wordmark strong { font-size: 20px !important; }
+}
+@media (max-width: 1099px) {
+  .video-print .gallery-film { height: min(40vh, 420px) !important; }
+  .video-print figcaption { max-width: calc(min(40vh, 420px) * 9 / 16); }
+}
+@media (min-width: 560px) and (max-width: 1099px) {
+  #main .menu-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important; gap: 20px 14px !important; }
+}
+#main .menu-grid .item-photo img { max-height: 24vh; object-fit: contain; }
+@media (max-width: 700px) { .taste-gallery > figure { flex-basis: min(56vw, 36vh) !important; } }
+.page-menu #main .menu-cover { max-height: 52vh; }
+@media (min-width: 560px) and (max-width: 1099px) {
+  #main .menu-grid .menu-item h3 { font-size: 20px !important; line-height: 1.15 !important; }
+  #main .menu-grid .item-photo { height: 150px !important; min-height: 0 !important; aspect-ratio: auto !important; }
+  #main .menu-grid .item-photo img { max-height: 130px; }
+  #main .menu-grid .item-body { padding: 12px 10px 16px !important; }
+}
