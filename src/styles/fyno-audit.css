@@ -100,7 +100,6 @@
 @media (min-width: 1100px) {
   #main .menu-grid:has(> :nth-child(6):last-child) { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; gap: 24px 14px; }
 }
-.location-detail img { max-height: 62vh; width: auto !important; max-width: 100%; object-fit: contain; }
 .campaign-posters .poster-page img { max-height: 78vh; width: auto !important; max-width: 100%; margin-inline: auto; display: block; }
 .offer-poster img { max-height: 60vh; object-fit: contain; }
 .page-partner #main img { max-height: 62vh; width: auto; max-width: 100%; object-fit: contain; }
@@ -206,3 +205,31 @@
 .page-home #main .poster-copy .hero-sub strong { font: 400 clamp(24px, 2.4vw, 34px)/1.15 var(--display); color: var(--accent-strong, #b82517); letter-spacing: .01em; }
 .page-home #main .poster-copy .hero-sub span { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.45; text-wrap: balance; }
 .locale-zh.page-home #main .poster-copy h1 .hero-title-line { display: inline-block; }
+
+/* Locations block (Mao 11-13: photo left with a dead gap, info too small). Two balanced columns, photo fills its column,
+   labels readable in brand red, values large. Photo height still capped by the screen so it never fills the view. */
+@media (min-width: 761px) {
+  #main .locations-list .location-detail { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important; gap: clamp(32px, 4.5vw, 72px) !important; align-items: center !important; }
+  #main .location-detail-photo { width: 100% !important; align-self: stretch !important; }
+  #main .location-detail-photo > img { width: 100% !important; height: min(76vh, 640px) !important; aspect-ratio: auto !important; object-fit: cover !important; object-position: 50% 35% !important; border-radius: 18px; }
+}
+#main .location-detail h2 { font-size: clamp(44px, min(5.2vw, 9vh), 84px) !important; line-height: 1 !important; margin-bottom: clamp(18px, 2.4vw, 32px) !important; }
+#main .location-detail dl { display: grid; gap: clamp(14px, 1.8vw, 22px); margin: 0 0 28px; }
+#main .location-detail dl > div { display: grid !important; grid-template-columns: 128px minmax(0, 1fr) !important; gap: 16px !important; align-items: baseline; padding: 0 0 14px; border-bottom: 2px solid #b8251722; }
+#main .location-detail dt { font: 400 17px/1.2 var(--display) !important; letter-spacing: .08em !important; color: var(--accent-strong, #b82517) !important; text-transform: uppercase; }
+#main .location-detail dd { font: 400 clamp(22px, 1.9vw, 28px)/1.3 var(--display) !important; color: #2b1a12 !important; margin: 0; }
+#main .location-detail dd small { display: block; margin-top: 6px; font: 500 15px/1.45 var(--sans) !important; color: #5a4032 !important; letter-spacing: 0 !important; }
+#main .location-detail .location-service { font-size: 14px !important; }
+@media (max-width: 760px) {
+  #main .location-detail dl > div { grid-template-columns: 1fr !important; gap: 4px !important; }
+  #main .location-detail-photo > img { width: 100% !important; height: auto !important; max-height: 52vh; object-fit: cover !important; border-radius: 14px; }
+}
+@media (min-width: 951px) and (max-width: 1199px) {
+  body .site-header .brand-lockup { order: 1; }
+  body .site-header .desktop-nav { order: 2; margin-left: auto !important; justify-content: flex-end; }
+  body .site-header .header-actions { order: 3; }
+}
+@media (max-width: 760px) {
+  #main .locations-list .location-detail-photo { width: 100% !important; max-width: none !important; justify-self: stretch !important; }
+  #main .locations-list .location-detail-photo > img { width: 100% !important; aspect-ratio: 4 / 3 !important; max-height: none; object-position: 50% 30% !important; }
+}
