@@ -17,11 +17,11 @@
   min-height: 88px; padding: 14px 0; display: flex; justify-content: space-between;
   gap: 28px; align-items: center; max-width: 1440px;
 }
-:is(.page-home, .page-menu) .brand-lockup { display: flex; align-items: center; gap: 10px; text-align: left; flex: none; }
-:is(.page-home, .page-menu) .brand-lockup > img { position: static; width: 104px; height: 104px; }
-:is(.page-home, .page-menu) .brand-wordmark strong { font: 800 28px/.95 'FuturaPT',sans-serif; letter-spacing: -.035em; }
-:is(.page-home, .page-menu) .brand-wordmark strong span { display: block; font-size: 15px; letter-spacing: .15em; margin: 5px 0 0; }
-:is(.page-home, .page-menu) .brand-wordmark small { display: none; }
+:is(body) .brand-lockup { display: flex; align-items: center; gap: 10px; text-align: left; flex: none; }
+:is(body) .brand-lockup > img { position: static; width: 104px; height: 104px; }
+:is(body) .brand-wordmark strong { font: 800 28px/.95 'FuturaPT',sans-serif; letter-spacing: -.035em; }
+:is(body) .brand-wordmark strong span { display: block; font-size: 15px; letter-spacing: .15em; margin: 5px 0 0; }
+:is(body) .brand-wordmark small { display: none; }
 .page-home .desktop-nav { margin-left: auto; gap: 24px; flex-wrap: nowrap; }
 .page-home .desktop-nav > a { font: 600 16px/1.4 var(--sans); }
 .page-home .header-actions { position: static; gap: 16px; }
@@ -134,10 +134,10 @@
 }
 @media (max-width: 700px) {
   .page-home .header-inner { width: calc(100% - 32px); }
-  :is(.page-home, .page-menu) .brand-lockup { gap: 8px; }
-  :is(.page-home, .page-menu) .brand-lockup > img { width: 88px; height: 88px; }
-  :is(.page-home, .page-menu) .brand-wordmark strong { font-size: 25px; }
-  :is(.page-home, .page-menu) .brand-wordmark strong span { font-size: 12px; }
+  :is(body) .brand-lockup { gap: 8px; }
+  :is(body) .brand-lockup > img { width: 88px; height: 88px; }
+  :is(body) .brand-wordmark strong { font-size: 25px; }
+  :is(body) .brand-wordmark strong span { font-size: 12px; }
   .page-home .header-actions { gap: 12px; }
   .page-home .food-poster { padding-top: 22px; padding-bottom: 84px; }
   .poster-stage { height: clamp(285px,75vw,445px); }

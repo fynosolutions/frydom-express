@@ -1,0 +1,75 @@
+/* 2026-11-13 Fyno audit pass: targeted fixes on top of the existing rounds. */
+
+/* Phone: "BROOKLYN." must fit on one line (was breaking to "BROOKLY / N."). */
+.page-home.page-home #main .home-visit h2 { overflow-wrap: normal; word-break: keep-all; }
+@media (max-width: 700px) {
+  .page-home.page-home #main .home-visit h2 { font-size: clamp(64px, 21vw, 120px); }
+}
+
+/* Visit block: real interior photo, sized so it never dominates or collapses. */
+.page-home.page-home .home-visit > img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; max-height: 620px; width: 100%; }
+@media (max-width: 700px) {
+  .page-home.page-home #main .home-visit > img { aspect-ratio: 4 / 3; max-height: none; }
+}
+
+/* Desktop first screen: keep headline, order buttons and hours above the fold. */
+@media (min-width: 951px) {
+  .page-home.page-home .poster-stage { height: clamp(300px, 27vw, 400px); }
+  .page-home.page-home .food-poster { padding-bottom: 64px; }
+}
+
+/* Home closeups now use real 4:5 photos; show the whole subject. */
+.taste-gallery .taste-photo { overflow: hidden; }
+.taste-gallery .taste-photo img { width: 100%; object-position: center; }
+
+/* Footer contact column no longer carries the partnership phone. */
+.footer-contact .footer-partner { margin-top: 18px; }
+@media (min-width: 951px) {
+  .page-home.page-home #main .poster-copy h1 { font-size: clamp(64px, 6.6vw, 104px) !important; line-height: 1 !important; }
+  .page-home.page-home #main .poster-copy h1 .hero-title-line { display: inline; }
+  .page-home.page-home #main .poster-copy > p { margin-top: 14px; }
+  .page-home.page-home .poster-stage .poster-caption { right: auto; left: 50%; translate: -50% 0; bottom: -6px; }
+}
+
+/* Phone: bottom action bar stays one line; first screen shows headline + order button sooner. */
+.mobile-customer-actions .button { white-space: nowrap; }
+@media (max-width: 700px) {
+  .mobile-customer-actions .button { padding-inline: 14px; gap: 10px; font-size: 15px; min-height: 46px; }
+  .page-home.page-home #main .poster-copy h1 { font-size: clamp(54px, 15vw, 84px) !important; line-height: 1 !important; }
+  .page-home.page-home .poster-stage { height: clamp(280px, 78vw, 400px) !important; }
+}
+
+/* Menu cover: darker scrim so the headline reads over the photo. */
+.menu-cover::after { background: #25140966; }
+
+/* Real-phone safety: explicit button colour outside cascade layers; no sideways scroll from the tilted gallery cards. */
+.intro-skip { color: var(--paper); }
+.video-gallery { overflow-x: clip; }
+
+/* Round 2 review fixes */
+/* Menu: a 5-item category fills one row instead of 4 + 1 orphan; 6 items sit 3 + 3. */
+@media (min-width: 1100px) {
+  #main .menu-grid:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: 24px 18px; }
+  #main .menu-grid:has(> :nth-child(6):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+/* Phone: thinner sticky header so content gets the screen. */
+@media (max-width: 700px) {
+  body .brand-lockup > img { width: 52px !important; height: 52px !important; }
+  body .header-inner { min-height: 62px !important; padding-block: 5px !important; }
+  body .brand-wordmark strong { font-size: 20px !important; }
+  .mobile-customer-actions { padding-block: 7px !important; }
+  /* Visit photo: show the whole shop sign, no crop. */
+  .page-home.page-home #main .home-visit > img { aspect-ratio: auto; max-height: none; object-fit: contain; }
+  /* Closeups: swipeable row with readable captions instead of three squeezed columns. */
+  .taste-gallery { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px !important; padding: 0 20px 12px !important; -webkit-overflow-scrolling: touch; }
+  .taste-gallery > figure { flex: 0 0 68vw; display: block !important; scroll-snap-align: center; }
+  .taste-gallery .taste-photo { rotate: none !important; }
+  .taste-gallery figcaption { display: block !important; padding-top: 16px !important; }
+  .taste-gallery figcaption h3 { font-size: 24px !important; }
+  .taste-gallery .text-link { font-size: 16px; }
+  .taste-sticker { display: none; }
+}
+/* Locations page: same red buttons as the rest of the site. */
+.locations-list .button { background: var(--accent-strong, #b82517) !important; color: var(--cream, #faebd2) !important; border-color: transparent !important; }
+/* Footer eyebrow was ~8px. */
+.site-footer .footer-invitation > .eyebrow { font-size: 12px !important; letter-spacing: .08em; }

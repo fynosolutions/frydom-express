@@ -2045,11 +2045,12 @@
             "postalCode": "11220",
             "addressCountry": "US"
           },
-          "hoursText": "11:00–22:00",
+          "hoursText": "Sun–Thu 11 AM–9 PM · Fri–Sat 11 AM–10 PM",
           "schedule": null,
           "services": [
             "Dine-in",
-            "Takeout"
+            "Takeout",
+            "Delivery"
           ],
           "image": {
             "src": "/assets/original/7d579376-store-outside-800.webp",
@@ -2065,7 +2066,7 @@
           "phone": "929-805-0718",
           "phoneHref": "tel:+19298050718",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=781%2061st%20St%2C%20Brooklyn%2C%20NY%2011220",
-          "hoursSource": "User confirmed 11:00–22:00 on 2026-10-31; operating weekdays remain unspecified.",
+          "hoursSource": "Google Business Profile read on 2026-11-13: Sun–Thu 11 AM–9 PM, Fri–Sat 11 AM–10 PM (set by owner side 2026-11-01).",
           "phoneSource": "/assets/posters/staff-offer-1.webp"
         }
       ],
@@ -4193,11 +4194,12 @@
             "postalCode": "11220",
             "addressCountry": "US"
           },
-          "hoursText": "11:00–22:00",
+          "hoursText": "周日至周四 11:00–21:00 · 周五、周六 11:00–22:00",
           "schedule": null,
           "services": [
             "Dine-in",
-            "Takeout"
+            "Takeout",
+            "Delivery"
           ],
           "image": {
             "src": "/assets/original/7d579376-store-outside-800.webp",
@@ -4213,7 +4215,7 @@
           "phone": "929-805-0718",
           "phoneHref": "tel:+19298050718",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=781%2061st%20St%2C%20Brooklyn%2C%20NY%2011220",
-          "hoursSource": "User confirmed 11:00–22:00 on 2026-10-31; operating weekdays remain unspecified.",
+          "hoursSource": "Google Business Profile read on 2026-11-13: Sun–Thu 11 AM–9 PM, Fri–Sat 11 AM–10 PM (set by owner side 2026-11-01).",
           "phoneSource": "/assets/posters/staff-offer-1.webp"
         }
       ],

@@ -7,10 +7,10 @@ export const t = (lang: Language, en: string, zh: string) => lang === 'en' ? en 
 export const locale = (lang: Language) => data.locales[lang];
 export const url = (lang: Language, kind: PageKind) => locale(lang).routes[kind];
 export const navigation: PageKind[] = ['home','menu','offers','locations','partner','support','privacy'];
-export const primaryNavigation: PageKind[] = ['menu','offers','locations','partner'];
+export const primaryNavigation: PageKind[] = ['menu','offers','locations'];
 export const orderPlatforms = [
+  {name:'Order direct (pickup)',href:'https://pos.chowbus.com/online-ordering/store/Frydom-Express-Brooklyn/23427'},
   {name:'Uber Eats',href:'https://www.ubereats.com/store/frydom-express-fried-chicken-%E9%A3%9E%E4%B9%90%E7%82%B8%E9%B8%A1-781-61st-street/OLdZQvsVXzWCMBpsf9uctg'},
-  {name:'Grubhub',href:'https://www.grubhub.com/restaurant/frydom-express-fried-chicken-fei-le-zha-ji-781-61st-street-brooklyn/13464504'},
 ];
 export const labels: Record<Language, Record<PageKind,string>> = {
   en: { offers:'Offers', 'staff-offer':'Work ID & Group Offers', 'leg-quarter':'Crispy-Skinned Chicken Leg Quarter', 'chicken-bucket':'Ultimate Chicken Bucket', home:'Home',story:'Our Story',menu:'Menu',locations:'Locations',partner:'Become a Partner',support:'Partner Support',privacy:'Privacy Policy',terms:'Terms of Service' },

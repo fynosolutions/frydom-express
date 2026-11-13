@@ -19,8 +19,8 @@ body .button-dark,body .order-picker>summary {
 body .page-intro.menu-cover h1 { -webkit-text-stroke:9px #fff !important; }
 body.page-menu .breadcrumb a { -webkit-text-stroke-width:0 !important; }
 @media(max-width:950px){
- body:not(.page-home):not(.page-menu) .site-header :is(.brand-wordmark,.language-link),
- body:not(.page-home):not(.page-menu) .mobile-navigation nav,
+ body:not(body) .site-header :is(.brand-wordmark,.language-link),
+ body:not(body) .mobile-navigation nav,
  body .topline{-webkit-text-stroke-width:0 !important}
 }
 @media(max-width:700px){body .page-intro.menu-cover h1{-webkit-text-stroke-width:5px !important}}

@@ -27,7 +27,7 @@
 }
 .locale-en .button { font-size: 22px; }
 .locale-en .desktop-nav > a { font-family: 'Mouse Memoirs',sans-serif; font-size: 22px; font-weight: 400; }
-:is(.page-home, .page-menu) .brand-wordmark strong {
+:is(body) .brand-wordmark strong {
   font-family: 'Modak', 'FuturaPT', sans-serif;
   font-size: 28px;
   font-weight: 400;
@@ -35,7 +35,7 @@
   letter-spacing: 0;
   font-synthesis: none;
 }
-:is(.page-home, .page-menu) .brand-wordmark strong span { font-family: 'Mouse Memoirs',sans-serif; font-size: inherit; letter-spacing: .18em; }
+:is(body) .brand-wordmark strong span { font-family: 'Mouse Memoirs',sans-serif; font-size: inherit; letter-spacing: .18em; }
 .page-home .poster-wordmark {
   font-family: 'Mouse Memoirs', 'FuturaPT', sans-serif;
   font-weight: 400;
@@ -70,8 +70,8 @@
 }
 @media (max-width: 700px) {
   .page-home .poster-wordmark { font-size: 30vw; -webkit-text-stroke-width: 3px; }
-  :is(.page-home, .page-menu) .brand-wordmark strong { font-size: 24px; }
-  :is(.page-home, .page-menu) .brand-wordmark strong span { font-size: inherit; }
+  :is(body) .brand-wordmark strong { font-size: 24px; }
+  :is(body) .brand-wordmark strong span { font-size: inherit; }
   .page-home.locale-en .food-sticker { font-size: clamp(15px,4vw,24px); }
   .page-home.locale-en #main .poster-copy h1 { font-size: clamp(30px,8.5vw,44px); }
   .page-home.locale-en #main .hero-actions .button { font-size: 21px; }

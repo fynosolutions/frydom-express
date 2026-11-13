@@ -96,7 +96,7 @@ pauseButton?.addEventListener('click',()=>{
   const paused=ribbon!.classList.toggle('is-paused');
   pauseButton.setAttribute('aria-pressed',String(paused));
   pauseButton.setAttribute('aria-label',(paused?pauseButton.dataset.playLabel:pauseButton.dataset.pauseLabel)||'');
-  pauseButton.firstElementChild!.textContent=paused?'▶':'Ⅱ';
+  pauseButton.firstElementChild!.innerHTML=paused?'<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em"><path d="M8 5v14l11-7Z" fill="currentColor"/></svg>':'<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5v14M15 5v14"/></svg>';
 });
 if(ribbon&&typeof window.IntersectionObserver==='function'){new IntersectionObserver(([entry])=>ribbon.classList.toggle('is-offscreen',!entry.isIntersecting)).observe(ribbon);}
 

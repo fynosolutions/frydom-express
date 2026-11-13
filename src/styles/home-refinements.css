@@ -20,7 +20,7 @@ body.locale-zh .site-header .desktop-nav > a {
   font-size: 40px;
   font-weight: 400;
 }
-body.locale-zh:is(.page-home,.page-menu) .site-header .desktop-nav > a { font-size: 32px; }
+body.locale-zh:is(body) .site-header .desktop-nav > a { font-size: 32px; }
 body .site-header .desktop-nav { gap: 24px; }
 body .site-header .desktop-nav > a { line-height: 1.2; }
 body.locale-en .site-header .mobile-navigation nav > a { font-family: 'Frydom Display Wide', 'Mouse Memoirs', sans-serif; }
@@ -37,8 +37,8 @@ body .site-header .mobile-navigation .nav-label {
   text-wrap: balance;
 }
 @media(min-width:951px) and (max-width:1279px) {
-  body:is(.page-home,.page-menu) .header-inner { flex-wrap: wrap; }
-  body:is(.page-home,.page-menu) .desktop-nav {
+  body:is(body) .header-inner { flex-wrap: wrap; }
+  body:is(body) .desktop-nav {
     order: 3;
     flex-basis: 100%;
     margin-left: 0;
@@ -46,5 +46,5 @@ body .site-header .mobile-navigation .nav-label {
     flex-wrap: wrap;
     row-gap: 12px;
   }
-  body:not(.page-home):not(.page-menu) .desktop-nav { grid-column: 1 / -1; }
+  body:not(body) .desktop-nav { grid-column: 1 / -1; }
 }
