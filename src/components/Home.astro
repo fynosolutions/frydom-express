@@ -8,20 +8,20 @@ import FoodCloseups from './FoodCloseups.astro';
 import{locale,t,url,type Language}from'../lib/site';
 const{lang}=Astro.props as {lang:Language};
 const content=locale(lang);
-const hero=content.menu.find((item:any)=>item.id==='angus-beef-cheeseburger').image;
+const hero=content.menu.find((item:any)=>item.id==='original-recipe-fried-chicken').image;
 ---
 <section class="food-poster" id="brand" aria-labelledby="hero-title">
   <div class="poster-stage">
     <div class="poster-wordmark" aria-hidden="true">FRYDOM</div>
     <span class="food-sticker sticker-crispy" aria-hidden="true">{t(lang,'GOLDEN','金黄')}<br/>{t(lang,'& CRISPY','酥脆')}</span>
-    <img class="hero-food" src={hero.src} width={hero.width} height={hero.height} alt={t(lang,'Angus Beef Cheeseburger with melted cheese, tomato and lettuce','安格斯芝士牛肉堡，搭配芝士、番茄与生菜')} fetchpriority="high" decoding="async"/>
+    <img class="hero-food" src={hero.src} width={hero.width} height={hero.height} alt={t(lang,'A pile of golden Original Recipe fried chicken','一堆金黄酥脆的招牌原味炸鸡')} fetchpriority="high" decoding="async"/>
     <span class="food-sticker sticker-juicy" aria-hidden="true">{t(lang,'ONE BIG','一口')}<br/>{t(lang,'JUICY BITE.','爆汁！')}</span>
-    <span class="poster-caption">{t(lang,'ANGUS BEEF CHEESEBURGER','安格斯芝士牛肉堡')}</span>
+    <span class="poster-caption">{t(lang,'ORIGINAL RECIPE FRIED CHICKEN','招牌原味炸鸡')}</span>
   </div>
   <div class="poster-bottom wrap">
     <div class="poster-copy">
       <h1 id="hero-title">{lang==='en'?<><span class="hero-title-line">Big crunch.</span>{' '}<span class="hero-title-line">Bigger cravings.</span></>:'金黄酥脆，一口爆汁。'}</h1>
-      <p>{t(lang,'Fried chicken. Stacked burgers. Your next good bite.','炸鸡、汉堡，还有让你惦记的好滋味。')}</p>
+      <p>{t(lang,'Chinese-style and Korean-style fried chicken, burgers and Taning lemon tea. Fried fresh in Sunset Park.','中式与韩式炸鸡、汉堡，配一杯挞柠柠檬茶。日落公园现点现炸。')}</p>
       <div class="hero-actions"><OrderPicker lang={lang}/><a class="button button-outline" href={url(lang,'menu')}>{t(lang,'Explore the menu','查看菜单')} <Arrow/></a></div>
       <div class="poster-location">
         <span>BROOKLYN, NEW YORK</span>
@@ -31,16 +31,18 @@ const hero=content.menu.find((item:any)=>item.id==='angus-beef-cheeseburger').im
   </div>
 </section>
 
+<a class="offer-strip" href={url(lang,'leg-quarter')}><span class="offer-strip-tag">{t(lang,'NEW','新品')}</span><strong>{t(lang,'Crispy-Skinned Chicken Leg Quarter','脆皮手枪腿')} · $6.45</strong><span class="offer-strip-more">{t(lang,'See all offers','查看全部优惠')} <Arrow/></span></a>
+
 <FoodCloseups lang={lang}/>
 
 <VideoGallery lang={lang}/>
 
 <section class="home-visit wrap section-pad" id="our-locations" aria-labelledby="locations-title">
-  <img src={content.locations[0].image.src} width={content.locations[0].image.width} height={content.locations[0].image.height} alt={t(lang,'Frydom Express Brooklyn storefront','Frydom Express Brooklyn 门店')} loading="lazy"/>
+  <img src={content.locations[0].detailImage.src} width={content.locations[0].detailImage.width} height={content.locations[0].detailImage.height} alt={t(lang,'Inside Frydom Express Brooklyn: order counter and menu boards','Frydom Express Brooklyn 店内：点餐台与菜单屏')} loading="lazy"/>
   <div><h2 id="locations-title">{t(lang,'Brooklyn.','布鲁克林，')}<br/>{t(lang,'Come hungry.','带着好胃口来。')}</h2>
     <p>781 61st St, Brooklyn, NY 11220</p><p>{t(lang,'Hours','营业时段')} · {content.locations[0].hoursText}</p>
-    <p class="visit-note">{t(lang,'Dine-in · Takeout. Call before visiting to confirm the day’s hours.','堂食 · 外带。到店前请致电确认当日营业安排。')}</p>
+    <p class="visit-note">{t(lang,'Dine-in · Takeout · Delivery. Near 8th Ave in Sunset Park.','堂食 · 外带 · 外卖。日落公园，近 8 大道。')}</p>
     <StoreActions lang={lang}/><a class="text-link" href={url(lang,'locations')}>{t(lang,'Location details','查看门店详情')} ↗</a>
   </div>
 </section>
-<section class="home-partner-brief wrap"><div><h2>{t(lang,'Grow with Frydom.','与 Frydom 一起成长。')}</h2><p>{t(lang,'Explore opening support and partnership opportunities.','了解开业支持与加盟合作机会。')}</p></div><a class="text-link" href={url(lang,'partner')}>{t(lang,'Become a partner','了解加盟合作')} ↗</a></section>
+

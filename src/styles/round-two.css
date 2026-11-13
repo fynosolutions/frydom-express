@@ -26,16 +26,16 @@
 .home-offers-band { position: relative; }
 
 /* Menu shares the compact brand header and red/cream/yellow palette. */
-.page-menu { --accent: #c82c1b; --accent-strong: #b82517; --heading: #c82c1b; --line: #c82c1b40; }
-.page-menu .topline { display: none; }
-.page-menu .site-header { border-bottom: 0; }
-.page-menu .header-inner { min-height: 88px; padding: 14px 0; display: flex; justify-content: space-between; gap: 24px; align-items: center; max-width: 1440px; }
-.page-menu .desktop-nav { margin-left: auto; gap: 24px; flex-wrap: nowrap; }
-.page-menu .desktop-nav > a { font-size: 22px; }
-.page-menu.locale-zh .desktop-nav > a { font: 600 16px/1.4 var(--sans); }
-.page-menu .header-actions { position: static; }
-.page-menu .language-link { min-height: 44px; display: flex; align-items: center; }
-.page-menu .button { border-radius: 999px; padding: 12px 24px; min-height: 48px; }
+body:not(.page-home) { --accent: #c82c1b; --accent-strong: #b82517; --heading: #c82c1b; --line: #c82c1b40; }
+body:not(.page-home) .topline { display: none; }
+body:not(.page-home) .site-header { border-bottom: 0; }
+body:not(.page-home) .header-inner { min-height: 88px; padding: 14px 0; display: flex; justify-content: space-between; gap: 24px; align-items: center; max-width: 1440px; }
+body:not(.page-home) .desktop-nav { margin-left: auto; gap: 24px; flex-wrap: nowrap; }
+body:not(.page-home) .desktop-nav > a { font-size: 22px; }
+body:not(.page-home).locale-zh .desktop-nav > a { font: 600 16px/1.4 var(--sans); }
+body:not(.page-home) .header-actions { position: static; }
+body:not(.page-home) .language-link { min-height: 44px; display: flex; align-items: center; }
+body:not(.page-home) .button { border-radius: 999px; padding: 12px 24px; min-height: 48px; }
 .page-menu .breadcrumb { padding-block: 12px; }
 .page-menu .page-intro::before { display: none; }
 .page-menu #main .page-intro { width: 100%; max-width: none; padding: 48px max(24px,calc((100% - 1380px)/2)) 40px; background: var(--accent); color: var(--cream); }
@@ -93,15 +93,15 @@
 @media (max-width: 1100px) {
   .taste-lead { gap: 32px; }
   .taste-pair { gap: 36px; }
-  .page-menu .header-inner { gap: 18px; }
-  .page-menu .desktop-nav { gap: 16px; }
-  .page-menu .desktop-nav > a { font-size: 20px; }
-  .page-menu.locale-zh .desktop-nav > a { font-size: 14px; }
+  body:not(.page-home) .header-inner { gap: 18px; }
+  body:not(.page-home) .desktop-nav { gap: 16px; }
+  body:not(.page-home) .desktop-nav > a { font-size: 20px; }
+  body:not(.page-home).locale-zh .desktop-nav > a { font-size: 14px; }
 }
 @media (max-width: 950px) {
-  .page-menu .desktop-nav { display: none; }
-  .page-menu .mobile-navigation { display: block; }
-  .page-menu .header-inner { min-height: 78px; padding-block: 10px; }
+  body:not(.page-home) .desktop-nav { display: none; }
+  body:not(.page-home) .mobile-navigation { display: block; }
+  body:not(.page-home) .header-inner { min-height: 78px; padding-block: 10px; }
 }
 @media (max-width: 700px) {
   .taste-story { padding-top: 48px; }
@@ -121,7 +121,7 @@
   .mascot-greeting img { width: 130px; height: 150px; }
   .mascot-greeting span { font-size: 22px; padding: 16px 20px; }
   .page-home #main .creative-note { margin-bottom: 20px; font-size: 11px; }
-  .page-menu .header-inner { width: calc(100% - 32px); gap: 12px; }
+  body:not(.page-home) .header-inner { width: calc(100% - 32px); gap: 12px; }
   .page-menu #main .page-intro { padding: 30px 18px; }
   .page-menu #main .page-intro h1 { font-size: 52px; }
   .page-menu #main .intro-bottom > p { font-size: 16px; }

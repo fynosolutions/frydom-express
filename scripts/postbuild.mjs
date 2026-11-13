@@ -15,3 +15,33 @@ await writeFile('dist/_redirects','/index.html / 301\n/en/index.html /en/ 301\n'
 for(const [from,to] of Object.entries(redirects)) await writeFile('dist'+from,`<!doctype html><html lang="${from.startsWith('/en/')?'en':'zh-Hans'}"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=${to}"><link rel="canonical" href="${origin+to.split('#')[0]}"><title>Frydom Express</title></head><body><a href="${to}">Frydom Express</a></body></html>`);
 await writeFile('dist/_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n');
 console.log(`Validated ${data.routes.length} routes; generated sitemap, robots, redirects and headers.`);
+
+// Symbol characters (arrows, stars, hearts) render as colour emoji or tofu on real phones.
+// Replace them in visible text with inline SVG icons that inherit size and colour.
+{
+  const { readdir } = await import('node:fs/promises');
+  const { load } = await import('cheerio');
+  const s = d => `<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.12em">${d}</svg>`;
+  const icons = {
+    '↗': s('<path d="M7 17 17 7M8 7h9v9"/>'), '→': s('<path d="M4 12h16M13 5l7 7-7 7"/>'), '←': s('<path d="M20 12H4M11 5l-7 7 7 7"/>'),
+    '↑': s('<path d="M12 20V4M5 11l7-7 7 7"/>'), '↓': s('<path d="M12 4v16M5 13l7 7 7-7"/>'), '⤢': s('<path d="M4 20 20 4M14 4h6v6M10 20H4v-6"/>'),
+    '✳': s('<path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/>'), '✓': s('<path d="m4 12.5 5 5L20 6.5"/>'),
+    '♡': s('<path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/>'),
+    '×': s('<path d="M6 6l12 12M18 6 6 18"/>'), '＋': s('<path d="M12 5v14M5 12h14"/>'),
+    'Ⅱ': s('<path d="M9 5v14M15 5v14"/>'), '▶': s('<path d="M8 5v14l11-7Z" fill="currentColor"/>'),
+  };
+  const re = new RegExp('[' + Object.keys(icons).join('') + ']', 'g');
+  const walk = async dir => (await Promise.all((await readdir(dir, { withFileTypes: true })).map(e => e.isDirectory() ? walk(dir + '/' + e.name) : e.name.endsWith('.html') ? [dir + '/' + e.name] : []))).flat();
+  let n = 0;
+  for (const file of await walk('dist')) {
+    const $ = load(await readFile(file, 'utf8'), { decodeEntities: false });
+    $('body *').not('script,style,svg,svg *,textarea,option').contents().each((_, node) => {
+      if (node.type !== 'text' || !re.test(node.data)) return;
+      re.lastIndex = 0;
+      const esc = node.data.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      $(node).replaceWith(esc.replace(re, c => { n++; return icons[c]; }));
+    });
+    await writeFile(file, $.html());
+  }
+  console.log(`Replaced ${n} symbol characters with inline SVG icons.`);
+}

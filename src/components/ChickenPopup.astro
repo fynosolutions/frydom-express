@@ -122,7 +122,7 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
     function updatePlayback() {
       clearTimeout(slideTimer);
       if (popup!.open && rotating) slideTimer = window.setTimeout(advance, 3000);
-      rotation.textContent = rotating ? 'Ⅱ' : '▶';
+      rotation.innerHTML = rotating ? '<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5v14M15 5v14"/></svg>' : '<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em"><path d="M8 5v14l11-7Z" fill="currentColor"/></svg>';
       rotation.setAttribute('aria-label', rotating ? rotation.dataset.pause! : rotation.dataset.resume!);
       counter.setAttribute('aria-live', rotating ? 'off' : 'polite');
       if (!rotating || index !== 0) {
@@ -162,13 +162,15 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
 
     function showPopup() {
       if (popup!.open) return;
+      /* Once per visit, and open on the new-item poster rather than the raw-prep video. */
+      try { if (sessionStorage.getItem('frydom-popup-seen')) return; sessionStorage.setItem('frydom-popup-seen','1'); } catch { /* storage blocked: still show once per page */ }
       popup!.showModal();
       rotating = !motion.matches;
-      showSlide(0);
+      showSlide(Math.min(2, slides.length - 1));
     }
     function schedule() {
       clearTimeout(timer);
-      timer = window.setTimeout(showPopup, 3000);
+      timer = window.setTimeout(showPopup, 6000);
     }
     window.addEventListener('pageshow', event => { if (event.persisted) schedule(); });
     const intro = document.querySelector<HTMLElement>('#home-intro');
