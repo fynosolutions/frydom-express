@@ -164,3 +164,34 @@
   .chicken-popup .popup-frame { transition: opacity 180ms ease-out !important; }
   .chicken-popup .popup-frame[inert] { transition: opacity 0s 180ms, visibility 0s 180ms !important; }
 }
+
+/* Hero chicken hops on the FRYDOM letters (Mao 11-13): small, seated on top of the letters, never covering them.
+   Position is driven by the script in Home.astro; these rules only switch off the old centred/floating layout. */
+.page-home .poster-stage .hero-food[data-hop] { translate: none; animation: none !important; object-fit: contain; z-index: 3; transform-origin: 50% 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .page-home .poster-stage .hero-food[data-hop][data-hero-food-motion="waiting"] { scale: .12; opacity: 0; }
+}
+/* Hero layout after the big chicken left the middle: letters are the poster now; win back the headroom the hop needs. */
+@media (min-width: 701px) {
+  .page-home.page-home .poster-wordmark { font-size: min(26vw, 380px) !important; }
+  .page-home.page-home .poster-stage { height: calc(min(26vw, 380px) * .92) !important; }
+}
+@media (max-width: 700px) {
+  .page-home.page-home .poster-stage { height: calc(30vw * .9 + 46px) !important; }
+  .page-home.page-home .poster-stage .sticker-crispy { top: 40% !important; left: 2% !important; }
+  .page-home.page-home .poster-stage .sticker-juicy { top: 52% !important; right: 2% !important; }
+  .page-home.page-home .poster-stage .poster-caption { bottom: -18px !important; }
+}
+/* Menu cover mascot was covering the F of FOLLOW (Mao 11-13): move it beside the shorter second line, clear of all letters. */
+.page-menu #main .menu-cover .menu-cover-mascot { left: auto !important; right: clamp(16px, 7vw, 120px) !important; top: auto !important; bottom: 26% !important; rotate: 10deg !important; z-index: 2; }
+@media (max-width: 700px) {
+  .page-menu #main .menu-cover .menu-cover-mascot { width: 74px !important; right: 10px !important; bottom: 18% !important; }
+}
+/* Menu cover: the title must clear the wave on short laptop screens (was cut at 1280x720). */
+.page-menu #main .menu-cover { max-height: none !important; }
+@media (min-width: 701px) {
+  .page-menu.locale-en #main .menu-cover h1 { font-size: min(9.5vw, 15vh, 150px) !important; }
+  .page-menu.locale-zh #main .menu-cover h1 { font-size: min(8vw, 13vh, 130px) !important; }
+}
+.page-menu #main .menu-cover { height: min(600px, 62vh) !important; min-height: 300px; }
+@media (max-width: 700px) { .page-menu #main .menu-cover { height: 300px !important; padding-bottom: 92px !important; } }

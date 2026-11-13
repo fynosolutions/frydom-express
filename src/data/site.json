@@ -456,8 +456,8 @@
           "description": "Crispy fish fillet burger + fries + a soft drink.",
           "image": {
             "src": "/assets/menu-1015/crispy-fish-fillet-burger-combo.webp",
-            "width": 555,
-            "height": 469
+            "width": 800,
+            "height": 600
           },
           "labels": [],
           "notes": [],
@@ -678,7 +678,7 @@
           "image": {
             "src": "/assets/menu-1015/crispy-fish-fillet-burger.webp",
             "width": 1000,
-            "height": 676
+            "height": 712
           },
           "labels": [],
           "notes": [],
@@ -2601,8 +2601,8 @@
           "description": "脆皮鱼柳堡 + 薯条 + 汽水。",
           "image": {
             "src": "/assets/menu-1015/crispy-fish-fillet-burger-combo.webp",
-            "width": 555,
-            "height": 469
+            "width": 800,
+            "height": 600
           },
           "labels": [],
           "notes": [],
@@ -2823,7 +2823,7 @@
           "image": {
             "src": "/assets/menu-1015/crispy-fish-fillet-burger.webp",
             "width": 1000,
-            "height": 676
+            "height": 712
           },
           "labels": [],
           "notes": [],
