@@ -64,7 +64,7 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <main id="main"><slot/></main>
     <Footer lang={lang}/>
     <MobileActions lang={lang}/>
-    {/* Auto popup retired 2026-11-13: offers now sit in a banner under the hero. */}
+    {kind==='home'&&<ChickenPopup lang={lang}/>}
     <script>
       import '../scripts/site';
     </script>

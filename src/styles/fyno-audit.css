@@ -142,3 +142,25 @@
   #main .menu-grid .item-photo img { max-height: 130px; }
   #main .menu-grid .item-body { padding: 12px 10px 16px !important; }
 }
+
+/* Popup back (Mao 11-13), to the review standard:
+   - never covers the whole phone screen: card ≤ 72% of screen height, page stays visible behind
+   - offer text is real web text (readable), poster is only the picture
+   - short fade (no two-image ghosting), 44px controls, once per visit (script) */
+.chicken-popup { width: min(86vw, 400px) !important; max-height: 78vh; max-height: 78dvh; border-radius: 18px; background: var(--cream, #faebd2) !important; }
+.chicken-popup::backdrop { background: rgb(28 16 10 / 55%) !important; }
+.chicken-popup .popup-stage { aspect-ratio: auto !important; height: min(62vh, 560px); height: min(62dvh, 560px); }
+.chicken-popup .popup-frame { display: flex !important; flex-direction: column; text-decoration: none; color: #382318; background: var(--cream, #faebd2) !important; }
+.chicken-popup .popup-art { flex: 1 1 auto; min-height: 0; display: block; padding: 14px 14px 0; }
+.chicken-popup .popup-art img { width: 100%; height: 100%; object-fit: contain; }
+.chicken-popup .popup-copy { flex: none; display: grid; gap: 2px; padding: 10px 18px 12px; text-align: center; }
+.chicken-popup .popup-copy strong { font: 400 24px/1.1 var(--display); color: #b82517; }
+.chicken-popup .popup-copy em { font-style: normal; font: 700 17px/1.3 var(--sans); }
+.chicken-popup .popup-cta { font: 700 15px/1.3 var(--sans); color: #b82517; text-decoration: underline; text-underline-offset: 3px; }
+.chicken-popup .popup-close { top: 8px !important; right: 8px !important; color: var(--cream, #faebd2) !important; }
+.chicken-popup .popup-controls { padding: 6px 4px 10px !important; gap: 18px !important; border-top: 1px solid #c82c1b30; }
+.chicken-popup .popup-controls button { color: var(--cream, #faebd2) !important; display: grid; place-items: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .chicken-popup .popup-frame { transition: opacity 180ms ease-out !important; }
+  .chicken-popup .popup-frame[inert] { transition: opacity 0s 180ms, visibility 0s 180ms !important; }
+}

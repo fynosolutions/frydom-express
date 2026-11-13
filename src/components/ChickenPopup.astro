@@ -1,26 +1,25 @@
 ---
 import {locale, t, url, type Language, type PageKind} from '../lib/site';
 const {lang} = Astro.props as {lang: Language};
-const offers: {id: PageKind; title: string}[] = locale(lang).offers;
+const offers: {id: PageKind; title: string; headline: string}[] = locale(lang).offers;
+/* New item first, staff offer last (it only applies to people with a work ID). */
+const rank: Record<string, number> = {'leg-quarter':0,'chicken-bucket':1,'staff-offer':2};
+const ordered = [...offers].sort((a,b)=>(rank[a.id]??9)-(rank[b.id]??9));
 ---
-<dialog class="chicken-popup" aria-label={t(lang,'Original Recipe Chicken and offers','招牌原味鸡与活动优惠')}>
+<dialog class="chicken-popup" aria-label={t(lang,'New items and offers','新品与优惠')}>
   <button class="popup-close" type="button" autofocus aria-label={t(lang,'Close popup','关闭弹窗')}>×</button>
   <div class="popup-stage">
-    <div class="popup-frame" data-slide>
-      <video muted playsinline preload="none" poster="/assets/gallery/DUoxIoIjdYY.webp"
-        data-src="/assets/gallery/DUoxIoIjdYY.mp4" aria-label={t(lang,'Fresh from the fryer','炸鸡出锅近景')}></video>
-      <a class="popup-menu" href={url(lang,'menu')+'#original-recipe-fried-chicken'}>{t(lang,'Explore Original Recipe Chicken','查看招牌原味鸡')} ↗</a>
-    </div>
-    {offers.map(offer => (
-      <a class="popup-frame popup-poster" data-slide inert href={url(lang,offer.id)}>
-        <img src={`/assets/posters/${offer.id}-1.webp`} alt={offer.title}
-          width={offer.id==='staff-offer'?1855:1701} height="2400" loading="lazy" decoding="async"/>
+    {ordered.map((offer, i) => (
+      <a class="popup-frame popup-poster" data-slide inert={i !== 0} href={url(lang,offer.id)}>
+        <span class="popup-art"><img src={`/assets/posters/${offer.id}-1.webp`} alt=""
+          width={offer.id==='staff-offer'?1855:1701} height="2400" loading="lazy" decoding="async"/></span>
+        <span class="popup-copy"><strong>{offer.title}</strong><em>{offer.headline}</em><span class="popup-cta">{t(lang,'See details','查看详情')} →</span></span>
       </a>
     ))}
   </div>
   <div class="popup-controls">
     <button type="button" data-previous aria-label={t(lang,'Previous slide','上一页')}>←</button>
-    <span aria-live="polite" aria-atomic="true">1 / {offers.length + 1}</span>
+    <span aria-live="polite" aria-atomic="true">1 / {ordered.length}</span>
     <button type="button" data-next aria-label={t(lang,'Next slide','下一页')}>→</button>
     <button type="button" data-rotation data-pause={t(lang,'Pause slideshow','暂停轮播')}
       data-resume={t(lang,'Resume slideshow','继续轮播')} aria-label={t(lang,'Pause slideshow','暂停轮播')}>Ⅱ</button>
@@ -107,7 +106,6 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
 <script>
   const popup = document.querySelector<HTMLDialogElement>('.chicken-popup');
   if (popup && typeof popup.showModal === 'function') {
-    const video = popup.querySelector('video')!;
     const slides = [...popup.querySelectorAll<HTMLElement>('[data-slide]')];
     const counter = popup.querySelector('.popup-controls span')!;
     const rotation = popup.querySelector<HTMLButtonElement>('[data-rotation]')!;
@@ -121,23 +119,15 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
     }
     function updatePlayback() {
       clearTimeout(slideTimer);
-      if (popup!.open && rotating) slideTimer = window.setTimeout(advance, 3000);
+      if (popup!.open && rotating) slideTimer = window.setTimeout(advance, 4500);
       rotation.innerHTML = rotating ? '<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5v14M15 5v14"/></svg>' : '<svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em"><path d="M8 5v14l11-7Z" fill="currentColor"/></svg>';
       rotation.setAttribute('aria-label', rotating ? rotation.dataset.pause! : rotation.dataset.resume!);
       counter.setAttribute('aria-live', rotating ? 'off' : 'polite');
-      if (!rotating || index !== 0) {
-        video.pause();
-        return;
-      }
-      video.muted = true;
-      if (!video.hasAttribute('src')) video.src = video.dataset.src!;
-      video.play().catch(() => { /* The poster stays visible until the next slide. */ });
     }
     function showSlide(next: number) {
       index = (next + slides.length) % slides.length;
       slides.forEach((slide, i) => { slide.inert = i !== index; });
       counter.textContent = (index + 1) + ' / ' + slides.length;
-      if (index === 0 && video.readyState >= 1) video.currentTime = 0;
       updatePlayback();
     }
     rotation.addEventListener('click', () => { rotating = !rotating; updatePlayback(); });
@@ -151,9 +141,6 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
     popup.addEventListener('click', event => { if (event.target === popup) close(); });
     popup.addEventListener('close', () => {
       clearTimeout(slideTimer);
-      video.pause();
-      video.removeAttribute('src');
-      video.load();
     });
     window.addEventListener('pagehide', () => {
       clearTimeout(timer);
@@ -162,11 +149,11 @@ const offers: {id: PageKind; title: string}[] = locale(lang).offers;
 
     function showPopup() {
       if (popup!.open) return;
-      /* Once per visit, and open on the new-item poster rather than the raw-prep video. */
+      /* Once per visit; opens on the new item. */
       try { if (sessionStorage.getItem('frydom-popup-seen')) return; sessionStorage.setItem('frydom-popup-seen','1'); } catch { /* storage blocked: still show once per page */ }
       popup!.showModal();
       rotating = !motion.matches;
-      showSlide(Math.min(2, slides.length - 1));
+      showSlide(0);
     }
     function schedule() {
       clearTimeout(timer);
