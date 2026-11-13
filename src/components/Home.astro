@@ -8,15 +8,13 @@ import FoodCloseups from './FoodCloseups.astro';
 import{locale,t,url,type Language}from'../lib/site';
 const{lang}=Astro.props as {lang:Language};
 const content=locale(lang);
-const hero=content.menu.find((item:any)=>item.id==='original-recipe-fried-chicken').image;
 ---
 <section class="food-poster" id="brand" aria-labelledby="hero-title">
   <div class="poster-stage">
     <div class="poster-wordmark" aria-hidden="true">FRYDOM</div>
     <span class="food-sticker sticker-crispy" aria-hidden="true">{t(lang,'GOLDEN','金黄')}<br/>{t(lang,'& CRISPY','酥脆')}</span>
-    <img class="hero-food" src={hero.src} width={hero.width} height={hero.height} alt={t(lang,'A pile of golden Original Recipe fried chicken','一堆金黄酥脆的招牌原味炸鸡')} fetchpriority="high" decoding="async"/>
+    <img class="hero-food" src="/assets/offers/mascot-run-cup.webp" width="720" height="786" alt={t(lang,'The Frydom chicken mascot hopping across the letters','Frydom 小鸡在字母上跳来跳去')} fetchpriority="high" decoding="async"/>
     <span class="food-sticker sticker-juicy" aria-hidden="true">{t(lang,'ONE BIG','一口')}<br/>{t(lang,'JUICY BITE.','爆汁！')}</span>
-    <span class="poster-caption">{t(lang,'ORIGINAL RECIPE FRIED CHICKEN','招牌原味炸鸡')}</span>
   </div>
   <div class="poster-bottom wrap">
     <div class="poster-copy">
@@ -48,9 +46,9 @@ const hero=content.menu.find((item:any)=>item.id==='original-recipe-fried-chicke
 
 
 <script>
-  /* Hero chicken hops along the tops of the FRYDOM letters: F → R → Y → D → O → M, then one long hop back to F.
+  /* Hero mascot hops along the tops of the FRYDOM letters: F → R → Y → D → O → M, then one long hop back to F.
      It starts only after the site's own entry (letters pop in, chicken grows in) has finished, so that motion is untouched.
-     Reduced motion: the chicken simply sits on top of the F. Paused while the hero is off screen. */
+     Reduced motion: the mascot simply sits on top of the F. Paused while the hero is off screen. */
   const stage = document.querySelector<HTMLElement>('.poster-stage');
   const word = stage?.querySelector<HTMLElement>('.poster-wordmark');
   const food = stage?.querySelector<HTMLImageElement>('.hero-food');
@@ -83,10 +81,10 @@ const hero=content.menu.find((item:any)=>item.id==='original-recipe-fried-chicke
     }
     if (letters.length < 2) return null;
     const avg = letters.reduce((s, l) => s + l.w, 0) / letters.length;
-    const w = Math.round(avg * (innerWidth > 700 ? 0.82 : 0.9));
+    const w = Math.round(avg * (innerWidth > 700 ? 0.72 : 0.95));
     const h = Math.round(w * food.naturalHeight / food.naturalWidth);
     /* Sit the chicken on the letter: its bottom overlaps the letter top by a hair, never the letter body. */
-    const spots = letters.map(l => ({x: Math.round(l.cx - w / 2), y: Math.round(l.top - h * 0.94)}));
+    const spots = letters.map(l => ({x: Math.round(l.cx - w / 2), y: Math.round(l.top - h * 0.97)}));
     return {spots, w, h};
   }
 
@@ -116,28 +114,31 @@ const hero=content.menu.find((item:any)=>item.id==='original-recipe-fried-chicke
     if (!g || !food || reduce.matches || !Element.prototype.animate) return;
     if (food.dataset.heroFoodMotion && food.dataset.heroFoodMotion !== 'revealed') return;
     const frames: Keyframe[] = [];
-    const legs: {from: Spot; to: Spot; dur: number; arc: number}[] = [];
+    const legs: {from: Spot; to: Spot; dur: number; arc: number; dir?: number}[] = [];
     for (let i = 0; i < g.spots.length - 1; i++) legs.push({from: g.spots[i], to: g.spots[i + 1], dur: 460, arc: g.arc});
-    legs.push({from: g.spots[g.spots.length - 1], to: g.spots[0], dur: 1000, arc: g.arc * g.back});
+    legs.push({from: g.spots[g.spots.length - 1], to: g.spots[0], dur: 1000, arc: g.arc * g.back, dir: -1});
     const rest = 520, takeoff = 110, land = 150;
-    const total = legs.reduce((s, l) => s + rest + takeoff + l.dur + land, 0);
+    const total = legs.reduce((s, l) => s + rest + takeoff + l.dur + land + (l.dir ? 160 : 0), 0);
     let t = 0;
     const at = (ms: number, k: Keyframe) => frames.push({...k, offset: Math.min(1, ms / total)});
     const pos = (p: Spot) => `${p.x}px ${p.y}px`;
     for (const leg of legs) {
+      const d = leg.dir ?? 1;
+      const sc = (x: number, y: number) => `${(x * d).toFixed(3)} ${y.toFixed(3)}`;
       at(t, {translate: pos(leg.from), scale: '1 1'});
-      t += rest; at(t, {translate: pos(leg.from), scale: '1 1'});
-      t += takeoff; at(t, {translate: `${leg.from.x}px ${leg.from.y + g.h * 0.04}px`, scale: '1.07 .9'});
+      t += rest; at(t, {translate: pos(leg.from), scale: d < 0 ? '-1 1' : '1 1'});
+      t += takeoff; at(t, {translate: `${leg.from.x}px ${leg.from.y + g.h * 0.04}px`, scale: sc(1.07, .9)});
       const n = 14;
       for (let i = 1; i <= n; i++) {
         const u = i / n, e = u < .5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
         const x = leg.from.x + (leg.to.x - leg.from.x) * e;
         const y = leg.from.y + (leg.to.y - leg.from.y) * u - leg.arc * 4 * u * (1 - u);
-        const s = i === n ? '1.1 .86' : `${(1 - .05 * Math.sin(Math.PI * u)).toFixed(3)} ${(1 + .07 * Math.sin(Math.PI * u)).toFixed(3)}`;
+        const s = i === n ? sc(1.1, .86) : sc(1 - .05 * Math.sin(Math.PI * u), 1 + .07 * Math.sin(Math.PI * u));
         at(t + leg.dur * u, {translate: `${x.toFixed(1)}px ${y.toFixed(1)}px`, scale: s});
       }
       t += leg.dur;
-      t += land; at(t, {translate: pos(leg.to), scale: '1 1'});
+      t += land; at(t, {translate: pos(leg.to), scale: d < 0 ? '-1 1' : '1 1'});
+      if (d < 0) { t += 160; at(t, {translate: pos(leg.to), scale: '1 1'}); }
     }
     frames[frames.length - 1].offset = 1;
     try {

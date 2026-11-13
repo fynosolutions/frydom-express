@@ -195,3 +195,5 @@
 }
 .page-menu #main .menu-cover { height: min(600px, 62vh) !important; min-height: 300px; }
 @media (max-width: 700px) { .page-menu #main .menu-cover { height: 300px !important; padding-bottom: 92px !important; } }
+/* The hopping mascot is a die-cut sticker: no dark food outline, soft sticker shadow. */
+.page-home .poster-stage .hero-food[data-hop] { filter: drop-shadow(0 6px 6px rgb(89 50 25 / 22%)) !important; }
