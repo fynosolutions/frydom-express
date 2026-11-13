@@ -211,7 +211,7 @@
 @media (min-width: 761px) {
   #main .locations-list .location-detail { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important; gap: clamp(32px, 4.5vw, 72px) !important; align-items: center !important; }
   #main .location-detail-photo { width: 100% !important; align-self: stretch !important; }
-  #main .location-detail-photo > img { width: 100% !important; height: min(76vh, 640px) !important; aspect-ratio: auto !important; object-fit: cover !important; object-position: 50% 35% !important; border-radius: 18px; }
+  #main .location-detail-photo > img { width: 100% !important; height: min(68vh, 620px) !important; aspect-ratio: auto !important; object-fit: cover !important; object-position: 50% 35% !important; border-radius: 18px; }
 }
 #main .location-detail h2 { font-size: clamp(44px, min(5.2vw, 9vh), 84px) !important; line-height: 1 !important; margin-bottom: clamp(18px, 2.4vw, 32px) !important; }
 #main .location-detail dl { display: grid; gap: clamp(14px, 1.8vw, 22px); margin: 0 0 28px; }
