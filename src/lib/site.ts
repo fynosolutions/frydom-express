@@ -6,7 +6,7 @@ export const data = site as any;
 export const t = (lang: Language, en: string, zh: string) => lang === 'en' ? en : zh;
 export const locale = (lang: Language) => data.locales[lang];
 export const url = (lang: Language, kind: PageKind) => locale(lang).routes[kind];
-export const navigation: PageKind[] = ['home','menu','offers','locations','partner','support','privacy'];
+export const navigation: PageKind[] = ['home','menu','offers','locations'];
 export const primaryNavigation: PageKind[] = ['menu','offers','locations'];
 export const orderPlatforms = [
   {name:'Order direct (pickup)',href:'https://pos.chowbus.com/online-ordering/store/Frydom-Express-Brooklyn/23427'},
