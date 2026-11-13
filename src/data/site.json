@@ -2037,7 +2037,7 @@
       "locations": [
         {
           "id": "brooklyn",
-          "name": "Brooklyn, New York",
+          "name": "Sunset Park, Brooklyn",
           "address": {
             "streetAddress": "781 61st St",
             "addressLocality": "Brooklyn",
@@ -4186,7 +4186,7 @@
       "locations": [
         {
           "id": "brooklyn",
-          "name": "Brooklyn, New York",
+          "name": "布鲁克林日落公园",
           "address": {
             "streetAddress": "781 61st St",
             "addressLocality": "Brooklyn",
