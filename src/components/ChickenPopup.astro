@@ -155,9 +155,11 @@ const ordered = [...offers].sort((a,b)=>(rank[a.id]??9)-(rank[b.id]??9));
       rotating = !motion.matches;
       showSlide(0);
     }
+    /* Count 6s only once the page has fully loaded, so the popup never lands while a slow phone is still drawing the page. */
     function schedule() {
       clearTimeout(timer);
-      timer = window.setTimeout(showPopup, 6000);
+      const start = () => { clearTimeout(timer); timer = window.setTimeout(showPopup, 6000); };
+      if (document.readyState === 'complete') start(); else window.addEventListener('load', start, {once: true});
     }
     window.addEventListener('pageshow', event => { if (event.persisted) schedule(); });
     const intro = document.querySelector<HTMLElement>('#home-intro');
