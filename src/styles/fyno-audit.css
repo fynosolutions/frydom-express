@@ -197,3 +197,12 @@
 @media (max-width: 700px) { .page-menu #main .menu-cover { height: 300px !important; padding-bottom: 92px !important; } }
 /* The hopping mascot is a die-cut sticker: no dark food outline, soft sticker shadow. */
 .page-home .poster-stage .hero-food[data-hop] { filter: drop-shadow(0 6px 6px rgb(89 50 25 / 22%)) !important; }
+
+/* Line breaks site-wide (Mao 11-13: "断句不对"): headings balance, body text avoids a lone last word. */
+#main :is(h1, h2, h3, h4, figcaption h3), .site-footer :is(h2, h3) { text-wrap: balance; }
+#main :is(p, li, dd, figcaption, small), .site-footer p { text-wrap: pretty; }
+/* Hero sub-line: one strong line (what we sell) + one supporting line (what else, where). */
+.page-home #main .poster-copy .hero-sub { display: grid; gap: 6px; justify-items: center; margin-inline: auto; max-width: 46em; }
+.page-home #main .poster-copy .hero-sub strong { font: 400 clamp(24px, 2.4vw, 34px)/1.15 var(--display); color: var(--accent-strong, #b82517); letter-spacing: .01em; }
+.page-home #main .poster-copy .hero-sub span { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.45; text-wrap: balance; }
+.locale-zh.page-home #main .poster-copy h1 .hero-title-line { display: inline-block; }

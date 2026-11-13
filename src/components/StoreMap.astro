@@ -1,0 +1,42 @@
+---
+/* Live Google map with the store pin + the store's own walking diagram (from its in-store poster).
+   No API key: the public embed URL. The iframe only loads when scrolled near (loading="lazy"). */
+import {locale,t,type Language} from '../lib/site';
+const {lang, heading = true} = Astro.props as {lang: Language; heading?: boolean};
+const store = locale(lang).locations[0];
+const query = encodeURIComponent('Frydom Express, 781 61st St, Brooklyn, NY 11220');
+---
+<section class="store-map wrap" aria-labelledby={heading ? 'store-map-title' : undefined} aria-label={heading ? undefined : t(lang,'Map and directions','地图与路线')}>
+  {heading && <h2 id="store-map-title">{t(lang,'Find us in Sunset Park','日落公园，找到我们')}</h2>}
+  <div class="store-map-grid">
+    <div class="store-map-frame">
+      <iframe src={`https://www.google.com/maps?q=${query}&z=17&output=embed`} title={t(lang,'Google Map: Frydom Express, 781 61st St, Brooklyn','谷歌地图：Frydom Express，781 61st St, Brooklyn')}
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <figure class="store-map-guide">
+      <img src="/assets/locations/directions-61st-8th.webp" width="1168" height="596" loading="lazy" decoding="async"
+        alt={t(lang,'Walking map: from the 8 Av N train station, walk up 8th Ave and turn left on 61st St. Frydom Express and Taning are next to TESO Life.','步行路线图：从地铁 N 线 8 Av 站出来，沿 8th Ave 走到 61st St 左转，Frydom Express 和挞柠在 TESO Life 旁边。')}/>
+      <figcaption>
+        <strong>{t(lang,'781 61st St, Sunset Park, Brooklyn','781 61st St · 布鲁克林日落公园')}</strong>
+        <span>{t(lang,'N train to 8 Av, walk up 8th Ave, turn left on 61st St. We share the shop with Taning lemon tea, next to TESO Life.','坐 N 线到 8 Av 站，沿 8th Ave 走到 61st St 左转。和挞柠柠檬茶同一家店，在 TESO Life 旁边。')}</span>
+        <a class="store-map-link" href={store.mapUrl} target="_blank" rel="noopener noreferrer">{t(lang,'Open in Google Maps','在谷歌地图打开')} ↗</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<style>
+  .store-map { padding-block: clamp(36px, 6vw, 72px); }
+  .store-map h2 { margin: 0 0 22px; font: 400 clamp(34px, min(5vw, 8vh), 64px)/1 var(--display); color: var(--accent-strong, #b82517); text-wrap: balance; }
+  .store-map-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(16px, 2.4vw, 32px); align-items: stretch; }
+  .store-map-frame { position: relative; width: 100%; justify-self: stretch; border-radius: 18px; overflow: hidden; border: 3px solid #fffdf8; box-shadow: 0 10px 24px #59321922; background: #eadfcc; min-height: 320px; }
+  .store-map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .store-map-guide { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .store-map-guide img { width: 100%; height: auto; border-radius: 14px; }
+  .store-map-guide figcaption { display: grid; gap: 6px; font: 500 16px/1.5 var(--sans); color: #382318; text-wrap: pretty; }
+  .store-map-guide strong { font: 400 24px/1.15 var(--display); color: var(--accent-strong, #b82517); }
+  .store-map-link { justify-self: start; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 700; color: var(--accent-strong, #b82517); text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 760px) {
+    .store-map-grid { grid-template-columns: 1fr; }
+    .store-map-frame { min-height: 0; aspect-ratio: 4 / 3; }
+  }
+</style>
