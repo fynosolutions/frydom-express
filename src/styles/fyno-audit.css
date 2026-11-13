@@ -81,3 +81,32 @@
 .offer-strip + .taste-story { margin-top: 0; }
 .site-footer .footer-contact > span { display: block; font: 500 17px/1.5 var(--sans); color: var(--cream); margin-bottom: 14px; }
 .locale-zh.page-home #main .poster-copy h1 { text-wrap: balance; word-break: keep-all; }
+
+/* Scale pass (Mao 11-13: "too big, I can only see the burger"): nothing may be taller than ~70% of the screen. */
+@media (min-width: 951px) {
+  body .brand-lockup > img { width: 72px !important; height: 72px !important; }
+  body .header-inner { min-height: 72px !important; padding-block: 8px !important; }
+}
+.taste-gallery { max-width: min(1190px, 118vh) !important; }
+.page-home.page-home #main .taste-copy h2 { font-size: clamp(56px, min(11vw, 17vh), 170px) !important; }
+.page-home.page-home #main .gallery-heading h2 { font-size: clamp(72px, min(13vw, 22vh), 210px) !important; }
+.page-home.page-home #main .home-visit h2 { font-size: clamp(60px, min(9.5vw, 15vh), 150px) !important; }
+.page-home.page-home .home-visit > img { max-height: 58vh !important; width: auto !important; max-width: 100%; justify-self: center; }
+.video-print { width: fit-content !important; justify-self: center; }
+.video-print .gallery-film { height: min(50vh, 520px) !important; width: auto !important; aspect-ratio: 9 / 16; }
+.video-print figcaption { max-width: calc(min(50vh, 520px) * 9 / 16); }
+.page-home.page-home #main .video-print h3 { font-size: clamp(22px, 3.4vh, 34px) !important; }
+.page-menu #main .menu-cover { max-height: 62vh; min-height: 0 !important; }
+@media (min-width: 1100px) {
+  #main .menu-grid:has(> :nth-child(6):last-child) { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; gap: 24px 14px; }
+}
+.location-detail img { max-height: 62vh; width: auto !important; max-width: 100%; object-fit: contain; }
+.campaign-posters .poster-page img { max-height: 78vh; width: auto !important; max-width: 100%; margin-inline: auto; display: block; }
+.offer-poster img { max-height: 60vh; object-fit: contain; }
+.page-partner #main img { max-height: 62vh; width: auto; max-width: 100%; object-fit: contain; }
+@media (max-width: 700px) {
+  .taste-gallery > figure { flex-basis: 56vw !important; }
+  .page-home.page-home #main .home-visit > img { max-height: 46vh !important; }
+}
+@media (max-width: 700px) { .video-print .gallery-film { height: min(44vh, 420px) !important; } .video-print figcaption { max-width: calc(min(44vh, 420px) * 9 / 16); } }
+.site-footer .footer-contact > span { font: 500 16px/1.5 var(--sans) !important; letter-spacing: 0 !important; }
