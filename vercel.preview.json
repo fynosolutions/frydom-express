@@ -7,6 +7,18 @@
   "cleanUrls": false,
   "redirects": [
     {
+      "source": "/",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "frydom-lang",
+          "value": "zh"
+        }
+      ],
+      "destination": "/en/",
+      "permanent": false
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "statusCode": 301

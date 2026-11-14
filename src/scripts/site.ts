@@ -198,3 +198,10 @@ document.addEventListener('keydown', event => {
     }
   });
 });
+
+/* English is the default homepage (US store). The server sends "/" to "/en/" unless this cookie says zh;
+   tapping the language switch records the choice for a year. */
+document.querySelectorAll<HTMLAnchorElement>('.language-link').forEach(link=>link.addEventListener('click',()=>{
+  const lang=link.getAttribute('lang')==='zh-Hans'?'zh':'en';
+  document.cookie=`frydom-lang=${lang}; path=/; max-age=31536000; SameSite=Lax`;
+}));

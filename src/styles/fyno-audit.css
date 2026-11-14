@@ -233,3 +233,33 @@
   #main .locations-list .location-detail-photo { width: 100% !important; max-width: none !important; justify-self: stretch !important; }
   #main .locations-list .location-detail-photo > img { width: 100% !important; aspect-ratio: 4 / 3 !important; max-height: none; object-position: 50% 30% !important; }
 }
+
+/* Logo wordmark (Mao 11-13): desktop red too bright; phone text blurry from the white outline on the red header. */
+.site-header .brand-wordmark strong { color: #a3241a !important; }
+.site-header .brand-wordmark strong span { color: #a3241a !important; }
+.site-header .brand-wordmark, .site-header .brand-wordmark * { -webkit-text-stroke: 0 !important; text-shadow: none !important; }
+@media (max-width: 950px) {
+  .site-header .brand-wordmark strong, .site-header .brand-wordmark strong span { color: #fff6e6 !important; }
+  .site-header .brand-wordmark strong { font-size: 21px !important; letter-spacing: .01em !important; }
+  .site-header .brand-wordmark strong span { font-size: 15px !important; letter-spacing: .2em !important; margin-top: 3px !important; }
+}
+
+/* Phone footer (Mao 11-13: too long). Drop the repeat menu CTA, links in two columns, contact compact, legal row small. */
+@media (max-width: 700px) {
+  .site-footer .footer-top { gap: 22px !important; padding-bottom: 20px !important; padding-top: 28px; }
+  .site-footer .footer-invitation { display: none !important; }
+  .site-footer :is(.footer-links, .footer-contact) > h3 { font-size: 13px !important; letter-spacing: .14em !important; margin: 0 0 10px !important; opacity: .8; }
+  .site-footer .footer-links { display: grid !important; grid-template-columns: 1fr 1fr; column-gap: 16px; }
+  .site-footer .footer-links > h3 { grid-column: 1 / -1; }
+  .site-footer .footer-links > a { font-size: 20px !important; min-height: 40px !important; margin: 0 !important; display: flex; align-items: center; }
+  .site-footer .footer-contact > p { font-size: 13px !important; letter-spacing: .08em; text-transform: uppercase; margin: 14px 0 2px !important; opacity: .8; }
+  .site-footer .footer-contact > p:first-of-type { margin-top: 0 !important; }
+  .site-footer .footer-contact > a:not(.footer-partner) { font-size: 22px !important; min-height: 40px !important; display: inline-flex !important; align-items: center; }
+  .site-footer .footer-contact > span { font-size: 16px !important; line-height: 1.45 !important; margin-bottom: 0 !important; }
+  .site-footer .footer-bottom { padding-block: 14px 18px !important; gap: 8px !important; font-size: 13px !important; }
+  .site-footer .footer-bottom > div { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .site-footer .footer-bottom a { font-size: 13px !important; white-space: nowrap; min-height: 32px; display: inline-flex; align-items: center; }
+}
+/* The logo is the brand name, not Chinese copy: same lettering on Chinese pages. */
+.locale-zh .site-header .brand-wordmark strong { font-family: Modak, FuturaPT, sans-serif !important; font-style: normal !important; }
+.locale-zh .site-header .brand-wordmark strong span { font-family: 'Mouse Memoirs', sans-serif !important; }
