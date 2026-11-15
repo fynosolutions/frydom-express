@@ -13,6 +13,7 @@ advantages.find('.fr-card > h3').each((_, heading) => {
   source(heading).nextAll().wrapAll('<div class="advantage-copy"></div>');
 });
 advantages.find('.fr-dot').remove();
+source('#who-we-want .fr-icon').remove();
 advantages.find('.fr-bullets').attr('role', 'list');
 advantages.find('.fr-pills, .fr-mini:last-child > .tag').remove();
 advantages.find('.fr-mini > .tag').empty().attr('aria-hidden', 'true');
