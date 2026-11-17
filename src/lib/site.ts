@@ -48,7 +48,9 @@ const descriptions: Record<Language,Record<PageKind,string>> = {
 };
 export function metadata(lang:Language,kind:PageKind) {
   return {
-    title:kind==='home'?t(lang,'Frydom Express — Chinese & Korean Fried Chicken in Sunset Park, Brooklyn','Frydom Express 飞乐炸鸡 — 布鲁克林日落公园 中式韩式炸鸡'):labels[lang][kind]+' | Frydom Express',
+    title:kind==='home'?t(lang,'Frydom Express — Chinese & Korean Fried Chicken in Sunset Park, Brooklyn','Frydom Express 飞乐炸鸡 — 布鲁克林日落公园 中式韩式炸鸡'):kind==='menu'?t(lang,'Menu & Prices — Frydom Express Fried Chicken, Sunset Park Brooklyn','菜单价格 — Frydom Express 飞乐炸鸡 · 布鲁克林日落公园')
+      :kind==='locations'?t(lang,'Location & Hours — Frydom Express Fried Chicken, Sunset Park Brooklyn','地址与营业时间 — Frydom Express 飞乐炸鸡 · 布鲁克林日落公园')
+      :labels[lang][kind]+' | Frydom Express',
     description:descriptions[lang][kind],
   };
 }
