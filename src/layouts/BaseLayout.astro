@@ -59,6 +59,20 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <meta property="og:image" content={'https://frydomexpressny.com'+shareImage.src}/>
     <meta name="twitter:card" content="summary_large_image"/>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData(lang,kind)).replaceAll('<','\u003c')}/>
+    <!-- GA4 (001 Frydom, property 555559062). Only counts on the live domain. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XEQBJV83KY"></script>
+    <script is:inline>
+      if(/^(www\.)?frydomexpressny\.com$/.test(location.hostname)){
+        window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
+        gtag('js',new Date());gtag('config','G-XEQBJV83KY');
+        document.addEventListener('click',function(e){
+          var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.href,n=null;
+          if(/^tel:/.test(h))n='call_click';else if(/chowbus\.com/.test(h))n='order_click';else if(/ubereats\.com|doordash\.com|grubhub\.com/.test(h))n='delivery_click';else if(/google\.[a-z.]+\/maps|maps\.app\.goo\.gl|maps\.apple\.com/.test(h))n='directions_click';
+          if(!n)return;var w=a.closest('header,footer,dialog,[role=dialog],section,main');
+          gtag('event',n,{click_location:w?(w.id||w.className.split(' ')[0]||w.tagName.toLowerCase()):'page',link_url:h,transport_type:'beacon'});
+        },true);
+      }
+    </script>
   </head>
   <body id="top" class:list={[`page-${kind}`,`locale-${lang}`]}>
     <PageWave/>
