@@ -7,10 +7,32 @@ await mkdir('dist/en',{recursive:true});
 await rename('dist/en.html','dist/en/index.html');
 for(const route of data.routes){const file='dist'+(route.path.endsWith('/')?route.path+'index.html':route.path);await access(file);}
 const indexed=['partner','privacy','terms'];
-const urls=data.routes.filter(route=>!indexed.includes(route.kind)).map(route=>`  <url><loc>${origin+route.path}</loc><xhtml:link rel="alternate" hreflang="en" href="${origin+data.locales.en.routes[route.kind]}"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="${origin+data.locales.zh.routes[route.kind]}"/></url>`);
+// '/' (Chinese home) is cookie-redirected to /en/ for visitors without the zh cookie, so crawlers can never read it.
+const urls=data.routes.filter(route=>!indexed.includes(route.kind)&&route.path!=='/').map(route=>`  <url><loc>${origin+route.path}</loc><xhtml:link rel="alternate" hreflang="en" href="${origin+data.locales.en.routes[route.kind]}"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="${origin+data.locales.zh.routes[route.kind]}"/></url>`);
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`);
 // Original root robots returned 404. No existing policy was overwritten.
 await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
+// llms.txt: plain-text facts for AI assistants. Only facts already published on the site (hours = Google Business Profile, set 2026-11-01).
+await writeFile('dist/llms.txt',`# Frydom Express — Sunset Park, Brooklyn
+
+> Frydom Express Brooklyn is a fried chicken restaurant at 781 61st St, Brooklyn, NY 11220 (Sunset Park). It serves Chinese-style and Korean-style fried chicken, wings, burgers and Taning lemon tea. Dine-in, takeout and delivery.
+
+This site (frydomexpressny.com) is the official site of the Brooklyn store. The Frydom Express brand and franchise headquarters site is https://frydomexpress.com/ — franchise questions go there.
+
+## Store facts
+- Address: 781 61st St, Brooklyn, NY 11220, United States
+- Phone: +1 929-805-0718
+- Hours: Sun–Thu 11:00 AM–9:00 PM; Fri–Sat 11:00 AM–10:00 PM (online orders close 30 minutes earlier)
+- Order online for pickup: https://pos.chowbus.com/online-ordering/store/Frydom-Express-Brooklyn/23427
+- Delivery: Uber Eats — https://www.ubereats.com/store/frydom-express-fried-chicken-%E9%A3%9E%E4%B9%90%E7%82%B8%E9%B8%A1-781-61st-street/OLdZQvsVXzWCMBpsf9uctg
+
+## Pages
+- [Home](${origin}/en/)
+- [Menu with prices](${origin}/en/menu.html)
+- [Location and hours](${origin}/en/stores.html)
+- [Current offers](${origin}/en/offers.html)
+- [中文菜单](${origin}/menu.html)
+`);
 await writeFile('dist/_redirects','/index.html / 301\n/en/index.html /en/ 301\n'+Object.entries(redirects).map(([from,to])=>`${from} ${to} 301`).join('\n')+'\n');
 // Static-host fallback; production and local preview serve HTTP 301 redirects.
 for(const [from,to] of Object.entries(redirects)) await writeFile('dist'+from,`<!doctype html><html lang="${from.startsWith('/en/')?'en':'zh-Hans'}"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=${to}"><link rel="canonical" href="${origin+to.split('#')[0]}"><title>Frydom Express</title></head><body><a href="${to}">Frydom Express</a></body></html>`);
