@@ -22,7 +22,7 @@ const descriptions: Record<Language,Record<PageKind,string>> = {
     'staff-offer':'Show your work ID at our Brooklyn location for staff and group meal benefits. View qualifying amounts and contact details.',
     'leg-quarter':'Discover our freshly fried Crispy-Skinned Chicken Leg Quarter, advertised at $6.45. Ask about participating locations.',
     'chicken-bucket':'Discover the $38.99 Ultimate Chicken Bucket with a free $20 blind box. View the advertised meal and ask about availability.',
-    home:'Meet Frydom Express: crispy fried chicken, wings, burgers, wraps and sides. Explore our menu and visit us in Sunset Park, Brooklyn.',
+    home:'Frydom Express in Sunset Park, Brooklyn: Chinese fried chicken and Korean fried chicken, wings, burgers and Taning lemon tea. See the menu, order online.',
     story:'Discover the Brooklyn roots of Frydom Express, our golden fried chicken, globally inspired sauces and neighborhood store experience.',
     menu:'Explore the Frydom Express Brooklyn menu with prices for fried chicken, combos, burgers, wings, boneless chicken, sides and drinks.',
     locations:'Find Frydom Express in Sunset Park, Brooklyn, including the address, hours, phone number, directions and dine-in and takeout services.',
@@ -48,7 +48,7 @@ const descriptions: Record<Language,Record<PageKind,string>> = {
 };
 export function metadata(lang:Language,kind:PageKind) {
   return {
-    title:kind==='home'?t(lang,'Frydom Express — Crispy Fried Chicken & Burgers','Frydom Express — 金黄酥脆，一口爆汁'):labels[lang][kind]+' | Frydom Express',
+    title:kind==='home'?t(lang,'Frydom Express — Chinese & Korean Fried Chicken in Sunset Park, Brooklyn','Frydom Express 飞乐炸鸡 — 布鲁克林日落公园 中式韩式炸鸡'):labels[lang][kind]+' | Frydom Express',
     description:descriptions[lang][kind],
   };
 }

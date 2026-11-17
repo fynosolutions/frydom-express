@@ -8,7 +8,7 @@ const offers: {id: PageKind; title: string; headline: string; description: strin
   {offers.map(offer => (
     <a class="offer-poster" href={url(lang,offer.id)}>
       <img src={`/assets/posters/${offer.id}-1.webp`} width={offer.id==='staff-offer'?1855:1701}
-        height="2400" alt="" decoding="async"/>
+        height="2400" alt={offer.title+" poster"} decoding="async"/>
       <span class="offer-card-copy"><strong>{offer.title}</strong><em>{offer.headline}</em><span>{offer.description}</span><span class="offer-card-link">{t(lang,'See details','查看详情')} →</span></span>
     </a>
   ))}
