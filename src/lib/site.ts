@@ -54,21 +54,24 @@ export function metadata(lang:Language,kind:PageKind) {
 }
 export function asset(path:string) {return data.assets[path];}
 export function structuredData(lang:Language,kind:PageKind) {
-  const origin='https://frydomexpress.com';
+  const origin='https://frydomexpressny.com';
   const canonical=origin+url(lang,kind);
-  const organization={'@type':'Organization','@id':origin+'/#organization',name:'Frydom Express',url:origin+'/',email:data.brand.email,logo:origin+data.brand.logo.src};
+  const organization={'@type':'Organization','@id':origin+'/#organization',name:'Frydom Express',url:'https://frydomexpress.com/',sameAs:['https://frydomexpress.com/','https://www.instagram.com/frydomexpress/'],email:data.brand.email,logo:origin+data.brand.logo.src};
+  // The one store this domain serves. Brand/franchise HQ lives at frydomexpress.com (parentOrganization).
+  const hours=(days:string[],closes:string)=>({'@type':'OpeningHoursSpecification',dayOfWeek:days,opens:'11:00',closes});
+  const store={'@type':'Restaurant','@id':origin+'/#brooklyn',name:'Frydom Express Brooklyn (Sunset Park)',alternateName:['Frydom Express','Frydom Express Sunset Park'],url:origin+'/',telephone:'+1-929-805-0718',priceRange:'$',servesCuisine:['Fried Chicken','Chinese','Korean','Chicken Wings','Burgers'],address:{'@type':'PostalAddress',streetAddress:'781 61st St',addressLocality:'Brooklyn',addressRegion:'NY',postalCode:'11220',addressCountry:'US'},hasMap:'https://www.google.com/maps/search/?api=1&query=Frydom%20Express%20781%2061st%20St%20Brooklyn%20NY%2011220',openingHoursSpecification:[hours(['Sunday','Monday','Tuesday','Wednesday','Thursday'],'21:00'),hours(['Friday','Saturday'],'22:00')],hasMenu:origin+url(lang,'menu'),acceptsReservations:false,potentialAction:{'@type':'OrderAction',target:['https://pos.chowbus.com/online-ordering/store/Frydom-Express-Brooklyn/23427','https://www.ubereats.com/store/frydom-express-fried-chicken-%E9%A3%9E%E4%B9%90%E7%82%B8%E9%B8%A1-781-61st-street/OLdZQvsVXzWCMBpsf9uctg'],deliveryMethod:['http://purl.org/goodrelations/v1#DeliveryModePickUp','http://purl.org/goodrelations/v1#DeliveryModeOwnFleet']},image:origin+data.brand.logo.src,parentOrganization:{'@id':origin+'/#organization'}};
   const website={'@type':'WebSite','@id':origin+'/#website',url:origin+'/',name:'Frydom Express',publisher:{'@id':organization['@id']}};
   const type=kind==='story'?'AboutPage':kind==='locations'?'CollectionPage':'WebPage';
   const page:any={'@type':type,'@id':canonical+'#webpage',url:canonical,name:metadata(lang,kind).title,description:metadata(lang,kind).description,inLanguage:lang==='zh'?'zh-Hans':'en',isPartOf:{'@id':website['@id']},about:{'@id':organization['@id']}};
-  const graph:any[]=[organization,website,page];
+  const graph:any[]=[organization,website,page,store];
   if(kind!=='home')graph.push({'@type':'BreadcrumbList','@id':canonical+'#breadcrumbs',itemListElement:[{'@type':'ListItem',position:1,name:labels[lang].home,item:origin+url(lang,'home')},{'@type':'ListItem',position:2,name:labels[lang][kind],item:canonical}]});
   if(kind==='menu') {
     const menu={'@type':'Menu','@id':canonical+'#menu',name:t(lang,'Frydom Express Menu','Frydom Express 菜单'),url:canonical,inLanguage:lang==='zh'?'zh-Hans':'en',description:descriptions[lang].menu,hasMenuSection:locale(lang).categories.filter((c:any)=>locale(lang).menu.some((i:any)=>i.sectionId===c.id)).map((c:any)=>({'@type':'MenuSection','@id':canonical+'#'+c.id,name:c.name,hasMenuItem:locale(lang).menu.filter((i:any)=>i.sectionId===c.id).map((i:any)=>({'@type':'MenuItem','@id':canonical+'#'+i.id,name:i.name,description:i.description,image:origin+i.image.src}))}))};
     graph.push(menu);page.mainEntity={'@id':menu['@id']};
   }
   if(kind==='locations'){
-    const locations=locale(lang).locations.map((location:any)=>({'@type':'Restaurant','@id':origin+url('en','locations')+'#'+location.id,name:'Frydom Express — '+location.name,url:canonical+'#'+location.id,image:origin+(location.detailImage||location.image).src,address:{'@type':'PostalAddress',...location.address},parentOrganization:{'@id':organization['@id']}}));
-    graph.push(...locations);graph.push({'@type':'ItemList','@id':canonical+'#locations',itemListElement:locations.map((location:any,i:number)=>({'@type':'ListItem',position:i+1,item:{'@id':location['@id']}}))});page.mainEntity={'@id':canonical+'#locations'};
+    const locations=[store];
+    graph.push({'@type':'ItemList','@id':canonical+'#locations',itemListElement:locations.map((location:any,i:number)=>({'@type':'ListItem',position:i+1,item:{'@id':location['@id']}}))});page.mainEntity={'@id':canonical+'#locations'};
   }
   return {'@context':'https://schema.org','@graph':graph};
 }

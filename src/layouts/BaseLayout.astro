@@ -26,7 +26,9 @@ import '../styles/footer.css';
 import '../styles/fyno-audit.css';
 const {lang,kind} = Astro.props as {lang:Language,kind:PageKind};
 const meta=metadata(lang,kind);
-const canonical='https://frydomexpress.com'+url(lang,kind);
+// Franchise copy belongs to the brand HQ site; legal pages are HQ copies. This domain ranks for the Brooklyn store.
+const canonical=(kind==='partner'?'https://frydomexpress.com':'https://frydomexpressny.com')+url(lang,kind);
+const noindex=kind==='privacy'||kind==='terms';
 const hero=kind==='home'?locale(lang).menu.find((item:any)=>item.id==='angus-beef-cheeseburger').image:asset('/images/brand-new-1280-1280.webp');
 const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image||hero;
 ---
@@ -39,9 +41,10 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <title>{meta.title}</title>
     <meta name="description" content={meta.description}/>
     <link rel="canonical" href={canonical}/>
-    <link rel="alternate" hreflang="en" href={'https://frydomexpress.com'+url('en',kind)}/>
-    <link rel="alternate" hreflang="zh-Hans" href={'https://frydomexpress.com'+url('zh',kind)}/>
-    <link rel="alternate" hreflang="x-default" href={'https://frydomexpress.com'+url('en',kind)}/>
+    {noindex&&<meta name="robots" content="noindex, follow"/>}
+    <link rel="alternate" hreflang="en" href={'https://frydomexpressny.com'+url('en',kind)}/>
+    <link rel="alternate" hreflang="zh-Hans" href={'https://frydomexpressny.com'+url('zh',kind)}/>
+    <link rel="alternate" hreflang="x-default" href={'https://frydomexpressny.com'+url('en',kind)}/>
     <link rel="icon" href={asset('/favicon-32.png').src} type="image/png"/>
     <link rel="apple-touch-icon" href={asset('/apple-touch-icon.png').src}/>
     <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
@@ -53,7 +56,7 @@ const shareImage=locale(lang).offers?.find((offer:any)=>offer.id===kind)?.image|
     <meta property="og:title" content={meta.title}/>
     <meta property="og:description" content={meta.description}/>
     <meta property="og:url" content={canonical}/>
-    <meta property="og:image" content={'https://frydomexpress.com'+shareImage.src}/>
+    <meta property="og:image" content={'https://frydomexpressny.com'+shareImage.src}/>
     <meta name="twitter:card" content="summary_large_image"/>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData(lang,kind)).replaceAll('<','\u003c')}/>
   </head>

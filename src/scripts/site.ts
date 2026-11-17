@@ -1,5 +1,5 @@
 import './heading-motion';
-const productionHost = ['frydomexpress.com','www.frydomexpress.com'].includes(location.hostname) && location.protocol === 'https:';
+const productionHost = ['frydomexpressny.com','www.frydomexpressny.com','frydomexpress.com','www.frydomexpress.com'].includes(location.hostname) && location.protocol === 'https:';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 // Animate only after a text block enters the viewport. Never hide pending text:

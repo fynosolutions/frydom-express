@@ -4,7 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 const data=JSON.parse(await readFile('src/data/site.json','utf8'));
 const checks=[];const failures=[];const cache=new Map();
-const origin='https://frydomexpress.com';
+const origin='https://frydomexpressny.com';
 // Prices transcribed from the owner-approved 1015 printed menu, page 1.
 const printedPrices={
   'original-recipe-fried-chicken':[9.95,18.95,26.95],
@@ -26,12 +26,12 @@ async function document(route){if(cache.has(route))return cache.get(route);const
 function check(name,run){try{run();checks.push({name,status:'passed'});}catch(error){failures.push({name,error:error.message});checks.push({name,status:'failed',error:error.message});}}
 for(const {lang,kind,path:route}of data.routes){
   const q=await document(route);const source=data.locales[lang];
-  check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');if(['staff-offer','leg-quarter','chicken-bucket'].includes(kind)){assert.equal(q('.campaign-posters img').length,1);assert.equal(q('.campaign-copy').length,1);assert.equal(q('.campaign-terms').length,1);assert(q('.campaign-copy').text().includes(source.offers.find(o=>o.id===kind).headline));}else if(kind==='offers'){assert.equal(q('main .offer-poster img').length,3);}else assert(q('main').text().trim().length>100);assert.equal(q('head meta[name=robots]').length,0);assert(!q('main').text().includes('< img'));});
-  check(route+' canonical and language alternates',()=>{assert.equal(q('link[rel=canonical]').attr('href'),origin+route);for(const l of ['en','zh'])assert.equal(q(`link[hreflang="${l==='en'?'en':'zh-Hans'}"]`).attr('href'),origin+data.locales[l].routes[kind]);});
+  check(route+' semantics',()=>{assert.equal(q('h1').length,1);assert.equal(q('main').length,1);assert.equal(q('html').attr('lang'),lang==='en'?'en':'zh-Hans');if(['staff-offer','leg-quarter','chicken-bucket'].includes(kind)){assert.equal(q('.campaign-posters img').length,1);assert.equal(q('.campaign-copy').length,1);assert.equal(q('.campaign-terms').length,1);assert(q('.campaign-copy').text().includes(source.offers.find(o=>o.id===kind).headline));}else if(kind==='offers'){assert.equal(q('main .offer-poster img').length,3);}else assert(q('main').text().trim().length>100);assert(!q('main').text().includes('< img'));});
+  check(route+' canonical and language alternates',()=>{assert.equal(q('link[rel=canonical]').attr('href'),(kind==='partner'?'https://frydomexpress.com':origin)+route);assert.equal(q('meta[name=robots]').length,['privacy','terms'].includes(kind)?1:0);for(const l of ['en','zh'])assert.equal(q(`link[hreflang="${l==='en'?'en':'zh-Hans'}"]`).attr('href'),origin+data.locales[l].routes[kind]);});
   check(route+' unique IDs',()=>{const ids=q('[id]').map((i,e)=>q(e).attr('id')).get();assert.equal(new Set(ids).size,ids.length);});
   check(route+' exact active navigation',()=>{assert.equal(q('.desktop-nav a[aria-current=page]').length,['home','privacy','terms','partner','support'].includes(kind)?0:1);assert.equal(q('.desktop-nav a').length,5);assert.equal(q('.desktop-nav[hidden]').length,0);});
   let graph;
-  check(route+' JSON-LD parses and contains only supported facts',()=>{graph=JSON.parse(q('script[type="application/ld+json"]').text())['@graph'];assert(graph.some(n=>n['@type']==='Organization'));assert(!JSON.stringify(graph).match(/OpeningHoursSpecification|aggregateRating|ratingValue|legalName|priceCurrency|Open now|OrderAction/));});
+  check(route+' JSON-LD parses and contains only supported facts',()=>{graph=JSON.parse(q('script[type="application/ld+json"]').text())['@graph'];assert(graph.some(n=>n['@type']==='Organization'));assert(!JSON.stringify(graph).match(/aggregateRating|ratingValue|legalName|priceCurrency|Open now/));});
   for(const element of q('a[href]').toArray()){
     const href=q(element).attr('href');let dest;try{dest=new URL(href,origin+route);}catch{failures.push({name:route+' link',error:href});continue;}
     if(dest.origin!==origin)continue;
@@ -79,7 +79,7 @@ for(const {lang,kind,path:route}of data.routes){
 }
 check('unique page titles and descriptions',()=>{const titles=[...cache.values()].map(q=>q('title').text());assert.equal(new Set(titles).size,data.routes.length);const descriptions=[...cache.values()].map(q=>q('meta[name=description]').attr('content'));assert.equal(new Set(descriptions).size,data.routes.length);});
 const sitemap=await readFile('dist/sitemap.xml','utf8');
-check('sitemap lists only canonical routes',()=>{const q=load(sitemap,{xml:true});assert.equal(q('url').length,data.routes.length);for(const route of data.routes)assert(q('loc').map((i,e)=>q(e).text()).get().includes(origin+route.path));assert(!sitemap.includes('#'));assert(!sitemap.includes('localhost'));assert(!sitemap.includes('lastmod'));});
+check('sitemap lists only canonical routes',()=>{const q=load(sitemap,{xml:true});const listed=data.routes.filter(r=>!['partner','privacy','terms'].includes(r.kind));assert.equal(q('url').length,listed.length);for(const route of listed)assert(q('loc').map((i,e)=>q(e).text()).get().includes(origin+route.path));assert(!sitemap.includes('#'));assert(!sitemap.includes('localhost'));assert(!sitemap.includes('lastmod'));});
 check('robots and homepage aliases',()=>{assert(data.routes.some(r=>r.path==='/en/'));assert(data.routes.some(r=>r.path==='/'));});
 await mkdir('docs/qa',{recursive:true});
 function readable(q,node){if(node.type==='text')return node.data;if(['script','style','nav','footer'].includes(node.tagName))return'';const block=['h1','h2','h3','h4','p','li','section','article','dt','dd','address','div','br','summary'].includes(node.tagName);return(block?'\n':' ')+(node.children||[]).map(n=>readable(q,n)).join('')+(block?'\n':' ');}
