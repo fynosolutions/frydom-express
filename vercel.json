@@ -7,6 +7,17 @@
   "cleanUrls": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "frydom-express-preview.vercel.app"
+        }
+      ],
+      "destination": "https://frydomexpressny.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/",
       "missing": [
         {
